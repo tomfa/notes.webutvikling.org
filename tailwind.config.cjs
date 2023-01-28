@@ -51,7 +51,7 @@ module.exports = {
 				DEFAULT: {
 					css: {
 						a: {
-							"@apply cactus-link": "",
+							"@apply link": "",
 						},
 						strong: {
 							fontWeight: "700",
@@ -114,6 +114,9 @@ module.exports = {
 				".title": {
 					"@apply text-2xl font-semibold text-accent-2": {},
 				},
+        ".link": {
+          "@apply text-accent underline dark:no-underline dark:hover:underline hover:decoration-solid  underline-offset-4 decoration-dotted": {},
+        }
 			});
 		}),
 	],

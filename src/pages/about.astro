@@ -5,44 +5,36 @@ import aboutImg from "../assets/about-astro.png";
 
 const meta = {
 	title: "About",
-	description: "I'm a starter theme for Astro.build",
+	description: "I'm just",
 };
 ---
 
 <PageLayout meta={meta}>
 	<div class="space-y-6">
-		<h1 class="title">About</h1>
-		<p>
-			Hi, I’m a starter Astro. I’m particularly great for getting you started with your own blogging
-			website.
-		</p>
-		<div class="flex justify-center">
-			<Image
-				src={aboutImg}
-				alt="A cartoon cactus looking at the 'Astro.build' logo"
-				loading="eager"
-			/>
-		</div>
-		<p>Here are my some of my awesome built in features:</p>
+		<h1 class="title">About the content</h1>
+		<p>These things are just notes and scribbles.</p>
 		<ul class="list-inside list-disc">
-			<li>I'm ultra fast as I'm a static site</li>
-			<li>I'm fully responsive</li>
-			<li>I come with a light and dark mode</li>
-			<li>I'm easy to customise and add additional content</li>
-			<li>I have Tailwind CSS styling</li>
-			<li>Shiki code syntax highlighting</li>
+			<li>Don't take anything seriously.</li>
+			<li>Add a grain of salt.</li>
+			<li>Usually the author doesn't know what they're talking about.</li>
+			<li>↑ Also good rules for the Internet as a whole.</li>
 		</ul>
+
 		<p>
-			Clone or fork my
-			<a
-				class="cactus-link inline-block"
-				href="https://github.com/chrismwilliams/astro-cactus"
-				target="_blank"
-				rel="noopener noreferrer"
-				aria-label="github repository"
-			>
-				repo
-			</a> if you like me!
+			This blog is written in <a class="link" href="https://astro.build/">Astro</a>. I migrated away from <a
+				class="link"
+				href="https://notes.webutvikling.org/gatsby-intro/">Gatsby</a
+			>, which seems to be <a class="link" href="https://2022.stateofjs.com/libraries"
+				>a thing nowadays</a
+			>. Curious for more? See the <a class="link" href="https://github.com/tomfa/blog"
+				>Github repo</a
+			>.
 		</p>
+		<p>I am Tomas. You can find me on
+			<a class="link" href="https://github.com/tomfa">github</a>,
+			<a class="link" href="https://twitter.com/tommfa">twitter</a>,
+			<a class="link" href="https://cal.com/tomas-fagerbekk">cal.com</a> or
+			<a class="link" href="https://linkedin.com/in/fagerbekk">linkedin</a>.
+		</p]>
 	</div>
 </PageLayout>
