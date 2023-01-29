@@ -27,12 +27,12 @@ const postDate = getFormattedDate(content.data.pubDate);
 <time datetime={datetime}>{postDate}</time>
 {
 	content.data.tags.length > 0 && (
-		<div class="inline before:content-['|']">
+		<div class="inline-flex items-center gap-1 before:content-['|']">
 			<svg
 				aria-hidden="true"
 				focusable="false"
 				xmlns="http://www.w3.org/2000/svg"
-				class="inline-block h-6 w-6"
+				class="inline-block h-6 w-6 mx-1"
 				viewBox="0 0 24 24"
 				stroke-width="1.5"
 				stroke="currentColor"
@@ -46,16 +46,15 @@ const postDate = getFormattedDate(content.data.pubDate);
 				<path d="M6 9h-.01" />
 			</svg>
 			{content.data.tags.map((tag, i) => (
-				<>
+				<span>
 					<a
 						class="link inline-block"
 						aria-label={`View more blogs with the tag ${tag}`}
 						href={`/tags/${tag}`}
 					>
 						{tag}
-					</a>
-					{i < content.data.tags.length - 1 && ", "}
-				</>
+					</a>{i < content.data.tags.length - 1 && ", "}
+				</span>
 			))}
 		</div>
 	)
