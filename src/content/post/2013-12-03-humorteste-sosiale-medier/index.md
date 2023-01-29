@@ -2,7 +2,8 @@
 title: "Humørteste sosiale medier"
 pubDate: 2013-12-03
 heroImage: /images/mark-adriane-muS2RraYRuQ-unsplash.jpg
-tags: [ai, api, idea, twitter]
+tags: [ai, api, twitter]
+category: idea
 ---
 
 **Hvordan kan man hente ut humøret eller følelser fra store datamengder? Hva kan dataen brukes til?**

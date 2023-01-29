@@ -2,7 +2,8 @@
 title: "Adding Freshdesk to Slack"
 pubDate: 2016-08-02
 heroImage: /images/freshdesk.jpg
-tags: ["guide", freshdesk, slack]
+tags: [freshdesk, slack]
+category: guide
 ---
 
 Adding slack as an app in Freshdesk allows you to use observers and dispatcher in freshdesk to notify / recieve data from Slack. **First, add Slack as an app to Freshdesk**

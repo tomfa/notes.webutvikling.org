@@ -3,6 +3,7 @@ title: "fork: retry: Resource temporarily unavailable"
 pubDate: 2014-09-21
 heroImage: /images/mae-mu-Pvclb-iHHYY-unsplash.jpg
 tags: [debugging, unix, webfaction]
+category: debugging
 ---
 
 I got this error on webfaction. Seems it was do to too many open files (file descriptors). Edit: Which is not really my fault, since I'm on a shared server... which is mostly because I'm cheap. So it IS kind of my fault. Anyhow..

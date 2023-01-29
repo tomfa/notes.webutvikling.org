@@ -1,9 +1,10 @@
 ---
 title: "Where is my PostgreSQL logs?"
 pubDate: 2019-08-24
-tags: ["guide", "postgres", tools]
+tags: ["postgres", tools]
 heroImage: /images/kayla-farmer-nhi3_11E6zM-unsplash.jpg
 imageAlt: "Photo by @imagesbykayla at Unsplash"
+category: guide
 ---
 
 Here's how to find the location of the postgres logs on my machine, setting them to logging _everything_, and watching it's output.

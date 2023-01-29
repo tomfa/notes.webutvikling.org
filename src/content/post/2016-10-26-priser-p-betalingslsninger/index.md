@@ -1,8 +1,9 @@
 ---
 title: "Priser på betalingsløsninger"
 pubDate: 2016-10-26
-tags: []
+tags: [payment]
 draft: true
+category: scribble
 ---
 
 Det har skjedd mye med **Betaling **de siste årene. Digitale, distribuerte valuater som [BitCoin](https://en.wikipedia.org/wiki/Bitcoin) (2009), dog ikke nye som konsepter ([E-gold](https://en.wikipedia.org/wiki/E-gold), ~1995. [Q-coins](https://en.wikipedia.org/wiki/Tencent_QQ#Q_Coin), ~2004), har fått såpass utbredt anvendelse og medieomtale at det er et navn flesteparten er kjent med. Paypal gjorde i 1999 det alminnelig og enkelt å kunne ta betaling over internett, og nå kommer Mobilbetaling for fullt. Hvorfor det? Hvorfor føles det ikke ut som en like big deal som det er? Med lanseringen av [Vipps](https://www.vipps.no/), [MobilePay](http://www.mobilepay.no/nb-no/Pages/mobilepay-privat.aspx) og [mCash](https://mca.sh/) holder betalingen på å gå fra kort til mobil. På overflaten høres ikke dette ut som noe som den store forskjellen. Fra et plastkort til mobilen. Prismessig ser det ut fra forbrukerens side er det uansett gratis, noe som gjør det litt forunderlig hvorfor disse løsningene markedsføres så heftig. Forklaringen er at det ikke er gratis i det hele tatt, noe de som har åpnet for å motta betalinger vet godt.   **Alternativer:**

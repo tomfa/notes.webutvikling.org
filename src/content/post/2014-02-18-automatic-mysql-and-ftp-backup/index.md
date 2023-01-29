@@ -2,7 +2,8 @@
 title: "Automatic MySQL and FTP backup"
 pubDate: 2014-02-18
 heroImage: /images/markus-spiske-5yEiCUynJ9w-unsplash.jpg
-tags: [guide, backup, ftp, mysql]
+tags: [backup, ftp, mysql]
+category: idea
 ---
 
 ## Want to backup

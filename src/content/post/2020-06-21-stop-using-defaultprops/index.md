@@ -2,8 +2,8 @@
 title: "Stop using defaultProps"
 pubDate: 2020-06-21
 heroImage: /images/raphael-biscaldi-5PEy9UraJ5c-unsplash.jpg
-tags: ["statement", "react", "javascript"]
-author: tomfaed
+tags: ["react", "javascript"]
+category: statement
 ---
 
 Question of the day:

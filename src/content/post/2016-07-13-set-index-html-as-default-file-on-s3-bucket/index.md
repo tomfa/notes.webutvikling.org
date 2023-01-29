@@ -2,7 +2,8 @@
 title: "Set index.html as default file on S3 bucket"
 pubDate: 2016-07-13
 heroImage: /images/bucket.jpg
-tags: ["guide", aws, bucket, index document, s3, website]
+tags: [aws, bucket, s3, website]
+category: guide
 ---
 
 ```

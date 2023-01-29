@@ -2,7 +2,8 @@
 title: "Git repo on FTP-server"
 pubDate: 2014-03-03
 heroImage: /images/markus-spiske-hL8slYnc-bM-unsplash.jpg
-tags: [guide, ftp, git]
+tags: [ftp, git]
+category: idea
 ---
 
 Often, you have to deal with limited web hotels that only provide a customly made (and usually poor) administration page, FTP- and SQL-access. **How can you, on **a cheap web hotel,** use git without ssh access?** If you're comfortable giving your git-password and ftp-password to a third party, using [deployhq](http://www.deployhq.com) (guide [here](http://code.tutsplus.com/tutorials/how-to-use-git-with-ftp--net-27610)) is a simple and better alternative than the method below.

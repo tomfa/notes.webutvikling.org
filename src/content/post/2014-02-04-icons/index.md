@@ -3,7 +3,8 @@ title: "Web Icon Fonts"
 pubDate: 2014-02-04
 heroImage: /images/harpal-singh-_zKxPsGOGKg-unsplash.jpg
 imageAlt: Image by Harpal Singh on Unsplash
-tags: ["resource", icon]
+tags: [icon]
+category: resource
 ---
 
 So you want font-icons for your page?

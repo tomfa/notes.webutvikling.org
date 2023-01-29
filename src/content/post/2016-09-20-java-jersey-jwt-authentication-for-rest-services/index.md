@@ -1,7 +1,7 @@
 ---
 title: "Java Jersey JWT authentication for REST services"
 pubDate: 2016-09-20
-tags: []
+tags: [jwt, java]
 draft: true
 ---
 

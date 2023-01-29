@@ -2,7 +2,8 @@
 title: "Center content in HTML mails for OWA"
 pubDate: 2015-08-26
 heroImage: /images/onlineprinters-oIpJ8koLx_s-unsplash.jpg
-tags: [guide, email, litmus, outlook, putsmail]
+tags: [email, litmus, outlook, putsmail]
+category: rant
 ---
 
 _Edit: Stop what your doing. It's hurting, I know. Go read [The Easy Way of Sending Newsletter Emails](http://notes.webutvikling.org/the-easy-way-of-sending-newsletter-emails/)._

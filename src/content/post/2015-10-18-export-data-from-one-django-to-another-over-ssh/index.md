@@ -2,7 +2,8 @@
 title: "Export data from one Django to another"
 pubDate: 2015-10-18
 heroImage: /images/steinar-engeland-_2G4EeyeoeA-unsplash.jpg
-tags: ["guide", database, django, loaddata, readdata]
+tags: [database, django, loaddata, readdata]
+category: guide
 ---
 
 Sometimes I clone a repository with Django and make a setup of the environment on my own machine. Then I would usually like to have some testdata populated in my environment. So here's how to copy the data from one Django installation (production) to my environment (test). 1. ssh to the remote server

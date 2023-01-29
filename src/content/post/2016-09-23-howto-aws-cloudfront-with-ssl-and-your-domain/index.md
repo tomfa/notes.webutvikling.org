@@ -2,7 +2,8 @@
 title: "HTTPS for AWS CloudFront and AWS ELB"
 pubDate: 2016-09-23
 heroImage: /images/ssl.jpg
-tags: ["guide", AWS, certificate manager, cloudfront, elastic load balancer, elb, https, ssl]
+tags: [AWS, certificate manager, cloudfront, elb, ssl]
+category: guide
 ---
 
 Wow, such easy, much free! A few simple steps on

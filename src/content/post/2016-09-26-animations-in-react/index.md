@@ -1,7 +1,7 @@
 ---
 title: "Animations in React"
 pubDate: 2016-09-26
-tags: []
+tags: [react]
 draft: true
 ---
 

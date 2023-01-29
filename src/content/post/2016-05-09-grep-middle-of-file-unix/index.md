@@ -2,7 +2,8 @@
 title: "grep middle of file (unix)"
 pubDate: 2016-05-09
 heroImage: /images/thomas-griesbeck-9WWQWYmHBCk-unsplash.jpg
-tags: ["guide", bash, grep]
+tags: [bash, grep]
+category: guide
 ---
 
 How to grep tails and head

@@ -2,7 +2,8 @@
 title: "How to add Web App Manifest"
 pubDate: 2016-11-29
 heroImage: /images/theme-color.png
-tags: ["guide", "progressive apps", "web app manifest"]
+tags: ["progressive apps", "web app manifest"]
+category: guide
 ---
 
 The [manifest.json for web apps](https://developer.mozilla.org/en-US/docs/Web/Manifest) can make your mobile experience a bit sweeter. Force rotation? Check! Home screen icon? Check! Splash loading screen and no url bar? Check, check! Amount of work? 5 minutes!

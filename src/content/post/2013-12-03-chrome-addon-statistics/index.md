@@ -2,7 +2,8 @@
 title: "Chrome-addon: statistics"
 pubDate: 2013-12-03
 heroImage: /images/luke-chesser-JKUTrJ4vK00-unsplash.jpg
-tags: [api, chrome, google, idea]
+tags: [api, chrome, google]
+category: idea
 draft: true
 ---
 

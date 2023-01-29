@@ -2,7 +2,8 @@
 title: "SFTP in Finder"
 pubDate: 2013-12-04
 heroImage: /images/rodrigo-abreu-lq9PxpwDZUk-unsplash.jpg
-tags: [guide, finder, ftp]
+tags: [finder, ftp]
+category: guide
 ---
 
 OK, so here's the thing. I use a Mac and I edit files located on a server somewhere on the Internet. I want to have the files and folders on that server mounted in Finder, so I can easily navigate and edit those files without having to up- and download files manually. Since I don't want everyone listening to be able to read my files, I can't use AFP, SMB or similar. I need something secure.  **I need to mount a SFTP volume through Macs native Finder.** That this isn't supported  natively by OS X is somewhat odd to me, but I accept that from time to time I need a third party program. So what programs are there?

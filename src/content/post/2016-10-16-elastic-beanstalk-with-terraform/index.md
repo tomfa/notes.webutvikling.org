@@ -2,7 +2,8 @@
 title: "Elastic Beanstalk with Terraform"
 pubDate: 2016-10-16
 heroImage: /images/benstlk.jpg
-tags: ["guide", aws, beanstalk, roles, subnet, terraform, vpc configuration]
+tags: [aws, beanstalk, roles, terraform, vpc]
+category: guide
 ---
 
 If you haven't already, try to add the Beanstalk application in your environment using only the eb command (see [own post](http://notes.webutvikling.org/elastic-beanstalk-in-a-vpc/)). What we do there, is making sure you have the correct setup for vpc and subnets.

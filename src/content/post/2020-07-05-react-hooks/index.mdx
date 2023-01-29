@@ -3,7 +3,8 @@ title: "React hooks"
 pubDate: 2020-07-05
 eImage: https://picsum.photos/600/400
 imageAlt: "Random image"
-tags: ["guide", "react"]
+tags: ["react"]
+category: scribble
 draft: true
 ---
 
@@ -20,7 +21,7 @@ Can we use redux very willy nilly, by creating and using it from within a compon
 
 A common argument against Redux is that it's too easy to share state across the app, so it becomes awkwardly weird when one component uses and changes another one... I conceptually agree. It's a different way of saying: We can create bugs more easily when sharing state, and it can be _difficult to debug_ why state changed when it's all due to some component you're not working on. Rephrasing: REDUX = EASY TO SHARE STATE = THIS IS NOT ALWAYS SMART = ... THEN DONT DO IT? YOU DONT HAVE TO SHARE STATE BECAUSE YOU CAN?
 
-SHould we use useCallback instead of defining functions inside render functions?
+Should we use useCallback instead of defining functions inside render functions?
 
 Should we use React.memo and React.useMemo for things when and why?
 

@@ -2,7 +2,8 @@
 title: "bash backup of webserver (FTP and SQL)"
 pubDate: 2014-04-02
 heroImage: /images/jc-gellidon-56eqH9opaUU-unsplash.jpg
-tags: [guide, backup, bash, ftp, script, sql, webserver]
+tags: [backup, bash, ftp, sql]
+category: idea
 ---
 
 ## Quick and dirty backup from remote SQL and FTP server

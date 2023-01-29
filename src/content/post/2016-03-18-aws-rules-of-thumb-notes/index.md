@@ -2,7 +2,8 @@
 title: "AWS rules of thumb notes"
 pubDate: 2016-03-18
 heroImage: /images/katya-austin-4Vg6ez9jaec-unsplash.jpg
-tags: []
+tags: ["aws"]
+category: scribble
 ---
 
 - Load balancer + auto scaling EC2 instances in different Availability Zones is pretty fucking awesome. It allows you to auto scale = pay for what you need. It gives you uptime even if a whole availability zone goes offline. You can have SSL-termination in the Load Balancer. It's nice. Use it.

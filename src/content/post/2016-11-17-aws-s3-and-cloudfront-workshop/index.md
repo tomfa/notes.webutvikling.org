@@ -3,6 +3,7 @@ title: "AWS S3 and CloudFront workshop"
 pubDate: 2016-11-17
 heroImage: /images/latency.png
 tags: [aws, cloudfront, performance, react, s3]
+category: guide
 ---
 
 Last week, I held an AWS workshop on how to host a (dummy) React app in S3, with CloudFront Cache. If you'd like to learn what I taught the others, a github repo is available at [https://github.com/tomfa/aws-frontend-workshop](https://github.com/tomfa/aws-frontend-workshop).

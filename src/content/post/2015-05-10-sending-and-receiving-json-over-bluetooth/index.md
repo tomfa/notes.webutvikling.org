@@ -2,7 +2,8 @@
 title: "Sending and receiving JSON over Bluetooth"
 pubDate: 2015-05-10
 heroImage: /images/harrison-broadbent-__LXdDYiL-w-unsplash.jpg
-tags: ["guide", bluetooth, iot, javascript, json]
+tags: [bluetooth, iot, javascript, json]
+category: guide
 ---
 
 I'm new to the whole Bluetooth communication game, but in my case I've run into having to communicate using 8-bit usigned integer arrays (I've used Cordova libraries to communicate with Arduino chips).

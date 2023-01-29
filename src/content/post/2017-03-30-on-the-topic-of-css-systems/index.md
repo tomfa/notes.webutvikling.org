@@ -2,7 +2,8 @@
 title: "CSS systems and principles"
 pubDate: 2017-03-30
 heroImage: /images/sample.png
-tags: [atomic css, atomic design, bem, css, oocss, pattern lab, smacss]
+tags: [atomic css, atomic design, bem, css]
+category: scribble
 ---
 
 What's wrong with CSS? How do you write scalable CSS? What's the difference between [SMACSS](https://smacss.com/book/), [BEM](http://getbem.com/introduction/), [OOCSS](https://github.com/stubbornella/oocss/wiki), [SUIT CSS](http://suitcss.github.io/) and [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/)? Here's some _opinionated_ thoughts on the confusing world of CSS.
@@ -169,7 +170,7 @@ In short, BEM tells you to use 3 different categories of classes. It's quite s
 }
 
 .col-md-2 {
-	width: 16, 666666666%;
+	width: 16.666666666%;
 }
 ```
 

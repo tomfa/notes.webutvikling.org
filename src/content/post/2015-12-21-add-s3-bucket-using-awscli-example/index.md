@@ -2,10 +2,11 @@
 title: "Add S3 bucket using awscli (example)"
 pubDate: 2015-12-21
 heroImage: /images/samur-isma-7pSpz7hXox0-unsplash.jpg
-tags: ["guide", aws, awscli, cloudfront, iam, policy, s3]
+tags: [awscli, cloudfront, iam, policy, s3]
+category: guide
 ---
 
-Here's a simple step by step guide on how to create a s3 bucket, with an attached cloudfront and a user with write access. This is typically what you want if you need quick hosting for static files for you website. This is made in contrast to the [terraform guide](http://notes.webutvikling.org/add-s3-bucket-using-terraform/), which does the same, but using different tools If you haven't already, setup awscli (using [python](https://www.python.org/downloads/) and [pip](https://pip.pypa.io/en/stable/installing/))
+Here's a simple step-by-step guide on how to create a s3 bucket, with an attached cloudfront and a user with write access. This is typically what you want if you need quick hosting for static files for you website. This is made in contrast to the [terraform guide](http://notes.webutvikling.org/add-s3-bucket-using-terraform/), which does the same, but using different tools If you haven't already, setup awscli (using [python](https://www.python.org/downloads/) and [pip](https://pip.pypa.io/en/stable/installing/))
 
 ```
 pip install awscli

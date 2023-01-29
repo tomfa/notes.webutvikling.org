@@ -1,7 +1,7 @@
 ---
 title: "The consequenses of being a mouth-breather"
 pubDate: 2016-10-18
-tags: []
+tags: [shower-thoughts]
 draft: true
 ---
 

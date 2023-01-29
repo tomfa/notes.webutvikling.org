@@ -3,6 +3,7 @@ title: "ES6 notes"
 pubDate: 2016-07-20
 heroImage: /images/es6.png
 tags: [es6, intro, javascript]
+category: scribble
 ---
 
 A summary of the key takeaways from [CodeSchools "ES2015: The Shape of JavaScript to Come"](https://www.coursetalk.com/providers/code-school/courses/es2015-the-shape-of-javascript-to-come).

@@ -3,7 +3,8 @@ title: "git: Replace master branch"
 pubDate: 2014-02-03
 heroImage: /images/simon-berger-Qa2tSHWgh84-unsplash.jpg
 imageAlt: Image by Simon Berger on Unsplash
-tags: [guide, git]
+tags: [git]
+category: idea
 ---
 
 So, you have a git branch named **BESTBRANCH** and you have basically made it your master branch?

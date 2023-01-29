@@ -3,6 +3,7 @@ title: "Startup workflow toolkit"
 pubDate: 2016-08-02
 heroImage: /images/startup.jpg
 tags: [freshdesk, github, slack, startup]
+category: scribble
 ---
 
 In my imagined startup, everything is running so smooth. You don't need to check anything, you just develop, create, work and do. Anything you should know, comes to you automatically – **automated input;** and any task that can be automated, is – **automated output**. You're not the computer – the computer is.

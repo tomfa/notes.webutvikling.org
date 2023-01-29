@@ -1,7 +1,7 @@
 ---
 title: "Why is Javascript so popular?"
 pubDate: 2016-10-13
-tags: []
+tags: [js]
 draft: true
 ---
 

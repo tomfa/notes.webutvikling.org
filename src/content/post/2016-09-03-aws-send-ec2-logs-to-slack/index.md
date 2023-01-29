@@ -2,7 +2,8 @@
 title: "Send AWS EC2 logs to Slack"
 pubDate: 2016-09-03
 heroImage: /images/slack-large.png
-tags: ["guide", monitoring, cloudwatch, ec2, lambda, logs, slack]
+tags: [monitoring, cloudwatch, ec2, lambda, slack]
+category: guide
 ---
 
 **I have** a Java app that runs on an regular Linux (EC2) instance, and logs to some folder on that machine. What **I want** is for Slack to be notified if any error occurs in the logs. This is possible through CloudWatch in [almost all regions](http://docs.aws.amazon.com/general/latest/gr/rande.html#cwl_region). Let me show you how!

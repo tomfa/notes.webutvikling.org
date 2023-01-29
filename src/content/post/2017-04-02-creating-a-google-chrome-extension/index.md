@@ -2,7 +2,8 @@
 title: "Creating a Google Chrome Extension"
 pubDate: 2017-04-02
 heroImage: /images/trello-chrome-ext.png
-tags: ["guide", chrome extention, css, google chrome, javascript]
+tags: [chrome extention, css, google chrome, javascript]
+category: guide
 ---
 
 I've heard multiple say that creating a chrome extension is about as easy as creating a static web page. Is it really? Here's a step-by-step on how I created my first Trello-integrated chrome extension, almost like a simple and developer-friendly version of [Momentum](https://momentumdash.com/).

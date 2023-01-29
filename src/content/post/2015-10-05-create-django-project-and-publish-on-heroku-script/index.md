@@ -2,7 +2,8 @@
 title: "Django + Heroku bootstrap"
 pubDate: 2015-10-05
 heroImage: /images/herangob.png
-tags: ["guide", django, heroku, how-to, script]
+tags: [django, heroku, how-to, script]
+category: guide
 ---
 
 It has happened on more than one occasion that I want a new Django project, with Grunt, jQuery, Bootstrap, Font-Awesome etc, deployed on Heroku. So I decided to write down the steps, and made a bash script to automate it all for me.

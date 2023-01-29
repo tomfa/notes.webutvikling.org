@@ -3,6 +3,7 @@ title: "AWS Elastic Beanstalk"
 pubDate: 2016-09-06
 heroImage: /images/beans-flatulence_5.jpg
 tags: [aws, beanstalk, opsworks]
+category: scribble
 ---
 
 > By using Elastic Beanstalk, developers can focus on developing their application and are freed from deployment-oriented tasks, such as provisioning servers, setting up load balancing, or managing scaling. – [AWS](https://aws.amazon.com/elasticbeanstalk/faqs/).

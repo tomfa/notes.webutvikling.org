@@ -2,7 +2,8 @@
 title: "curl headers only"
 pubDate: 2015-12-13
 heroImage: /images/viktor-talashuk-bhoj9tHlsiY-unsplash.jpg
-tags: ["guide", aws, curl, unix]
+tags: [aws, curl, unix]
+category: guide
 ---
 
 How to grep only the response headers

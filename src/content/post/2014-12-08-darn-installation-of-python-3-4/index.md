@@ -2,7 +2,8 @@
 title: "pip on python3: Can't decompress data; zlib not available"
 pubDate: 2014-12-08
 heroImage: /images/sebastian-herrmann-jzTQVxCyKYs-unsplash.jpg
-tags: ["debugging", pip, python, python3, virtualenv]
+tags: [pip, python, python3, virtualenv]
+category: debugging
 ---
 
 ## Getting pip3.4 to work

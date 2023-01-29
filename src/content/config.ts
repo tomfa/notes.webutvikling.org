@@ -1,5 +1,17 @@
 import { z, defineCollection } from "astro:content";
 
+export const POST_CATEGORY = [
+	"guide",
+	"rant",
+	"question",
+	"scribble",
+	"statement",
+	"resource",
+	"video",
+	"debugging",
+	"book",
+	"idea",
+] as const;
 const post = defineCollection({
 	schema: {
 		title: z.string().max(60),
@@ -7,7 +19,8 @@ const post = defineCollection({
 		pubDate: z.any().transform((str) => str && new Date(str)),
 		heroImage: z.string().optional(),
 		imageAlt: z.string().optional(),
-		tags: z.array(z.string()).default([]),
+		tags: z.array(z.string()).min(1).max(5),
+		category: z.enum(POST_CATEGORY).default("scribble"),
 	},
 	slug(entry) {
 		return entry.defaultSlug.split("/")[0]!.substring(11);

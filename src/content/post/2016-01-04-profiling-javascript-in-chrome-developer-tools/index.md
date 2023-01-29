@@ -2,7 +2,8 @@
 title: "Profiling in Chrome Developer Tools"
 pubDate: 2016-01-04
 heroImage: /images/christian-englmeier-J7EUjSlNQtg-unsplash.jpg
-tags: ["guide", chrome, devtools, javascript, profiling]
+tags: [chrome, devtools, javascript, profiling]
+category: guide
 ---
 
 1.  Open devtools

@@ -2,7 +2,8 @@
 title: "Porting a React app to Phonegap"
 pubDate: 2016-07-31
 heroImage: /images/react-app.jpg
-tags: ["guide", cordova, es6, mobile app, phonegap, react]
+tags: [cordova, es6, mobile app, phonegap, react]
+category: guide
 ---
 
 If you already have a React web app, and consider porting it to a proper phone app, you should consider using [React Native](https://facebook.github.io/react-native/). However, you could also use PhoneGap/Cordova, which is done in a heartbeat:

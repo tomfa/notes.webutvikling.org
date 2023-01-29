@@ -2,7 +2,8 @@
 title: "jquery confirm modal using bootstrap"
 pubDate: 2015-01-10
 heroImage: /images/jon-tyson-hhq1Lxtuwd8-unsplash.jpg
-tags: ["guide", bootstrap, jquery, modal]
+tags: [bootstrap, jquery, modal]
+category: guide
 ---
 
 This little JavaScript snippet lets you easily decide (from another javascript function) to show a confirm-dialog (Bootstrap), and functions to be executed on cancel/confirm.

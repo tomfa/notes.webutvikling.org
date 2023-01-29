@@ -2,7 +2,8 @@
 title: "Getting started with Hubot + Slack"
 pubDate: 2016-11-09
 heroImage: /images/bot.png
-tags: ["guide", es2015, es6, example, hubot, slack, slash]
+tags: [slack, chatbot]
+category: guide
 ---
 
 If [Custom Slash commands](http://notes.webutvikling.org/custom-slack-slash-commands-on-heroku/) weren't enough for you, or if you are trapped behind a firewall without the option to make public endpoints, bots are a great way to make custom integrations with Slack. Anything you can program is doable to integrate with Slack, let me show you and get you started. Key points about Slack bots:

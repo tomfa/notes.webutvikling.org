@@ -2,7 +2,8 @@
 title: "Custom Slack slash commands (on Heroku)"
 pubDate: 2016-10-23
 heroImage: /images/slash.jpg
-tags: ["guide", chatops, heroku, hubot, slack, slash command, workshop]
+tags: [chatops, hubot, slack, slash command]
+category: guide
 ---
 
 Imagine begin able to open Slack, and write

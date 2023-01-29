@@ -3,6 +3,7 @@ title: "Javascripts var, let, and const"
 pubDate: 2016-07-20
 heroImage: /images/es6.jpg
 tags: [const, es6, javascript, let, var]
+category: scribble
 ---
 
 Remember var from the ES5 and previously? It had this weird thing, where JavaScript would move the declaration to the top of the **function **behind the scenes, called [hoisting](https://www.google.no/#q=javascript%20hoisting). Usually no one noticed, but once in a while it would create a bug that could be hard to spot.

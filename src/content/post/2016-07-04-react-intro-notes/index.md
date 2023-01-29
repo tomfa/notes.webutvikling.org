@@ -3,6 +3,7 @@ title: "React intro notes"
 pubDate: 2016-07-04
 heroImage: /images/react.png
 tags: [es6, react, redux]
+category: scribble
 ---
 
 A handful notes from the React intro tutorial (which is available at https://facebook.github.io/react/docs/tutorial.html).

@@ -3,6 +3,7 @@ title: "What skills does an it consultant need?"
 pubDate: 2017-01-14
 heroImage: /images/Essential-Skills-Top-10-shutterstock_285431867.png
 tags: [consultancy]
+category: scribble
 ---
 
 _This is a copy paste of my answer to a short interview from a student_ _Disclaimer: I don't really know shit, I've been a consultant for 18 months._

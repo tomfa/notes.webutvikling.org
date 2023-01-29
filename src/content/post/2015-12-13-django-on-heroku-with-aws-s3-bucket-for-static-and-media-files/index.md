@@ -2,7 +2,8 @@
 title: "Django on Heroku with AWS S3 for files"
 pubDate: 2015-12-13
 heroImage: /images/djangodesktop-1280x1024.jpg
-tags: ["guide", aws, cloudfront, django, heroku, python3]
+tags: [aws, cloudfront, django, heroku, python3]
+category: guide
 ---
 
 Case: You want efficient collectstatic and serving of files

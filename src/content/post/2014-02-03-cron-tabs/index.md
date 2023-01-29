@@ -2,7 +2,8 @@
 title: "Cron tabs: create and delete"
 pubDate: 2014-02-03
 heroImage: /images/lukas-blazek-UAvYasdkzq8-unsplash.jpg
-tags: [guide, bash, cron, scheduling]
+tags: [bash, cron, scheduling]
+category: guide
 ---
 
 **Cron jobs run as root can be created with **

@@ -1,7 +1,8 @@
 ---
 title: "Django with AWS s3 media files (on Heroku)"
 pubDate: 2016-09-20
-tags: [aws, developer tools, django, pip, python, s3, virtualenv]
+tags: [aws, django, pip, python, s3]
+category: scribble
 draft: true
 ---
 

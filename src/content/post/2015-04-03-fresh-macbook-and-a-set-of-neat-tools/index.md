@@ -3,6 +3,7 @@ title: "Fresh Macbook and a set of neat tools"
 pubDate: 2015-04-03
 heroImage: /images/patrick-ward-z_dLXnQg0JY-unsplash.jpg
 tags: [tools, mac, software]
+category: guide
 ---
 
 _See also [2020 version](/post-setup-setup-of-new-mac/)_

@@ -3,7 +3,8 @@ title: "Alfred for Windows"
 pubDate: 2013-12-03
 heroImage: /images/markus-winkler-afW1hht0NSs-unsplash.jpg
 imageAlt: Image by Markus Winkler on Unsplash
-tags: [alfred, idea, windows]
+tags: [alfred, windows]
+category: idea
 ---
 
 **Jeg har brukt Mac i ett år nå, og hele veien elsket applikasjonen [Alfred](http://www.alfredapp.com/). Alfred er en rask og kraftig launcher som erstatter Mac sin spotlight (ala Windows sin Startmeny-søkefunksjon). Men Alfred finnes ikke på Windows, så hvorfor ikke lage den?**

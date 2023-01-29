@@ -3,7 +3,8 @@ title: "Track custom events with google analytics"
 pubDate: 2014-02-04
 heroImage: /images/isaac-smith-6EnTPvPPL6I-unsplash.jpg
 imageAlt: Image by Isaac Smith on Unsplash
-tags: [guide, analytics, ga]
+tags: [analytics, ga]
+category: guide
 ---
 
 ## Requirements:

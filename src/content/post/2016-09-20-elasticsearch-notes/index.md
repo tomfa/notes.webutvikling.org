@@ -2,6 +2,7 @@
 title: "Elasticsearch notes"
 pubDate: 2016-09-20
 tags: [elasticsearch]
+category: scribble
 draft: true
 ---
 

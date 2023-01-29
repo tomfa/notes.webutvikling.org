@@ -2,7 +2,8 @@
 title: "Show environment variables in Heroku"
 pubDate: 2015-12-12
 heroImage: /images/megumi-nachev-8rVSeXEJG1g-unsplash.jpg
-tags: ["guide", "heroku"]
+tags: ["heroku"]
+category: guide
 ---
 
 I was looking for **WEB_CONCURRENCY** environment variable on my Django-app. This is used for the number of concurrent webworkers for gunicorn, and is automatically scaled depending on the memory usage of your app.

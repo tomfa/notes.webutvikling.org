@@ -3,6 +3,7 @@ title: "AWS CodePipeline"
 pubDate: 2016-08-11
 heroImage: /images/PGC_Pipeline_Data.jpg
 tags: [aws, codepipeline, git, github]
+category: scribble
 ---
 
 CodePipeline is a specification of how your code runs out to production.

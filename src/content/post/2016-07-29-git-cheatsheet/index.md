@@ -2,7 +2,8 @@
 title: "git cheatsheet"
 pubDate: 2016-07-29
 heroImage: /images/git-cheat-sheet.jpg
-tags: ["guide", efficiency, alias, bash, cheatsheet, git]
+tags: [efficiency, alias, bash, cheatsheet, git]
+category: guide
 ---
 
 git is genious. Hands down brilliant. Every 6 months or so, I come across another command I didn't know I needed before I needed it. And those regular ones I type all the time. So here's a collection of handy git aliases that saves some typing and/or remembering.

@@ -1,9 +1,10 @@
 ---
-title: Typesafe React Redux hooks
+title: Migrating to React Redux hooks
 pubDate: 2020-06-28
 heroImage: /images/zyanya-bmo-6Y-4NXkY9G4-unsplash.jpg
 imageAlt: A drawn hook. Photo by Zyanya BMO on Unsplash.
-tags: ["guide", "react", "redux"]
+tags: ["react", "redux"]
+category: guide
 ---
 
 Going from `mapStateToProps` and `mapStateToDispatch` to `useDispatch, useSelector` or custom hooks: What's the benefits? Does typing inference work?

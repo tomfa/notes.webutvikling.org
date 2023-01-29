@@ -2,7 +2,8 @@
 title: "Always use Exact types in Flow"
 pubDate: 2020-05-09
 heroImage: /images/yelling.jpg
-tags: [statement, flow, react, typing]
+tags: [flow, react, typing]
+category: statement
 ---
 
 I love typing, but it was not definitely love at first sight. I remember laying my eyes on Java for the first time, and feeling disgusted about the verbosity of it all.
