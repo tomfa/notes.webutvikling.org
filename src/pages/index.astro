@@ -7,7 +7,19 @@ import { getUniqueTags, sortMDByDate } from "@/utils";
 
 const allPosts = await getCollection("post");
 const allPostsByDate = sortMDByDate(allPosts);
-const uniqueTags = getUniqueTags(allPosts);
+const mainTags = [
+	"management",
+	"efficiency",
+	"monitoring",
+	"code quality",
+	"startup",
+	"statement",
+	"book",
+	"guide",
+	"talk",
+	"tools",
+];
+const uniqueTags = getUniqueTags(allPosts).filter((t) => mainTags.includes(t));
 ---
 
 <PageLayout
