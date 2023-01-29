@@ -9,11 +9,13 @@ import { getUniqueTags, sortMDByDate } from "@/utils";
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
 	const allPosts = await getCollection("post");
-	const allPostsByDate = sortMDByDate(allPosts);
-	const uniqueTags = getUniqueTags(allPostsByDate);
+  const allLinks = await getCollection("link");
+  const content = [...allPosts, ...allLinks];
+	const allContentByDate = sortMDByDate(content);
+	const uniqueTags = getUniqueTags(allContentByDate);
 
 	return uniqueTags.map((tag) => {
-		const filterPosts = allPostsByDate.filter((post) => post.data.tags?.includes(tag));
+		const filterPosts = allContentByDate.filter((post) => post.data.tags?.includes(tag));
 		return paginate(filterPosts, {
 			params: { tag },
 			pageSize: 10,
