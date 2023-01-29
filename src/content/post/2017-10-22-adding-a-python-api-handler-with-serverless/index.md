@@ -38,8 +38,8 @@ end up solving it like this:
 
 2.  Realize shits not working, and manually set API-Gateway endpoint to accept blobs (this cannot be done in serverless):
 
-    - **First, remove "Use Lambda Proxy integration** ![](./remove-lambda-proxy.png)
+    - **First, remove "Use Lambda Proxy integration** ![](/images/remove-lambda-proxy.png)
 
-    - **Scroll down and accept multipart data, then Save** ![](./accept-multipart.png)
+    - **Scroll down and accept multipart data, then Save** ![](/images/accept-multipart.png)
 
-    - **Navigate to Method Execution (on API Gateway endpoint) and allow HTTP 200 responses** _(what? this seems weird)_ ![](./allow-200-response.png)
+    - **Navigate to Method Execution (on API Gateway endpoint) and allow HTTP 200 responses** _(what? this seems weird)_ ![](/images/allow-200-response.png)

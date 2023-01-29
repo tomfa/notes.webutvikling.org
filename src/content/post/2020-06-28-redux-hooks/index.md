@@ -17,7 +17,7 @@ Warning: Post is long. There is a **TLDR at the bottom**.
 
 ## First: How is Redux doing?
 
-![Redux is doing fine](./react-redus-trends.png)
+![Redux is doing fine](/images/react-redus-trends.png)
 
 Good, its NPM downloads has increased about 50% the last 12 months, same rate as React. So it seems safe to use: Reacts useContext and useReducer hooks, nor `apollo-client` have made redux obsolete.
 
@@ -43,7 +43,7 @@ And then run it:
 yarn start
 ```
 
-![React redux starter](./react-redux-starter.png)
+![React redux starter](/images/react-redux-starter.png)
 
 _Sweet. The browser should show you something ala the above_
 
@@ -109,7 +109,7 @@ _This config above is from [react-starter --template typescript](https://create-
 
 Get the browser extension ([Chrome](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/reduxdevtools/)) for [Redux dev tools](http://extension.remotedev.io/). It's incredibly useful.
 
-![Redux dev tools](./redux-tools.png)
+![Redux dev tools](/images/redux-tools.png)
 
 _Click around and see how the log responds to your different clicks. Note how you can inspect the state, the action, the diff and export a test case (among other cool things)._
 

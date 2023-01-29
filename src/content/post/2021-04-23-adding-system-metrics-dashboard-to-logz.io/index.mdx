@@ -122,7 +122,7 @@ _They even included info regarding Serverless environments in the Node setup ❤
 When your Heroku system logs starts coming in, click on them to expand and see their details.
 You can notice a couple of things.
 
-![Service is mapped as text](./service-is-text.png)
+![Service is mapped as text](/images/service-is-text.png)
 
 "service" and "status" are interpreted as text. This is a problem when we want to aggregate and filter on them.
 In order to fix this, we'll actually have to contact support. Show them your logs, and ask them to remove "ms" on the service field.
@@ -133,11 +133,11 @@ After "ms" is removed, you can change the type of status and service to integers
 
 Do this by going to Kibana -> Setting -> Index patters.
 
-![Set index patterns](./setting-index-patterns.png)
+![Set index patterns](/images/setting-index-patterns.png)
 
 Then, search for status, edit it and change its type to integer
 
-![Changing status type to integer](./change-status-type.png)
+![Changing status type to integer](/images/change-status-type.png)
 
 Great! While you're at it, you can consider the same to your application log fields.
 
@@ -157,45 +157,45 @@ Setting up a dashboard is done in three steps, which maps to the icons in the le
 
 #### 1. Discover logs with "service" field
 
-![Discover](./discover.png)
+![Discover](/images/discover.png)
 
 The "service" field is the Heroku variable tellings us how many millisecond a HTTP request took to complete.
 We filter our logs to only show logs where this exists.
 
-![](./require-service.png)
+![](/images/require-service.png)
 
 Then save it as e.g. "HTTP requests"
 
 #### 2. Visualize HTTP request response times
 
-![Visualise](./visualize.png)
+![Visualise](/images/visualize.png)
 
 Go to "Visualize" in the left menu, add a new "Line chart", and select the "HTTP requests" that we just created.
 
-![](./new-line-chart.png)
+![](/images/new-line-chart.png)
 
 We now have an empty chart. Great!
 
-![An empty graph](./graph-empty.png)
+![An empty graph](/images/graph-empty.png)
 
 On the left side under "buckets", Add "X-axis". Select "Dato Histogram", which should autoselect our "@timestamp" field.
 
-![Selecting date histogram for the X-axis](./buckets-date-histogram.png)
+![Selecting date histogram for the X-axis](/images/buckets-date-histogram.png)
 
 Click play. We now have a chart showing the amount of request! 🤩
 
-![A graph showing amount of requests](./graph-count.png)
+![A graph showing amount of requests](/images/graph-count.png)
 
 - Save that visualization as "HTTP traffic".
 - Then Save it again, as a new visualization named "HTTP response times"
 
 To replace the traffic with response times, replace Y-axis: count with the following:
 
-![](./service-percentiles.png)
+![](/images/service-percentiles.png)
 
 We've now got a graph, showing aggregated response times for our application. Yay! 🎉
 
-![](./graph-service-percentiles.png)
+![](/images/graph-service-percentiles.png)
 
 In your case, the graph might be empty, or (if you zoom in on time in the top right corner), very spiky – like mine.
 
@@ -206,32 +206,32 @@ Don't worry though – After you let it run for a day or two, we get more meanin
 
 Go to the dashboard from the left hand side. Add an existing visualization, and select the "HTTP response times" we just created.
 
-![Create new dashboard](./dashboard-add.png)
+![Create new dashboard](/images/dashboard-add.png)
 
 Repeat it again for the "HTTP traffic". We now got a simple performance dashboard! 😲
 
-![Initial performance dashbard](./dashboard-start.png)
+![Initial performance dashbard](/images/dashboard-start.png)
 
 But it's hard to see if our performance changes are due to increased traffic load or not.
 It would be nice if the traffic could include a response time indication in the same graph.
 
 Click the cogwheel for the HTTP traffic visualization, and Edit it.
 
-![Edit visualization](./dashboard-edit-vis.png)
+![Edit visualization](/images/dashboard-edit-vis.png)
 
 On the left hand side, add a Y axis with mediuan aggregation on the service field.
 
-![Add Response time aggregation](./add-y-axis.png)
+![Add Response time aggregation](/images/add-y-axis.png)
 
 If you click Play now, the response times and counts are graphed on the same value axis. Usually, the response time graph is now so small it's completely useless.
 We fix this by using left and right value axis.
 
 Click the Metrics & Axes, select "response times" and change the value axis.
 
-![Change y axis](./vis-change-y-axis-=metrics.png)
+![Change y axis](/images/vis-change-y-axis-=metrics.png)
 
 Done! The graph shows both traffic count (left axis) and median response time (right axis)
-![Traffic graph](./vis-2-y-axis.png)
+![Traffic graph](/images/vis-2-y-axis.png)
 
 If you go back to the performance dashboard, it's now complete! 🎀
 
@@ -244,15 +244,15 @@ Go to visualizations, select our "HTTP requests" data source.
 
 Again, select the Bucket X-axis to be a Date historgram based on timestamp
 
-![Selecting date histogram for the X-axis](./buckets-date-histogram.png)
+![Selecting date histogram for the X-axis](/images/buckets-date-histogram.png)
 
 Now filter based on status being above 400 – we don't care about successful requets here.
 
-![Filter HTTP status above 400](./vis-filter-above-400.png)
+![Filter HTTP status above 400](/images/vis-filter-above-400.png)
 
 Under Buckets, add a "Split series" sub bucket.
 
-![Split buckets for each status code](./vis-split-series.png)
+![Split buckets for each status code](/images/vis-split-series.png)
 
 Click play, and your visualization is done. Add it to your dashboard 📈
 
@@ -267,20 +267,20 @@ We'll select the "HTTP requests" data source, and get a simple row with 1 value 
 
 Let's split the rows by its url, by adding a "Split rows" bucket, ordering them by slow response times.
 
-![Splitting bucket by url](./table-split-bucket.png)
+![Splitting bucket by url](/images/table-split-bucket.png)
 
 We now got a table showing us the most requested urls.
 
-![Most popular urls](./table-url-count.png)
+![Most popular urls](/images/table-url-count.png)
 
 Now we can add a new metric, for the percentiles of response times.
 Add a metric on the left side for Percentieles aggregation of "service" field, on 50, 90 and 98 percents.
 
-![Splitting resposne time percentiles](./table-response-time-percentiles.png)
+![Splitting resposne time percentiles](/images/table-response-time-percentiles.png)
 
 Voilla, we got ourselves a table of slow urls. A great place to start if our performance is bad 🕵️‍♀️
 
-![Table visualization](./table-vis.png)
+![Table visualization](/images/table-vis.png)
 
 I'm sure you now know how to add it to a dashboard 🙌
 
@@ -291,15 +291,15 @@ Add a new visualization, again of type Data Table and again with "HTTP requests"
 
 Let's split the rows by its url as we did before, by adding a "Split rows" bucket, but this time ordering them by Count
 
-![Splitting bucket by url ordered by count](./vis-split-bucket-count.png)
+![Splitting bucket by url ordered by count](/images/vis-split-bucket-count.png)
 
 Again, we got a table showing us the most requested urls.
 
-![Most popular urls](./table-url-count.png)
+![Most popular urls](/images/table-url-count.png)
 
 Now lets filter away any status < 400.
 
-![Filter away any OK status](./vis-filter-above-400.png)
+![Filter away any OK status](/images/vis-filter-above-400.png)
 
 This shows us which URLs got the most "bad" responses. You can add this to a new debugging dashboard as is, and create separate lists for specific statuses.
 
@@ -307,13 +307,13 @@ Alternatively, you can add columns for the statuses such as 400, 404 and 500. Le
 
 Add a new metric of aggregation "Sum bucket". Use aggregation "Filters", with filter 1 being "status:404". In custom label at the bottom, write "404".
 
-![Sum filter aggregation](./metrics-bucket-sum-aggregatgion.png)
+![Sum filter aggregation](/images/metrics-bucket-sum-aggregatgion.png)
 
 _Repeat the process for the different statuses you care about to add more columns._
 
 Tada! 🎉 You now got a list of URLs that responds with bad status codes, and their amount. You can click on each header column to sort by e.g. most 500 erros, most 404 errors etc.
 
-![View of debugging list](./debugging-list.png)
+![View of debugging list](/images/debugging-list.png)
 
 _As we see in my example, there seems to be a bot trying to log in to my non-existing Wordpress. And my app has 0 visitors – what's new 🙊_
 

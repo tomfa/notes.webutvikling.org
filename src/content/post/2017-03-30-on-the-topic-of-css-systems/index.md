@@ -38,7 +38,7 @@ Before we compare the systems, we need to learn about a few concepts and use t
 
 #### Semantic vs content-independent CSS
 
-Say you have a search form in the top right corner of your website, that looks something like the picture below. What should be the class name of this component? ![header-search](./header-search.png) If you use semantic classes, you could name it something like "search" or even "header-search", because it is **how** it's used. If you use content-independent classes, you might call it "tiny-form",  because that's **what** it is. The CSS systems we'll look at are not explicitly in favour of one or the other, but some lean towards content-independence. // _I'm pro content-independent CSS, but that's a discussion for [another post.](http://notes.webutvikling.org/semantic-vs-content-independent-css/)_
+Say you have a search form in the top right corner of your website, that looks something like the picture below. What should be the class name of this component? ![header-search](/images/header-search.png) If you use semantic classes, you could name it something like "search" or even "header-search", because it is **how** it's used. If you use content-independent classes, you might call it "tiny-form",  because that's **what** it is. The CSS systems we'll look at are not explicitly in favour of one or the other, but some lean towards content-independence. // _I'm pro content-independent CSS, but that's a discussion for [another post.](http://notes.webutvikling.org/semantic-vs-content-independent-css/)_
 
 #### Separation of container and content
 
@@ -55,7 +55,7 @@ The principle of using separate classes for specifying structure and skin is ba
 
 ### Example site
 
-OK, enough concepts. Before we dive into the different systems and compare them, let me quickly show you a dummy sketch for an imagined blog. We'll use this example and see how the individual CSS systems come up with their own concepts to talk about these elements, and show what syntax they would use to target the elements. ![](./site-1.png)
+OK, enough concepts. Before we dive into the different systems and compare them, let me quickly show you a dummy sketch for an imagined blog. We'll use this example and see how the individual CSS systems come up with their own concepts to talk about these elements, and show what syntax they would use to target the elements. ![](/images/site-1.png)
 
 ### **Atomic Design**
 

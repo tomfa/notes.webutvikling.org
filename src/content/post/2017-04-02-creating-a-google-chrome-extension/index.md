@@ -15,15 +15,15 @@ First off, I want to override Chromes _new tab_ page. New Tab, Bookmarks and His
 
 1.  Download [blank-new-start-page sample](https://developer.chrome.com/extensions/samples#blank-new-tab-page)
 2.  Go to your [Chrome extensions page](chrome://extensions/) and select Developer Mode.
-3.  Select Load Unpacked extension, and choose the folder you downloaded the sample from. ![](./Screen-Shot-2017-03-31-at-10.00.59.png)
+3.  Select Load Unpacked extension, and choose the folder you downloaded the sample from. ![](/images/Screen-Shot-2017-03-31-at-10.00.59.png)
 
-**Tada!** You've got the extension, and you can check that it works by opening a new tab: ![Blank new page extension](./Screen-Shot-2017-03-31-at-10.07.17.png)
+**Tada!** You've got the extension, and you can check that it works by opening a new tab: ![Blank new page extension](/images/Screen-Shot-2017-03-31-at-10.07.17.png)
 
 ### Part 2: Making functionality
 
 So I'm thinking I'd like to see a specific board from Trello, optionally with a filter, with the topmost matching ticket in extra large fonts, to keep my head focused on that task. Something like this:
 
-![](./trello-chrome-ext.png)
+![](/images/trello-chrome-ext.png)
 
 > So it's basically a [todomvc](http://todomvc.com/) with a trello integration?
 

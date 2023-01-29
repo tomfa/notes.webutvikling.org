@@ -8,7 +8,7 @@ tags: ['statement', css]
 Say you have a search form in the top right corner of your website, that looks
 something like the picture below. What should be the class name of a component?
 
-![header-search](./header-search.png)
+![header-search](/images/header-search.png)
 
 If you use semantic classes, you could name it something like "search" or even
 "header-search", because it is **how** it's used.

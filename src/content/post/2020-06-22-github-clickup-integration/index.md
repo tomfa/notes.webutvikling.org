@@ -10,7 +10,7 @@ But first, let's do three quick questions:
 
 <details>
 <summary>Why do I write Pull request texts? </summary>
- 
+
 <strong>So team mates can understand what I try to accomplish, and why.</strong>
 
 A good text saves them time by giving them an overview and justification quick.
@@ -19,7 +19,7 @@ It probably saves me time too – since there will be less questions.
 Bonus: It might come in handy next time you'll need to do something similar
 (or exactly the same for a different project).
 
-![A decent PR](./pr.png)
+![A decent PR](/images/pr.png)
 
 </details>
 
@@ -30,7 +30,7 @@ Bonus: It might come in handy next time you'll need to do something similar
 
 A good text saves the future team time: the question _Why would you X?_ can be answered quickly.
 
-![Seeing an old commit](./so-thats-why.png)
+![Seeing an old commit](/images/so-thats-why.png)
 
 </details>
 
@@ -60,7 +60,7 @@ It's a super quick and efficient way to provide useful context.
 
 ## Referencing the issue
 
-![Image of issue id in clickup](clickup-id.png)
+![Image of issue id in clickup](/images/clickup-id.png)
 
 The ID can be found via URL or with the Github icon in Clickup.
 In can be referenced from a commit, a branch name or a pull request title by adding
@@ -97,7 +97,7 @@ git checkout -b feat/#60n564/api-add-users
 If you've forgot to reference the issue in the branch or commit messages, it's not too late.
 Just prepend it to your Pull request title.
 
-![task reference in PR title](./ref-pr-title.png)
+![task reference in PR title](/images/ref-pr-title.png)
 
 ## Auto-linking
 
@@ -105,8 +105,8 @@ Clickup will automatically update the pull request and the ticket in ClickUp
 when you do this. It _might take 10+ minutes_, but the Github PR will get a
 comment from you (by ClickUp):
 
-![Automatic PR comment](./clickup-github-pr-comment.png)
+![Automatic PR comment](/images/clickup-github-pr-comment.png)
 
 It will also add a reference to the PR from the ClickUp ticket:
 
-![Clickup activity log Github reference](./clickup-activity-log.png)
+![Clickup activity log Github reference](/images/clickup-activity-log.png)

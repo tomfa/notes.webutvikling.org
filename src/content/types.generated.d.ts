@@ -1051,20 +1051,6 @@ declare module 'astro:content' {
   collection: "post",
   data: InferEntrySchema<"post">
 },
-"hello-world.mdx": {
-  id: "hello-world.mdx",
-  slug: "hello-world",
-  body: string,
-  collection: "post",
-  data: InferEntrySchema<"post">
-},
-"second-post.md": {
-  id: "second-post.md",
-  slug: "second-post",
-  body: string,
-  collection: "post",
-  data: InferEntrySchema<"post">
-},
 },
 
 	};
