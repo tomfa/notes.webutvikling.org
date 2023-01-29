@@ -15,7 +15,7 @@ const postDate = getFormattedDate(content.data.pubDate);
 <h1 class="title">{content.data.title}</h1>
 <time datetime={datetime}>{postDate}</time>
 {
-	content.data.tags?.length && (
+	content.data.tags.length > 0 && (
 		<div class="inline before:content-['|']">
 			<svg
 				aria-hidden="true"

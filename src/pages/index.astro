@@ -6,7 +6,7 @@ import SocialList from "@/components/SocialList";
 import { getUniqueTags, sortMDByDate } from "@/utils";
 
 const allPosts = await getCollection("post");
-const allPostsByDate = sortMDByDate(allPosts);
+const allPostsByDate = sortMDByDate(allPosts).reverse();
 const mainTags = [
 	"management",
 	"efficiency",
@@ -29,7 +29,7 @@ const uniqueTags = getUniqueTags(allPosts).filter((t) => mainTags.includes(t));
 	}}
 >
 	<div>
-		<p class="mb-4">
+		<p class="mb-4 text-lg">
 			Random notes, anecdotes and random scribbling from my tech life and work brain.
 		</p>
 		<!--<SocialList />-->
@@ -41,14 +41,14 @@ const uniqueTags = getUniqueTags(allPosts).filter((t) => mainTags.includes(t));
 					{
 						allPostsByDate.map((p) => (
 							<li class="flex flex-wrap items-center gap-x-2 [&_q]:w-full">
-								<PostPreview post={p} as="h2" withDesc />
+								<PostPreview post={p} as="h2" />
 							</li>
 						))
 					}
 				</ul>
 			</section>
 			{
-				uniqueTags.length && (
+				uniqueTags.length > 0 && (
 					<aside>
 						<h2 class="mb-4 flex items-center text-lg font-semibold">
 							<svg
