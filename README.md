@@ -65,10 +65,10 @@ Adding a post is a simple as adding your .md(x) file(s) to the `src/content/post
 ### Frontmatter
 
 | Property (\* required) | Description                                                                                                                                                                       |
-| :--------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|:-----------------------| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | title \*               | Self explanatory. Used as the text link to the post, the h1 on the posts' page, and the pages title property. Has a max length of 60 chars, set in `src/content/config.ts`        |
 | description \*         | Similar to above, used as the seo description property. Has a min length of 50 and a max length of 160 chars, set in the post schema.                                             |
-| publishDate \*         | Again pretty simple. To change the date format/locale, currently **en-GB**, update/pass the **locale** arg to function **getFormattedDate**, found in `src/utils/date.ts`.        |
+| pubDate \*             | Again pretty simple. To change the date format/locale, currently **en-GB**, update/pass the **locale** arg to function **getFormattedDate**, found in `src/utils/date.ts`.        |
 | tags                   | Tags are optional with any created post. Any new tag(s) will be shown in `yourdomain.com/posts` + `yourdomain.com/tags`, and generate the page(s) `yourdomain.com/tags/[yourTag]` |
 
 ## Analytics

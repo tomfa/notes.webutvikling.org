@@ -9,5 +9,8 @@ export function getFormattedDate(
 		year: "numeric",
 		...options,
 	};
+	if (!date) {
+		return "Today";
+	}
 	return new Date(date).toLocaleDateString(locale, formatOptions);
 }

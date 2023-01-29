@@ -8,8 +8,8 @@ interface Props {
 
 const { content } = Astro.props;
 
-const datetime = content.data.publishDate.toISOString();
-const postDate = getFormattedDate(content.data.publishDate);
+const datetime = (content.data.pubDate || new Date()).toISOString();
+const postDate = getFormattedDate(content.data.pubDate);
 ---
 
 <h1 class="title">{content.data.title}</h1>
