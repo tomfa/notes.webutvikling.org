@@ -1,0 +1,37 @@
+---
+title: "Launching with yarn and npm side by side"
+pubDate: 2021-05-21
+heroImage: /images/spacex-OHOU-5UVIYQ-unsplash.jpg
+tags: [guide, npm, yarn]
+imageAlt: "Launching like a professional. Photo by @spacex on Unsplash."
+---
+
+As a person working with different people indifferent repos, mixing up npm with yarn and inconsistent
+script names to start the project really grinds my gears.
+
+- Do I run npm install or yarn install?
+- Did someone just add a package-lock.json to a yarn repo?
+- Do I run yarn dev, yarn start, yarn start:dev or yarn start:all to fire up the dev server?
+- Did linting/build/deployment just fail on CI because we use yarn there, but npm and package-lock in this repo?
+
+### 1. Select yarn (or npm)
+
+- Decide on using one of them (_yarn for speed, and monorepo support_).
+- Remove and add the _other_ lock file to `.gitignore`
+- Make sure your CI scripts use the same package manager
+
+### 2. Add a script for installing packages 🎀
+
+Add the script below to your bash profile. This will alias `ins` to install packages in the current repo, using whatever .
+
+`gist:259e3903e924ec64b32aa48e317cd07d#yarn.npm.install.sh`
+
+
+### 3. Add a script for starting the app 🚀
+
+Add the script below to your bash profile. This will alias `sta` to start the repo, with the commonly used dev script that the repo uses.
+
+`gist:259e3903e924ec64b32aa48e317cd07d#yarn.npm.start.sh`
+
+
+
