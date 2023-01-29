@@ -42,7 +42,16 @@ declare module 'astro:content' {
 	};
 
 	const entryMap: {
-		"post": {
+		"article": {
+"2023-01-14-state-of-js-2022/index.md": {
+  id: "2023-01-14-state-of-js-2022/index.md",
+  slug: "2023-01-14-state-of-js-2022",
+  body: string,
+  collection: "article",
+  data: any
+},
+},
+"post": {
 "2013-12-03-alfred-for-windows/index.md": {
   id: "2013-12-03-alfred-for-windows/index.md",
   slug: string,
