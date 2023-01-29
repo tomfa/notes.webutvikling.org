@@ -8,9 +8,9 @@ export async function getStaticPaths(): Promise<GetStaticPathsResult> {
 	const posts: CollectionEntry<"post">[] = await getCollection("post");
 	const links: CollectionEntry<"link">[] = await getCollection("link");
 	const all = [...posts, ...links];
-	const params = all.map((post) => ({
+	const params = all.map((post, i) => ({
 		params: { post: post.slug },
-		props: { post },
+		props: { post, prev: all[i - 1], next: all[i + 1] },
 	}));
 	return params;
 }
@@ -19,10 +19,32 @@ interface Props {
 	post: CollectionEntry<"post">;
 }
 
-const { post } = Astro.props;
+const { post, prev, next } = Astro.props;
 const { Content } = await post.render();
 ---
 
 <BlogPost post={post}>
 	<Content />
-</PostLayout>
+	{
+		(prev || next) && (
+			<div class="pt-20 text-xs flex justify-between">
+				{prev && (
+					<div class="mb-2 flex gap-2">
+						<span class="text-xs">&lt;</span>
+						<a class="text-xs" href={`/${prev.slug}`}>
+							{prev.data.title}
+						</a>
+					</div>
+				)}
+				{next && (
+					<div class="text-right flex gap-2">
+						<a class="text-xs" href={`/${next.slug}`}>
+							{next.data.title}
+						</a>
+						<span class="text-xs">&gt;</span>
+					</div>
+				)}
+			</div>
+		)
+	}
+</BlogPost>
