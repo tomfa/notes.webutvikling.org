@@ -13,6 +13,7 @@ const { headings } = await post.render();
 ---
 
 <BaseLayout meta={{ title: post.data.title, description: post.data.description }}>
+
 	<div class="sm:grid sm:grid-cols-[3fr_1fr] sm:items-start sm:gap-x-10">
 		<article class="break-words">
 			<BlogHero content={post} />

@@ -12,7 +12,18 @@ const datetime = (content.data.pubDate || new Date()).toISOString();
 const postDate = getFormattedDate(content.data.pubDate);
 ---
 
+{
+	content.data.heroImage && (
+		<img class="mb-2 w-full" src={content.data.heroImage} alt={content.data.imageAlt} />
+	)
+}
+{
+	content.data.imageAlt && (
+		<span class="mb-4 block text-xs text-gray-400">{content.data.imageAlt}</span>
+	)
+}
 <h1 class="title">{content.data.title}</h1>
+
 <time datetime={datetime}>{postDate}</time>
 {
 	content.data.tags.length > 0 && (
@@ -37,10 +48,12 @@ const postDate = getFormattedDate(content.data.pubDate);
 			{content.data.tags.map((tag, i) => (
 				<>
 					<a
-						class="link inline-block before:content-['#']"
+						class="link inline-block"
 						aria-label={`View more blogs with the tag ${tag}`}
 						href={`/tags/${tag}`}
-					>{tag}</a>
+					>
+						{tag}
+					</a>
 					{i < content.data.tags.length - 1 && ", "}
 				</>
 			))}
