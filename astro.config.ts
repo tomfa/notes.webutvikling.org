@@ -13,7 +13,7 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://www.astro-theme-cactus.netlify.app",
+	site: "https://notes.webutvikling.org",
 	experimental: {
 		contentCollections: true,
 	},

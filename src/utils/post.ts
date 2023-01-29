@@ -1,12 +1,14 @@
 import type { CollectionEntry } from "astro:content";
 
-export function sortMDByDate(posts: CollectionEntry<"post">[] = []) {
+export type Entry = CollectionEntry<"post"> | CollectionEntry<"link">;
+
+export function sortMDByDate(posts: Entry[] = []) {
 	return posts.sort(
 		(a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
 	);
 }
 
-export function getUniqueTags(posts: CollectionEntry<"post">[] = []) {
+export function getUniqueTags(posts: Entry[] = []) {
 	const uniqueTags = new Set<string>();
 	posts.forEach((post) => {
 		post.data.tags.map((tag) => uniqueTags.add(tag.toLowerCase()));
@@ -14,7 +16,7 @@ export function getUniqueTags(posts: CollectionEntry<"post">[] = []) {
 	return [...uniqueTags];
 }
 
-export function getUniqueCategories(posts: CollectionEntry<"post">[] = []) {
+export function getUniqueCategories(posts: Entry[] = []) {
 	const uniqueCategories = new Set<string>();
 	posts.forEach((post) => {
 		uniqueCategories.add(post.data.category.toLowerCase());
@@ -22,7 +24,7 @@ export function getUniqueCategories(posts: CollectionEntry<"post">[] = []) {
 	return [...uniqueCategories];
 }
 
-export function getUniqueTagsWithCount(posts: CollectionEntry<"post">[] = []): {
+export function getUniqueTagsWithCount(posts: Entry[] = []): {
 	[key: string]: number;
 } {
 	return posts.reduce((prev, post) => {
@@ -34,7 +36,7 @@ export function getUniqueTagsWithCount(posts: CollectionEntry<"post">[] = []): {
 	}, {});
 }
 
-export function getUniqueCategoriesWithCount(posts: CollectionEntry<"post">[] = []): {
+export function getUniqueCategoriesWithCount(posts: Entry[] = []): {
 	[key: string]: number;
 } {
 	return posts.reduce((prev, post) => {
