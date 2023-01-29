@@ -6,7 +6,8 @@ import SocialList from "@/components/SocialList";
 import { getUniqueTags, getUniqueCategories, sortMDByDate } from "@/utils";
 
 const allPosts = await getCollection("post");
-const allPostsByDate = sortMDByDate(allPosts).reverse();
+const posts = allPosts.filter(p => p.data.category !== "book");
+const allPostsByDate = sortMDByDate(posts);
 const mainTags = [
 	"management",
 	"efficiency",
@@ -19,8 +20,8 @@ const mainTags = [
 	"talk",
 	"tools",
 ];
-const uniqueTags = getUniqueTags(allPosts).filter((t) => mainTags.includes(t));
-const uniqueCategories = getUniqueCategories(allPosts);
+const uniqueTags = getUniqueTags(posts).filter((t) => mainTags.includes(t));
+const uniqueCategories = getUniqueCategories(posts);
 ---
 
 <PageLayout

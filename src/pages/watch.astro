@@ -6,7 +6,7 @@ import SocialList from "@/components/SocialList";
 import { getUniqueTags, sortMDByDate } from "@/utils";
 
 const videos = await getCollection("video");
-const videosByDate = sortMDByDate(videos).reverse();
+const videosByDate = sortMDByDate(videos);
 const mainTags = [
 	"management",
 	"efficiency",
@@ -29,7 +29,7 @@ const uniqueTags = getUniqueTags(videos);
 	}}
 >
 	<div>
-		<p class="mb-4 text-lg">Bookmarked watching gems of internet.</p>
+		<p class="mb-4 text-lg">Some useful videos.</p>
 	</div>
 	<section aria-label="Blog post list" class="mt-16">
 		<div class="grid gap-y-16 sm:grid-cols-[3fr_1fr] sm:gap-x-8">

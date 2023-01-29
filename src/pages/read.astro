@@ -2,24 +2,16 @@
 import { getCollection } from "astro:content";
 import PageLayout from "@/layouts/Base";
 import ArticlePreview from "@/components/blog/ArticlePreview";
+import PostPreview from "@/components/blog/PostPreview";
 import SocialList from "@/components/SocialList";
 import { getUniqueTags, sortMDByDate } from "@/utils";
 
 const articles = await getCollection("article");
-const articlesByDate = sortMDByDate(articles).reverse();
-const mainTags = [
-	"management",
-	"efficiency",
-	"monitoring",
-	"code quality",
-	"startup",
-	"statement",
-	"book",
-	"guide",
-	"talk",
-	"tools",
-];
-const uniqueTags = getUniqueTags(articles);
+const allPosts = await getCollection("post");
+const bookPosts = allPosts.filter((p) => p.data.category === "book");
+const entries = [...articles, ...bookPosts];
+const entriesByDate = sortMDByDate(entries);
+const uniqueTags = getUniqueTags(entries);
 ---
 
 <PageLayout
@@ -29,18 +21,27 @@ const uniqueTags = getUniqueTags(articles);
 	}}
 >
 	<div>
-		<p class="mb-4 text-lg">Bookmarked reading gems of internet.</p>
+		<p class="mb-4 text-lg">Good reads and book summaries.</p>
 	</div>
 	<section aria-label="Blog post list" class="mt-16">
 		<div class="grid gap-y-16 sm:grid-cols-[3fr_1fr] sm:gap-x-8">
 			<section aria-label="Blog post list">
 				<ul class="space-y-8 text-left">
 					{
-						articlesByDate.map((p) => (
-							<li class="flex flex-wrap items-center gap-x-2 [&_q]:w-full">
-								<ArticlePreview post={p} as="h2" withDesc />
-							</li>
-						))
+						entriesByDate.map((p) => {
+							if (p.data.url) {
+								return (
+									<li class="flex flex-wrap items-center gap-x-2 [&_q]:w-full">
+										<ArticlePreview post={p} as="h2" withDesc />
+									</li>
+								);
+							}
+							return (
+								<li class="flex flex-wrap items-center gap-x-2 [&_q]:w-full">
+									<PostPreview post={p} as="h2" />
+								</li>
+							);
+						})
 					}
 				</ul>
 			</section>
