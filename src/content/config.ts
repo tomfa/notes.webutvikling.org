@@ -9,6 +9,9 @@ const post = defineCollection({
 		imageAlt: z.string().optional(),
 		tags: z.array(z.string()).default([]),
 	},
+	slug(entry) {
+		return entry.defaultSlug.split("/")[0]!.substring(11);
+	},
 });
 
 export const collections = { post };
