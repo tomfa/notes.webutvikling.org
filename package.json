@@ -44,8 +44,13 @@
 	},
 	"dependencies": {
 		"@astrojs/prefetch": "^0.1.1",
+		"@astrojs/react": "^2.0.1",
 		"@astrojs/rss": "^2.0.0",
+		"@types/react": "^18.0.21",
+		"@types/react-dom": "^18.0.6",
 		"astro": "^1.9.1",
+		"react": "^18.0.0",
+		"react-dom": "^18.0.0",
 		"sharp": "^0.31.3"
 	}
 }
