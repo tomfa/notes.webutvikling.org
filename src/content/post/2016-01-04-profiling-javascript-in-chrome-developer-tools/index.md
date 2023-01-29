@@ -1,5 +1,5 @@
 ---
-title: 'Profiling JavaScript in Chrome Developer Tools'
+title: 'Profiling in Chrome Developer Tools'
 pubDate: 2016-01-04
 heroImage: /images/christian-englmeier-J7EUjSlNQtg-unsplash.jpg
 tags: ['guide', chrome, devtools, javascript, profiling]

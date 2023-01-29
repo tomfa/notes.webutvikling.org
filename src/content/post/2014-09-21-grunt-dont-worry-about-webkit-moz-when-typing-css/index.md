@@ -1,5 +1,5 @@
 ---
-title: "Grunt: Don't worry about webkit-*, moz-* when typing css"
+title: "Ignore webkit-*, moz-* when typing css"
 pubDate: 2014-09-21
 heroImage: /images/grunt.png
 tags: [css, grunt, vendor-prefix]

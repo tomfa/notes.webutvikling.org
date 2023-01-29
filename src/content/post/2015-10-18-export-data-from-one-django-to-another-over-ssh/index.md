@@ -1,5 +1,5 @@
 ---
-title: 'Export data from one Django to another over ssh'
+title: 'Export data from one Django to another'
 pubDate: 2015-10-18
 heroImage: /images/steinar-engeland-_2G4EeyeoeA-unsplash.jpg
 tags: ['guide', database, django, loaddata, readdata]

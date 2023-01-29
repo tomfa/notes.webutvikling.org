@@ -1,5 +1,5 @@
 ---
-title: "Don't convert SVG to PNG with browser Javascript"
+title: "Don't convert SVG to PNG in the browser"
 pubDate: 2016-07-20
 heroImage: /images/polaroid.jpg
 tags: ['statement', convert, java, javascript]
