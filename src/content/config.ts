@@ -1,5 +1,7 @@
 import { z, defineCollection } from "astro:content";
 
+export const LINK_TYPE = ["lib", "article", "video"] as const;
+
 export const POST_CATEGORY = [
 	"guide",
 	"rant",
@@ -7,7 +9,6 @@ export const POST_CATEGORY = [
 	"scribble",
 	"statement",
 	"resource",
-	"video",
 	"debugging",
 	"book",
 	"idea",
@@ -27,30 +28,18 @@ const post = defineCollection({
 	},
 });
 
-const article = defineCollection({
+const link = defineCollection({
 	schema: {
 		url: z.string().url(),
 		title: z.string().max(60),
 		description: z.string().min(50).max(320),
 		pubDate: z.any().transform((str) => str && new Date(str)),
 		tags: z.array(z.string()).default([]),
+		type: z.enum(LINK_TYPE).default("article"),
 	},
 	slug(entry) {
 		return entry.defaultSlug.split("/")[0]!.substring(11);
 	},
 });
 
-const video = defineCollection({
-	schema: {
-		url: z.string().url(),
-		title: z.string().max(60),
-		description: z.string().min(50).max(320),
-		pubDate: z.any().transform((str) => str && new Date(str)),
-		tags: z.array(z.string()).default([]),
-	},
-	slug(entry) {
-		return entry.defaultSlug.split("/")[0]!.substring(11);
-	},
-});
-
-export const collections = { post, article, video };
+export const collections = { post, link };

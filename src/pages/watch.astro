@@ -5,7 +5,8 @@ import VideoPreview from "@/components/blog/VideoPreview";
 import SocialList from "@/components/SocialList";
 import { getUniqueTags, sortMDByDate } from "@/utils";
 
-const videos = await getCollection("video");
+const allLinks = await getCollection("link");
+const videos = allLinks.filter(l => l.data.type === "video");
 const videosByDate = sortMDByDate(videos);
 const mainTags = [
 	"management",

@@ -7,10 +7,7 @@ import SocialList from "@/components/SocialList";
 import { getUniqueTags, sortMDByDate } from "@/utils";
 
 const allLinks = await getCollection("link");
-const articles = allLinks.filter((p) => p.data.type === "article");
-const allPosts = await getCollection("post");
-const bookPosts = allPosts.filter((p) => p.data.category === "book");
-const entries = [...articles, ...bookPosts];
+const entries = allLinks.filter(p => p.data.type === 'lib');
 const entriesByDate = sortMDByDate(entries);
 const uniqueTags = getUniqueTags(entries);
 ---
@@ -22,7 +19,7 @@ const uniqueTags = getUniqueTags(entries);
 	}}
 >
 	<div>
-		<p class="mb-4 text-lg">Articles and book I enjoy.</p>
+		<p class="mb-4 text-lg">Tools and libraries I recommend checking out.</p>
 	</div>
 	<section aria-label="Blog post list" class="mt-16">
 		<div class="grid gap-y-16 sm:grid-cols-[3fr_1fr] sm:gap-x-8">
