@@ -16,13 +16,13 @@ warning " > eslint-config-airbnb@18.2.0" has unmet peer dependency "eslint-plugi
 
 ## What is a peer dependency?
 
-A peer depencency is a dependency that a "plugin" package depends on *you* already having installed.
+A peer depencency is a dependency that a "plugin" package depends on _you_ already having installed.
 
 ### Why do we have peer dependecies?
 
 > In npm, each package can has its own dependencies and own versions of overlapping dependencies. There's one use case where this falls down, however: plugins. A plugin package is meant to be used with another "host" package, even though it does not always directly use the host package. - [nodejs.org: Peer Dependencies](https://nodejs.org/en/blog/npm/peer-dependencies/)
 
-For instance, my `airbnb-config-airbnb@18.2.0` depends on a given set of `eslint` versions, but it's not its own package requirment: the package depend on *you* having it installed.
+For instance, my `airbnb-config-airbnb@18.2.0` depends on a given set of `eslint` versions, but it's not its own package requirment: the package depend on _you_ having it installed.
 
 ### Why would we want to use peer dependencies?
 
@@ -34,7 +34,7 @@ Either install the package on the right hand side (the unmet peer dependency) or
 
 Note that you can end up in a loop: where installing the peer dependency causes a different package to complain, which (when resolved) causes the first package to complain gain. Let's give an example
 
-### Is there a way to install a package *and* its peer dependencies?
+### Is there a way to install a package _and_ its peer dependencies?
 
 Yes, by replacing `yarn add` with `npx install-peerdeps`
 
@@ -43,7 +43,6 @@ npx install-peerdeps --dev eslint-config-airbnb
 ```
 
 You'll still however get warnings if you upgrade either the peer dependencies or `eslint-config-airbnb`, so it's not a silver bullet.
-
 
 ### Related links
 

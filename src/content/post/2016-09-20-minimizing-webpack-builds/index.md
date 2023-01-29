@@ -1,5 +1,5 @@
 ---
-title: 'Minimizing Webpack builds'
+title: "Minimizing Webpack builds"
 pubDate: 2016-09-20
 tags: [react, webpack]
 draft: true

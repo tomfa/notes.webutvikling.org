@@ -33,7 +33,7 @@ const minDepth = headings.reduce((min, { depth }) => Math.min(min, depth), Infin
 							.map(({ slug, text, depth }, i) => {
 								if (depth === minDepth) {
 									return (
-										<li class={`line-clamp-2 hover:text-accent mt-2`}>
+										<li class={`mt-2 line-clamp-2 hover:text-accent`}>
 											<a href={`#${slug}`} aria-label={`Scroll to section: ${text}`}>
 												{text}
 											</a>
@@ -42,7 +42,7 @@ const minDepth = headings.reduce((min, { depth }) => Math.min(min, depth), Infin
 								}
 								if (depth - 1 === minDepth) {
 									return (
-										<li class="line-clamp-2 text-gray-400 hover:text-accent mt-0">
+										<li class="mt-0 text-gray-400 line-clamp-2 hover:text-accent">
 											<a href={`#${slug}`} aria-label={`Scroll to section: ${text}`}>
 												{text}
 											</a>

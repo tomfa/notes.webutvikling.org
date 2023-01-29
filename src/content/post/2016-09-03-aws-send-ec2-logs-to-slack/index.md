@@ -1,8 +1,8 @@
 ---
-title: 'Send AWS EC2 logs to Slack'
+title: "Send AWS EC2 logs to Slack"
 pubDate: 2016-09-03
 heroImage: /images/slack-large.png
-tags: ['guide', monitoring, cloudwatch, ec2, lambda, logs, slack]
+tags: ["guide", monitoring, cloudwatch, ec2, lambda, logs, slack]
 ---
 
 **I have** a Java app that runs on an regular Linux (EC2) instance, and logs to some folder on that machine. What **I want** is for Slack to be notified if any error occurs in the logs. This is possible through CloudWatch in [almost all regions](http://docs.aws.amazon.com/general/latest/gr/rande.html#cwl_region). Let me show you how!
@@ -43,6 +43,7 @@ For part 2, we'll create a Lambda function that receives logs and sends them 
 
 1.  Create an incoming webhook for Slack at https://your-slack-team.slack.com/apps/A0F7XDUAZ-incoming-webhooks. Note down the Webhook URL, and Channel for step 2 and 3.
 2.  We'll need a KMS key for the next step.
+
     - Create this with:
 
       ```
@@ -56,6 +57,7 @@ For part 2, we'll create a Lambda function that receives logs and sends them 
       ```
 
     - Note down the _CipherTextBlob_ which is returned, as well as the KMS _Arn_. We'll use these in the next step.
+
 3.  Next, we'll create the Lambda function.
     - Under blueprint, select _cloudwatch-logs-to-loggy_
     - Under Configure Triggers:

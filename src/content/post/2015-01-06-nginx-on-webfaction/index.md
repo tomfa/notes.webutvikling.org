@@ -1,13 +1,13 @@
 ---
-title: 'Running Django with nginx (on webfaction)'
+title: "Running Django with nginx (on webfaction)"
 pubDate: 2015-01-06
 heroImage: /images/sporlab-XiZ7pRvCzro-unsplash.jpg
-tags: ['guide', apache, django, nginx, rant, webfaction]
+tags: ["guide", apache, django, nginx, rant, webfaction]
 ---
 
 ## Case:
 
-You're using **virtualenv **and have used **apache** with a config somewhat like [this](http://michal.karzynski.pl/blog/2013/09/14/django-in-virtualenv-on-webfactions-apache-with-mod-wsgi/ 'this').
+You're using **virtualenv **and have used **apache** with a config somewhat like [this](http://michal.karzynski.pl/blog/2013/09/14/django-in-virtualenv-on-webfactions-apache-with-mod-wsgi/ "this").
 
 **Problem: Apache 'goes to sleep'**
 
@@ -19,7 +19,7 @@ Apache caches your wsgi application, and if it's not used within a certain amoun
 
 Use nginx instead:
 
-Set up a custom application, and install nginx + uwsgi to point to your original application like [this](https://community.webfaction.com/questions/10242/installing-nginx-uwsgi 'this').
+Set up a custom application, and install nginx + uwsgi to point to your original application like [this](https://community.webfaction.com/questions/10242/installing-nginx-uwsgi "this").
 
 **Potential new problem 2:** Doesn't find python – Can happen if you've installed the python version manually.
 
@@ -73,4 +73,4 @@ application = Cling(get_wsgi_application())
 **Potential disappointment 4:** nginx was not really faster – if this happens, you've probably not enabled threading support for uwsgi.
 
 **Solution 4:** add the flag `--enable-threading`.
-For more flags, e.g. `--workers` to set number of processes spawned, see [uwsgi-docs](http://uwsgi-docs.readthedocs.org/en/latest/Options.html 'wsgi docs').
+For more flags, e.g. `--workers` to set number of processes spawned, see [uwsgi-docs](http://uwsgi-docs.readthedocs.org/en/latest/Options.html "wsgi docs").

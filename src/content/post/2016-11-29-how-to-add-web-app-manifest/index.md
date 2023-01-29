@@ -1,8 +1,8 @@
 ---
-title: 'How to add Web App Manifest'
+title: "How to add Web App Manifest"
 pubDate: 2016-11-29
 heroImage: /images/theme-color.png
-tags: ['guide', 'progressive apps', 'web app manifest']
+tags: ["guide", "progressive apps", "web app manifest"]
 ---
 
 The [manifest.json for web apps](https://developer.mozilla.org/en-US/docs/Web/Manifest) can make your mobile experience a bit sweeter. Force rotation? Check! Home screen icon? Check! Splash loading screen and no url bar? Check, check! Amount of work? 5 minutes!
@@ -28,10 +28,7 @@ The [manifest.json for web apps](https://developer.mozilla.org/en-US/docs/Web/Ma
 
     ```html
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <link rel="apple-touch-icon" href="./icon144white.png" />
     ```
 

@@ -1,8 +1,8 @@
 ---
-title: 'This is how you do Pull requests'
+title: "This is how you do Pull requests"
 pubDate: 2020-05-18
 heroImage: /images/tobias-cornille-4QWR5geRC9I-unsplash.jpg
-tags: ['statement', 'guide', 'github', pull-request]
+tags: ["statement", "guide", "github", pull-request]
 ---
 
 A few rules of thumb for Github Pull requests.

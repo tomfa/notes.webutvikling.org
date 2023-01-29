@@ -1,8 +1,8 @@
 ---
-title: 'How to add hubot to slack'
+title: "How to add hubot to slack"
 pubDate: 2016-05-25
 heroImage: /images/hubot.png
-tags: ['guide', heroku, hubot, slack]
+tags: ["guide", heroku, hubot, slack]
 ---
 
 Simple notes on how to install hubot and add it to Slack Requires git, npm, heroku toolbelt and having added hubot-integration to slack through slack.com

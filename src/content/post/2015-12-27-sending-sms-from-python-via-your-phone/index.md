@@ -1,8 +1,8 @@
 ---
-title: 'Sending SMS from python via your phone'
+title: "Sending SMS from python via your phone"
 pubDate: 2015-12-27
 heroImage: /images/markus-winkler-8cP_6sC7Hhw-unsplash.jpg
-tags: ['guide', 'python', 'twilio', 'pushbullet']
+tags: ["guide", "python", "twilio", "pushbullet"]
 ---
 
 Sending SMS using [twilio.com](http://twilio.com) is nice, but it also costs money. If you want something free that you can use for your hobby projects, check out [pushbullet.com](https://www.pushbullet.com/). If you sign up (it's free), you can push SMS with the following:

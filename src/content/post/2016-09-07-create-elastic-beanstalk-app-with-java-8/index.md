@@ -1,8 +1,8 @@
 ---
-title: 'Create Elastic Beanstalk app with Java 8'
+title: "Create Elastic Beanstalk app with Java 8"
 pubDate: 2016-09-07
 heroImage: /images/jellybeans.jpg
-tags: ['guide', aws, elastic beanstalk cli, java]
+tags: ["guide", aws, elastic beanstalk cli, java]
 ---
 
 Beanstalk is quite nice. And the [awsebcli](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-cmd-commands.html) looks nice too, along with its documentation and [the example guide](https://pypi.python.org/pypi/awsebcli/3.7.6) at pypi. You can deploy straight from a local git repo in one command. You can have each branch go to a separate Beanstalk environments. So I tested it, and here are my notes: _Edit: If you want to learn this, check out the [workshop](https://github.com/helleroy/beanstalk-workshop) we made! _
@@ -37,6 +37,7 @@ Beanstalk is quite nice. And the [awsebcli](http://docs.aws.amazon.com/elasticbe
     _Note: my-ssh-key is used to log into the created instances. It must be located in ~/.ssh/ _
 
 4.  Connect your app to a (new) Beanstalk with **one** of the following command ([cli docs for create](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-create.html))
+
     1.  The line below specifies the app to be run on a single EC2 instance without an ELB (**--single**), and without databases.
 
         ```

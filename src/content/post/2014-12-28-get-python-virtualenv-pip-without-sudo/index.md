@@ -1,8 +1,8 @@
 ---
-title: 'Get python, pip, virtualenv without sudo'
+title: "Get python, pip, virtualenv without sudo"
 pubDate: 2014-12-28
 heroImage: /images/david-clode-cxMJYcuCLEA-unsplash.jpg
-tags: ['guide', python, sudo, vps]
+tags: ["guide", python, sudo, vps]
 ---
 
 ### Case

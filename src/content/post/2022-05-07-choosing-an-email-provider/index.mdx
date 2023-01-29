@@ -9,6 +9,7 @@ imageAlt: "Photo by Solen Feyissa on Unsplash. It's an image of a Macbook with G
 Every company needs to send some emails, but which email provider do I use?.
 
 I want high deliverability. Which in turn leads to the following requirements:
+
 - Inbound email routing
 - DKIM and SPF support
 
@@ -20,10 +21,10 @@ For transactional emails, I'd want:
 - Pass template variables in API calls, preferably with validation.
 
 For marketing emails, It would be nice if it could:
+
 - Handle unsubscribing/resubscribing
 - Automation workflows, e.g. send welcome email 1 day after signup
 - Automated A/B testing of subject lines
-
 
 GDPR compliance is a must, and I believe integrattons with [Facebook Audiences](https://www.mailerlite.com/integrations/facebook-audiences)
 is massively useful for marketing? (But I also don't want to give Meta money)
@@ -35,10 +36,8 @@ Cheap, old, transactional email provider.
 - ✅ [Inbound email](https://www.mailgun.com/products/send/inbound-routing/) routing (from 35$)
 - ✅ [DKIM](https://www.mailgun.com/blog/deliverability/understanding-dkim-how-it-works/) and [SPF](https://www.mailgun.com/blog/deliverability/spf-records-basics/) support
 
-
 - ❌ Email template editor, so developers aren't involved in text edits.
 - ❌ Pass template variables in API calls, with validation.
-
 
 - ❌ Handle unsubscribing/resubscribing
 - ❌ Automation workflows
@@ -49,10 +48,8 @@ Cheap, old, transactional email provider.
 - ✅ Inbound email routing
 - ✅ [DKIM](https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim.html) and [SPF](https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-spf.html) support
 
-
 - ❌ Email template editor, so developers aren't involved in text edits.
 - ✅ [Pass template variables in API calls, with validation](https://docs.aws.amazon.com/ses/latest/dg/send-personalized-email-api.html).
-
 
 - ❌ Handle unsubscrsssibing/resubscribing
 - ❌ Automation workflows
@@ -70,10 +67,8 @@ like inbox, and is [hosted within EU](https://www.sendinblue.com/api/) ✅
 - ✅ [Inbound email routing](https://www.sendinblue.com/features/inbox/)
 - ✅ [DKIM and SPF](https://help.sendinblue.com/hc/en-us/articles/208848209-Customise-your-DKIM-signature) support
 
-
 - ✅ [Email template editor](https://help.sendinblue.com/hc/en-us/articles/360019787120), so developers aren't involved in text edits.
 - ✅ [Pass template variables](https://developers.sendinblue.com/recipes/send-transactional-emails-in-nodejs) in API calls, with validation.
-
 
 - ✅ Handle [unsubscribing/resubscribing](https://help.sendinblue.com/hc/en-us/articles/208772629)
 - ✅ [Automation workflows](https://www.sendinblue.com/features/marketing-automation/)
@@ -91,10 +86,8 @@ The main reason for bad reviews are strict policies ✅, and technical issues �
 - ❌ Inbound email routing
 - ✅ [DKIM and SPF](https://www.mailerlite.com/help/how-to-verify-and-authenticate-your-domain#new/get-records-approved) support
 
-
 - ✅ [Email template editor](https://www.mailerlite.com/video-tutorials/drag-and-drop-editor#classic), so developers aren't involved in text edits.
 - ✅ [Pass template variables](hhttps://www.mailerlite.com/help/how-to-create-and-use-custom-fields) in API calls, with validation.
-
 
 - ✅ Handle [unsubscribing/resubscribing](https://www.mailerlite.com/video-tutorials/customize-unsubscribe-page)
 - ✅ [Automation workflows](https://www.mailerlite.com/features/automation)
@@ -108,10 +101,8 @@ Mailersend (from 25$ for my use calse) seems like a very well made, easy to use
 - ✅ [Inbound email routing](https://www.mailersend.com/features/inbound-emails) (from $25)
 - ✅ DKIM and SPF support
 
-
 - ✅ Email template editor, so developers aren't involved in text edits.
 - 😶 [Pass template variables](https://www.mailersend.com/features/dynamic-email-templates) in API calls, with validation.
-
 
 - ❌ Handle unsubscribing/resubscribing
 - ❌ Automation workflows
@@ -131,10 +122,8 @@ and their [Trustpilot](https://no.trustpilot.com/review/www.mailchimp.com) revie
 - ✅ [Inbound email routing](https://www.mailersend.com/features/inbound-emails) (from $25)
 - ✅ DKIM and SPF support
 
-
 - ✅ Email template editor, so developers aren't involved in text edits.
 - ✅ [Pass template variables](https://www.mailersend.com/features/dynamic-email-templates) in API calls, with validation.
-
 
 - ✅ Handle unsubscribing/resubscribing
 - ✅ Automation workflows
@@ -149,14 +138,13 @@ and their [Trustpilot](https://no.trustpilot.com/review/www.sendgrid.com) review
 - ✅ [Inbound email routing](https://docs.sendgrid.com/for-developers/parsing-email/setting-up-the-inbound-parse-webhook) (from $25)
 - ✅ DKIM and SPF support
 
-
 - ✅ Email template editor, so developers aren't involved in text edits.
 - ✅ [Pass template variables](https://www.mailersend.com/features/dynamic-email-templates) in API calls, with validation.
-
 
 - ✅ [Handle unsubscribing/resubscribing](https://docs.sendgrid.com/ui/account-and-settings/tracking#subscription-tracking)
 - ✅ [Automation workflows](https://sendgrid.com/solutions/email-marketing/automation/)
 - ✅ [Automated A/B testing of subject lines](https://docs.sendgrid.com/ui/sending-email/a-b-testing)
 
 ## Related links
+
 - [Email Deliverability: The Only Guide to Avoid The Spam Folder in 2022](https://moosend.com/blog/email-deliverability/)

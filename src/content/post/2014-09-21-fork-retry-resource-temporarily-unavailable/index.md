@@ -1,5 +1,5 @@
 ---
-title: 'fork: retry: Resource temporarily unavailable'
+title: "fork: retry: Resource temporarily unavailable"
 pubDate: 2014-09-21
 heroImage: /images/mae-mu-Pvclb-iHHYY-unsplash.jpg
 tags: [debugging, unix, webfaction]

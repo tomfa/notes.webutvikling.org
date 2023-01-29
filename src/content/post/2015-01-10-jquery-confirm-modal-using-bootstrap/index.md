@@ -1,8 +1,8 @@
 ---
-title: 'jquery confirm modal using bootstrap'
+title: "jquery confirm modal using bootstrap"
 pubDate: 2015-01-10
 heroImage: /images/jon-tyson-hhq1Lxtuwd8-unsplash.jpg
-tags: ['guide', bootstrap, jquery, modal]
+tags: ["guide", bootstrap, jquery, modal]
 ---
 
 This little JavaScript snippet lets you easily decide (from another javascript function) to show a confirm-dialog (Bootstrap), and functions to be executed on cancel/confirm.
@@ -22,29 +22,29 @@ This little JavaScript snippet lets you easily decide (from another javascript f
  */
 
 var funkyDialogBox = function (message, confirmCallback, cancelCallback) {
-  var unbind = function () {
-    $('#dataConfirmModal').unbind('hidden.bs.modal', wrapperCancel);
-    $('#dataConfirmOK').unbind();
-  };
-  var wrapperConfirm = function () {
-    if (typeof confirmCallback !== 'undefined') confirmCallback();
-    unbind();
-    $('#dataConfirmModal').modal('hide');
-  };
-  var wrapperCancel = function () {
-    if (typeof cancelCallback !== 'undefined') cancelCallback();
-    unbind();
-  };
-  if (!$('#dataConfirmModal').length) {
-    $('body').append(
-      '<div id="dataConfirmModal" class="modal fade"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true&times;</span></button><h4 class="modal-title">Please Confimt</h4></div><div class="modal-body text-center"><p>Er du sikker?</p></div><div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button><button type="button" id="dataConfirmOK" class="btn btn-primary">Confirm</button></div></div></div></div>'
-    );
-  }
-  unbind();
-  $('#dataConfirmModal').find('.modal-body').text(message);
-  $('#dataConfirmOK').click(wrapperConfirm);
-  $('#dataConfirmModal').modal({ show: true });
-  $('#dataConfirmModal').on('hidden.bs.modal', wrapperCancel);
+	var unbind = function () {
+		$("#dataConfirmModal").unbind("hidden.bs.modal", wrapperCancel);
+		$("#dataConfirmOK").unbind();
+	};
+	var wrapperConfirm = function () {
+		if (typeof confirmCallback !== "undefined") confirmCallback();
+		unbind();
+		$("#dataConfirmModal").modal("hide");
+	};
+	var wrapperCancel = function () {
+		if (typeof cancelCallback !== "undefined") cancelCallback();
+		unbind();
+	};
+	if (!$("#dataConfirmModal").length) {
+		$("body").append(
+			'<div id="dataConfirmModal" class="modal fade"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true&times;</span></button><h4 class="modal-title">Please Confimt</h4></div><div class="modal-body text-center"><p>Er du sikker?</p></div><div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button><button type="button" id="dataConfirmOK" class="btn btn-primary">Confirm</button></div></div></div></div>'
+		);
+	}
+	unbind();
+	$("#dataConfirmModal").find(".modal-body").text(message);
+	$("#dataConfirmOK").click(wrapperConfirm);
+	$("#dataConfirmModal").modal({ show: true });
+	$("#dataConfirmModal").on("hidden.bs.modal", wrapperCancel);
 };
 ```
 

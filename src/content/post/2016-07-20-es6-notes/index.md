@@ -1,5 +1,5 @@
 ---
-title: 'ES6 notes'
+title: "ES6 notes"
 pubDate: 2016-07-20
 heroImage: /images/es6.png
 tags: [es6, intro, javascript]
@@ -10,16 +10,16 @@ A summary of the key takeaways from [CodeSchools "ES2015: The Shape of JavaScrip
 1.  Like in python, ES6 allows for default values in parameters:
 
 ```js
-function say(name = 'Erik') {
-  console.log(name + 'says hi');
+function say(name = "Erik") {
+	console.log(name + "says hi");
 }
 ```
 
 2.  You can enter javascript context in the middle of a string  with `${javascript}`:
 
 ```js
-function sayHi(name = 'Erik') {
-  console.log(`${name} says hi`);
+function sayHi(name = "Erik") {
+	console.log(`${name} says hi`);
 }
 ```
 
@@ -27,25 +27,21 @@ function sayHi(name = 'Erik') {
 
 ```js
 function saySomethingtoSomeone({ toName, fromName, text }) {
-  console.log(`${fromName} says:${toName}, ${text}`);
+	console.log(`${fromName} says:${toName}, ${text}`);
 }
 
 saySomethingtoSomeone({
-  toName: Hans,
-  fromName: Erik,
-  text: 'Hi',
+	toName: Hans,
+	fromName: Erik,
+	text: "Hi",
 });
 ```
 
 4.  You can also assign default values to those parameters:
 
 ```js
-function saySomethingtoSomeone({
-  toName = 'Hans',
-  fromName = 'Erik',
-  text = 'Hi',
-} = {}) {
-  console.log(`${fromName} says:${toName}, ${text}`);
+function saySomethingtoSomeone({ toName = "Hans", fromName = "Erik", text = "Hi" } = {}) {
+	console.log(`${fromName} says:${toName}, ${text}`);
 }
 ```
 
@@ -53,17 +49,17 @@ function saySomethingtoSomeone({
 
 ```js
 function speakTheseWords(speaker, ...words) {
-  for (let i in words) {
-    console.log(`${speaker}: ${words[i]}`);
-  }
+	for (let i in words) {
+		console.log(`${speaker}: ${words[i]}`);
+	}
 }
 
 // OR
 
 function speakTheseWords(speaker, ...words) {
-  words.map(function (word) {
-    console.log(`${speaker}: ${word}`);
-  });
+	words.map(function (word) {
+		console.log(`${speaker}: ${word}`);
+	});
 }
 ```
 
@@ -71,22 +67,22 @@ function speakTheseWords(speaker, ...words) {
 
 ```js
 function speakTheseWords(speaker, ...words) {
-  words.map(word => console.log(`${speaker}: ${word}`));
+	words.map((word) => console.log(`${speaker}: ${word}`));
 }
 ```
 
 7.  **Spread operator** is the opposite of the rest parameter. Instead of bundling up a bunch of individual parameters into an array (rest parameter), it spreads an array into individual parameters.
 
 ```js
-let words = ['I', 'You', 'Love'];
-speakTheseWords('Mother of Dragons', ...words);
+let words = ["I", "You", "Love"];
+speakTheseWords("Mother of Dragons", ...words);
 ```
 
 8.  There's now a **shorthand for initializing objects **where it assumes the values are equal to the local variable with the same name.
 
 ```js
-let face = 'nice';
-let age = '27';
+let face = "nice";
+let age = "27";
 
 // instead of { face: face, age: age };
 let personObject = { face, age };
@@ -118,8 +114,8 @@ let lookAtMe(name, options={}) {
 ```js
 let arr = [15, 12, 1];
 for (let number of arr) {
-  // prints 15, 12, 1
-  console.log(number);
+	// prints 15, 12, 1
+	console.log(number);
 }
 ```
 
@@ -153,19 +149,19 @@ console.log(val);  // prints 1
 14. A new object type **Map** handles some of the issues that could occur in ES5 when using a plain object as a key-value store. Map should be used instead of a plain object for stores when the key is unknown before runtime.
 
 ```js
-let user1 = { cake: 'good', name: 'Huge Jackman' };
-let user2 = { cake: 'meh', name: 'Beef Armstrong' };
+let user1 = { cake: "good", name: "Huge Jackman" };
+let user2 = { cake: "meh", name: "Beef Armstrong" };
 
 let oldStyleBuggyStore = {};
-oldStyleBuggyStore[user1] = 'Winning';
-oldStyleBuggyStore[user2] = 'Losing';
+oldStyleBuggyStore[user1] = "Winning";
+oldStyleBuggyStore[user2] = "Losing";
 
 // Prints 'Losing'
 console.log(oldStyleBuggyStore[user1]);
 
 let newMapType = new Map();
-newMapType.set(user1, 'Winning');
-newMapType.set(user2, 'Losing');
+newMapType.set(user1, "Winning");
+newMapType.set(user2, "Losing");
 
 // prints 'Winning';
 console.log(newMapType.get(user1));
@@ -185,24 +181,24 @@ for [key, value] in map {
 1.  The key-value pairs of Weakmaps will be removed when the object used as key is garbage collected. This is unlike Maps and Objects KV-stores, where the fact that they're in the Map/Object prevents the object from being garbage collected.
 
 ```js
-let tomas = { name: 'Tomas', age: 27 };
+let tomas = { name: "Tomas", age: 27 };
 let memoryEffMap = new WeakMap();
-memoryEffMap.set(tomas, 'fish');
+memoryEffMap.set(tomas, "fish");
 ```
 
 17. **Sets **are similar to Arrays, but only have unique values. So while an array can contain 2 instances of the word 'hat', Sets will only ever contain 0 or 1 instances.
 
 ```js
 let tags = new Set();
-tags.add('fish');
-tags.add('cornbread');
+tags.add("fish");
+tags.add("cornbread");
 ```
 
 18. **Weaksets **are to sets as Weakmap are to maps: the keys may only be Objects, it can not be iterated with **let...of** and it will not prevent garbage collection of its members.
 
 ```js
-let fish = { title: 'fish' };
-let cornbread = { title: 'cornbread' };
+let fish = { title: "fish" };
+let cornbread = { title: "cornbread" };
 
 let weakTags = new WeakSet();
 weakTags.add(fish);
@@ -216,18 +212,18 @@ weakTags.has(fish); // false
 
 ```js
 class Person {
-  constructor(firstName, lastName) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-  }
+	constructor(firstName, lastName) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
 
-  render() {
-    document.body.appendChild(`
+	render() {
+		document.body.appendChild(`
       <li>
         ${this.firstName} ${this.lastName}
       </li>
     `);
-  }
+	}
 }
 ```
 
@@ -235,13 +231,13 @@ class Person {
 
 ```js
 class Animal extends Person {
-  constructor(name, animal, foodToEat) {
-    super(name, `the ${animal}`);
-    this.food = foodToEat;
+	constructor(name, animal, foodToEat) {
+		super(name, `the ${animal}`);
+		this.food = foodToEat;
 
-    // calls render function defined in person.
-    super.render();
-  }
+		// calls render function defined in person.
+		super.render();
+	}
 }
 ```
 
@@ -249,18 +245,18 @@ class Animal extends Person {
 
 ```js
 class Person {
-  constructor(firstName, lastName) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-  }
+	constructor(firstName, lastName) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
 
-  render() {
-    document.body.appendChild(`<li>${this._getRenderText()}</li>`);
-  }
+	render() {
+		document.body.appendChild(`<li>${this._getRenderText()}</li>`);
+	}
 
-  _getRenderText() {
-    return `${this.firstName} ${this.lastName}`;
-  }
+	_getRenderText() {
+		return `${this.firstName} ${this.lastName}`;
+	}
 }
 ```
 
@@ -269,17 +265,17 @@ class Person {
 ```js
 // messagemodule.js
 export function cakeMessage() {
-  console.log('cake');
+	console.log("cake");
 }
 
 export function catMessage() {
-  console.log('MIAAAO');
+	console.log("MIAAAO");
 }
 ```
 
 ```js
 // app.js
-import { cakeMessage, catMessage } from './messagemodule';
+import { cakeMessage, catMessage } from "./messagemodule";
 
 catMessage(); // prints 'MIAAAO'
 ```
@@ -289,13 +285,13 @@ There are several ways of exporting and importing functions. Below, what's expo
 ```js
 // messagemodule2.js
 function cakeMessage() {
-  console.log('cake');
+	console.log("cake");
 }
 function two() {
-  console.log("I'm two years old");
+	console.log("I'm two years old");
 }
 function catMessage() {
-  console.log('MIAAAO');
+	console.log("MIAAAO");
 }
 
 // Note: cakeMessage not exported
@@ -304,7 +300,7 @@ export { two, catMessage };
 
 ```js
 // app2.js – imports everything from module
-import * as msg from './messagemodule2';
+import * as msg from "./messagemodule2";
 
 msg.catMessage();
 ```
@@ -314,13 +310,13 @@ msg.catMessage();
 ```js
 // messagemodule.js
 export default function catMessage() {
-  console.log('MIAAAO');
+	console.log("MIAAAO");
 }
 ```
 
 ```js
 // app.js
-import miao from './messagemodule.js';
+import miao from "./messagemodule.js";
 miao();
 ```
 
@@ -388,27 +384,27 @@ getTasksFromServer()
 
 ```js
 function makeIterable(obj) {
-  obj[Symbol.iterator] = function () {
-    let properties = Object.keys(obj);
-    let count = 0;
-    let isDone = false;
+	obj[Symbol.iterator] = function () {
+		let properties = Object.keys(obj);
+		let count = 0;
+		let isDone = false;
 
-    let next = () => {
-      if (count >= properties.length) {
-        isDone = true;
-      }
-      return { done: isDone, value: obj[properties[count++]] };
-    };
+		let next = () => {
+			if (count >= properties.length) {
+				isDone = true;
+			}
+			return { done: isDone, value: obj[properties[count++]] };
+		};
 
-    return { next };
-  };
+		return { next };
+	};
 }
 
 let cat = { head: 15, tail: 19 };
 makeIterable(cat);
 
 for (let [key, val] of cat) {
-  console.log(`${key}: ${val}`);
+	console.log(`${key}: ${val}`);
 }
 ```
 
@@ -416,14 +412,14 @@ for (let [key, val] of cat) {
 
 ```js
 function* names() {
-  yield 'Tomas';
-  yield 'Hanna';
-  yield 'Cookie Monster';
+	yield "Tomas";
+	yield "Hanna";
+	yield "Cookie Monster";
 }
 
 // used in iteration
 for (let name of names()) {
-  console.log(name);
+	console.log(name);
 }
 
 let names = [...names()];

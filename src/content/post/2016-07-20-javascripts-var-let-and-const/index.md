@@ -1,5 +1,5 @@
 ---
-title: 'Javascripts var, let, and const'
+title: "Javascripts var, let, and const"
 pubDate: 2016-07-20
 heroImage: /images/es6.jpg
 tags: [const, es6, javascript, let, var]

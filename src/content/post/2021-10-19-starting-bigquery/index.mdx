@@ -18,12 +18,12 @@ In short, these are the steps
 - Enable the BigQuery API.
 - Create a service account and download a service account key
 
-
 ## Importing data from Python to a BigQuery table
 
 ### Installing requirements
 
 Install dependencies from the file below by running
+
 ```bash
 # preferably do this in a local virtualenv
 pip install -r requirements.txt
@@ -49,30 +49,33 @@ python bigquery_import.py
 
 `gist:9492ac855ad0095a5e595822d5aada75#bigquery_import.py`
 
-
 ## Selecting, updating and deleting BigQuery data
 
 BigQuery can be [queried with SQL](https://cloud.google.com/bigquery/docs/reference/standard-sql/enabling-standard-sql).
 Queries can be run via an interactive console in the browser, or via libraries as shown below.
 
 ### With interactive console
+
 See [Running interactive queries](https://cloud.google.com/bigquery/docs/running-queries#queries)
 
 The queries are similar to SQL.
 
 For instance, querying data
+
 ```sql
 SELECT * FROM myproject.mydataset.mytable
   WHERE first_name = 'Tomas';
 ```
 
 ...deleting data...
+
 ```sql
 DELETE FROM myproject.mydataset.mytable
   WHERE first_name = 'Tomas';
 ```
 
 ...or updating:
+
 ```sql
 UPDATE myproject.mydataset.mytable
   SET last_name = 'Newname'

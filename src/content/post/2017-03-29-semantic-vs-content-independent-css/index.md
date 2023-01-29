@@ -1,8 +1,8 @@
 ---
-title: 'Stop using semantic class names'
+title: "Stop using semantic class names"
 pubDate: 2017-03-29
 heroImage: /images/Screen-Shot-2017-03-29-at-23.17.34.png
-tags: ['statement', css]
+tags: ["statement", css]
 ---
 
 Say you have a search form in the top right corner of your website, that looks

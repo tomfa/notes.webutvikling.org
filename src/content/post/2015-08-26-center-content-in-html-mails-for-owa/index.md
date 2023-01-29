@@ -1,5 +1,5 @@
 ---
-title: 'Center content in HTML mails for OWA'
+title: "Center content in HTML mails for OWA"
 pubDate: 2015-08-26
 heroImage: /images/onlineprinters-oIpJ8koLx_s-unsplash.jpg
 tags: [guide, email, litmus, outlook, putsmail]
@@ -13,19 +13,19 @@ _Edit: Stop what your doing. It's hurting, I know. Go read [The Easy Way of Send
 
 ```html
 <html>
-  <body>
-    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <td align="center">
-          <table width="600" border="0" cellpadding="0" cellspacing="0">
-            <tr>
-              <td style="text-align: left">ADD ALL YOUR STUFF HERE</td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-    </table>
-  </body>
+	<body>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td align="center">
+					<table width="600" border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td style="text-align: left">ADD ALL YOUR STUFF HERE</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</body>
 </html>
 ```
 

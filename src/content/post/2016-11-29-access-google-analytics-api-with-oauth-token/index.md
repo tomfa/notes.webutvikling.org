@@ -1,8 +1,8 @@
 ---
-title: 'Access Google Analytics API with OAuth token'
+title: "Access Google Analytics API with OAuth token"
 pubDate: 2016-11-29
 heroImage: /images/graphic-1142957_1280.jpg
-tags: ['guide', api, auth, ga, google analytics, java, javascript, jwt]
+tags: ["guide", api, auth, ga, google analytics, java, javascript, jwt]
 ---
 
 Notes on adding a Google Service worker that enables you to query Google Analytics with an access token.

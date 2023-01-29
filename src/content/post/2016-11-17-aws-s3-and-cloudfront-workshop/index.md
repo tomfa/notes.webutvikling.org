@@ -1,5 +1,5 @@
 ---
-title: 'AWS S3 and CloudFront workshop'
+title: "AWS S3 and CloudFront workshop"
 pubDate: 2016-11-17
 heroImage: /images/latency.png
 tags: [aws, cloudfront, performance, react, s3]

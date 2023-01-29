@@ -1,8 +1,8 @@
 ---
-title: 'Using AWS Route 53 and SES to handle DNS and e-mail'
+title: "Using AWS Route 53 and SES to handle DNS and e-mail"
 pubDate: 2016-09-20
 heroImage: /images/mails.png
-tags: ['guide', aws, domain names, email, forwarding, lambda, ses]
+tags: ["guide", aws, domain names, email, forwarding, lambda, ses]
 ---
 
 Some notes on using AWS for handling DNS and e-mail. **Task 1**: example.com, www.example.com should go to some Cloudfront, and api.example.com should go to a Heroku app.

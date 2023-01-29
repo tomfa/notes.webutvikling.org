@@ -1,14 +1,13 @@
 ---
-title: 'Setting up a new developer Macbook'
+title: "Setting up a new developer Macbook"
 pubDate: 2020-06-03
-eImage: 'https://images.unsplash.com/photo-1542393545-10f5cde2c810?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1001&q=80'
+eImage: "https://images.unsplash.com/photo-1542393545-10f5cde2c810?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1001&q=80"
 imageAlt: Laptop on a desk. Photo by Nick Morrison on Unsplash.
-tags: ['guide', 'brew', 'mac', 'tools']
+tags: ["guide", "brew", "mac", "tools"]
 ---
 
 Every ~4 years, I'm getting a new Mac. It has happened a few times now, so I thought I might as well make a setup guide for next time.
 Also, it's interesting to see how many (or few!) things change.
-
 
 ### Install brew
 
@@ -119,8 +118,8 @@ touch .local_profile .zshrc.local
 **[Hide that Dock](https://apple.stackexchange.com/questions/59556/is-there-a-way-to-completely-disable-dock)**
 
 ```
-defaults write com.apple.dock autohide -bool true 
-defaults write com.apple.dock autohide-delay -float 1000 
+defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock autohide-delay -float 1000
 defaults write com.apple.dock no-bouncing -bool TRUE && killall Dock
 ```
 
@@ -133,7 +132,6 @@ defaults write com.apple.dock no-bouncing -bool TRUE && killall Dock
 - Added [terraform](https://www.terraform.io/downloads)
 
 #### Temporary Mac Silicon issues
-
 
 ```bash
 # npm fails at installing npm module sharp (and probably others)

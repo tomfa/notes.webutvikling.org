@@ -1,5 +1,5 @@
 ---
-title: 'React intro notes'
+title: "React intro notes"
 pubDate: 2016-07-04
 heroImage: /images/react.png
 tags: [es6, react, redux]

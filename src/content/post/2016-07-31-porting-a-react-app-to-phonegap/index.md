@@ -1,8 +1,8 @@
 ---
-title: 'Porting a React app to Phonegap'
+title: "Porting a React app to Phonegap"
 pubDate: 2016-07-31
 heroImage: /images/react-app.jpg
-tags: ['guide', cordova, es6, mobile app, phonegap, react]
+tags: ["guide", cordova, es6, mobile app, phonegap, react]
 ---
 
 If you already have a React web app, and consider porting it to a proper phone app, you should consider using [React Native](https://facebook.github.io/react-native/). However, you could also use PhoneGap/Cordova, which is done in a heartbeat:
@@ -23,8 +23,8 @@ If you already have a React web app, and consider porting it to a proper phon
 
     ```html
     <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src \* 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src \*"
+    	http-equiv="Content-Security-Policy"
+    	content="default-src \* 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src \*"
     />
     ```
 
@@ -61,7 +61,6 @@ If you already have a React web app, and consider porting it to a proper phon
 
 9.  At last, make sure any API-calls **inside your original code** goes to that domain name, using the full urls, i.e. _http://api.domain.com (_**not** //api.domain.com or /api/posts)
 10. Compile it to an .apk by installing phonegap with npm and running compile:
-
 
     ```bash
     npm install phonegap -g 

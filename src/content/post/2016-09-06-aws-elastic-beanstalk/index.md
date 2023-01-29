@@ -1,5 +1,5 @@
 ---
-title: 'AWS Elastic Beanstalk'
+title: "AWS Elastic Beanstalk"
 pubDate: 2016-09-06
 heroImage: /images/beans-flatulence_5.jpg
 tags: [aws, beanstalk, opsworks]

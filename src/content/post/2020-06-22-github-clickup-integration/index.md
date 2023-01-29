@@ -1,8 +1,8 @@
 ---
-title: 'Integrate task management with code'
+title: "Integrate task management with code"
 pubDate: 2020-06-22
 heroImage: /images/clickhub.png
-tags: ['guide', 'statement', management, 'ClickUp', 'Github']
+tags: ["guide", "statement", management, "ClickUp", "Github"]
 ---
 
 A small guide on how to use ClickUps integration with Github.

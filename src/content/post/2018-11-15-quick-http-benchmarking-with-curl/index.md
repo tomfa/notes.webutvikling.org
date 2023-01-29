@@ -1,8 +1,8 @@
 ---
-title: 'Quick http benchmarking with curl'
+title: "Quick http benchmarking with curl"
 pubDate: 2018-11-15
 heroImage: /images/chuttersnap-gts_Eh4g1lk-unsplash.jpg
-tags: ['guide', 'tools', bash, performance]
+tags: ["guide", "tools", bash, performance]
 ---
 
 From time to time, I'd like to see how the performance gain/loss was after a code change. Say I've updated locahost:8000/search and I'd like to do 100 http calls to localhost:8000/search?q=fish to see how it performs:

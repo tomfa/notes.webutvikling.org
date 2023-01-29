@@ -3,7 +3,7 @@ title: Typesafe React Redux hooks
 pubDate: 2020-06-28
 heroImage: /images/zyanya-bmo-6Y-4NXkY9G4-unsplash.jpg
 imageAlt: A drawn hook. Photo by Zyanya BMO on Unsplash.
-tags: ['guide', 'react', 'redux']
+tags: ["guide", "react", "redux"]
 ---
 
 Going from `mapStateToProps` and `mapStateToDispatch` to `useDispatch, useSelector` or custom hooks: What's the benefits? Does typing inference work?
@@ -77,23 +77,23 @@ Ok, sweet. Let's add a `tsconfig.json` with e.g. the following contents ([8b76f8
 
 ```json
 {
-  "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react"
-  },
-  "include": ["src"]
+	"compilerOptions": {
+		"target": "es5",
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"allowJs": true,
+		"skipLibCheck": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
+		"module": "esnext",
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"noEmit": true,
+		"jsx": "react"
+	},
+	"include": ["src"]
 }
 ```
 
@@ -127,75 +127,70 @@ Some changes were made to the example code base, primarily to have self containe
 _The connected components can be viewed in the diff [e877b50...6efc2a2](https://github.com/tomfa/redux-hooks/compare/e877b50...6efc2a2)._
 
 ```tsx
-import React from 'react';
-import { RootState } from '../../store';
-import { Dispatch } from 'redux';
-import { connect } from 'react-redux';
+import React from "react";
+import { RootState } from "../../store";
+import { Dispatch } from "redux";
+import { connect } from "react-redux";
 
-import { sendMessage, updateMessage } from '../../store/chat/actions';
-import './ChatInput.css';
+import { sendMessage, updateMessage } from "../../store/chat/actions";
+import "./ChatInput.css";
 
 interface OwnProps {}
 type DispatchProps = ReturnType<typeof mapDispatchToProps>;
 type StateProps = ReturnType<typeof mapStateToProps>;
 type Props = DispatchProps & StateProps & OwnProps;
 
-const ChatInterface: React.FC<Props> = ({
-  user,
-  message,
-  updateMessage,
-  send,
-}) => {
-  const onChange = (event: React.SyntheticEvent<{ value: string }>) => {
-    updateMessage(event.currentTarget.value);
-  };
+const ChatInterface: React.FC<Props> = ({ user, message, updateMessage, send }) => {
+	const onChange = (event: React.SyntheticEvent<{ value: string }>) => {
+		updateMessage(event.currentTarget.value);
+	};
 
-  function keyPress(e: React.KeyboardEvent<any>) {
-    if (e.key === 'Enter') {
-      send({ message, user });
-    }
-  }
+	function keyPress(e: React.KeyboardEvent<any>) {
+		if (e.key === "Enter") {
+			send({ message, user });
+		}
+	}
 
-  function buttonClick(e: React.MouseEvent<any>) {
-    send({ message, user });
-  }
+	function buttonClick(e: React.MouseEvent<any>) {
+		send({ message, user });
+	}
 
-  return (
-    <div className="chat-interface">
-      <h3>User: {user} </h3>
-      <input
-        value={message}
-        onChange={onChange}
-        onKeyPress={keyPress}
-        className="chat-input"
-        placeholder="Type a message..."
-      />
-      <button onClick={buttonClick}>Send</button>
-    </div>
-  );
+	return (
+		<div className="chat-interface">
+			<h3>User: {user} </h3>
+			<input
+				value={message}
+				onChange={onChange}
+				onKeyPress={keyPress}
+				className="chat-input"
+				placeholder="Type a message..."
+			/>
+			<button onClick={buttonClick}>Send</button>
+		</div>
+	);
 };
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  send: ({ message, user }: { message: string; user: string }) =>
-    message &&
-    dispatch(
-      sendMessage({
-        message,
-        user,
-        timestamp: new Date().getTime(),
-      })
-    ),
-  updateMessage: (message: string) => dispatch(updateMessage(message)),
+	send: ({ message, user }: { message: string; user: string }) =>
+		message &&
+		dispatch(
+			sendMessage({
+				message,
+				user,
+				timestamp: new Date().getTime(),
+			})
+		),
+	updateMessage: (message: string) => dispatch(updateMessage(message)),
 });
 
 const mapStateToProps = (state: RootState, ownProps: OwnProps) => ({
-  user: state.system.userName,
-  message: state.chat.messageInput,
+	user: state.system.userName,
+	message: state.chat.messageInput,
 });
 
 export default connect<StateProps, DispatchProps, OwnProps, RootState>(
-  mapStateToProps,
-  mapDispatchToProps
+	mapStateToProps,
+	mapDispatchToProps
 )(ChatInterface);
 ```
 

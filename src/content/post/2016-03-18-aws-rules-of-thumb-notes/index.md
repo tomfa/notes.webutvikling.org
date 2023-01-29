@@ -1,5 +1,5 @@
 ---
-title: 'AWS rules of thumb notes'
+title: "AWS rules of thumb notes"
 pubDate: 2016-03-18
 heroImage: /images/katya-austin-4Vg6ez9jaec-unsplash.jpg
 tags: []

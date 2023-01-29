@@ -1,5 +1,5 @@
 ---
-title: 'Startup workflow toolkit'
+title: "Startup workflow toolkit"
 pubDate: 2016-08-02
 heroImage: /images/startup.jpg
 tags: [freshdesk, github, slack, startup]

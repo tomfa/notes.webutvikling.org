@@ -1,5 +1,5 @@
 ---
-title: 'Always use Exact types in Flow'
+title: "Always use Exact types in Flow"
 pubDate: 2020-05-09
 heroImage: /images/yelling.jpg
 tags: [statement, flow, react, typing]

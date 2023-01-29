@@ -1,8 +1,8 @@
 ---
-title: 'Creating a presentation'
+title: "Creating a presentation"
 pubDate: 2015-10-22
 heroImage: /images/teemu-paananen-bzdhc5b3Bxs-unsplash.jpg
-tags: ['presentation', 'slides.com', 'reveal.js']
+tags: ["presentation", "slides.com", "reveal.js"]
 ---
 
 People still call presentations or slides for powerpoints. That's kind of funny. This could be an anecdote about that, but it's not. I'm about to make some slides, and I wonder what applications to use. So here's some notes instead. I googled around, and liked these two:

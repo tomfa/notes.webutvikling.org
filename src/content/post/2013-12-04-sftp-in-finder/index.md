@@ -1,5 +1,5 @@
 ---
-title: 'SFTP in Finder'
+title: "SFTP in Finder"
 pubDate: 2013-12-04
 heroImage: /images/rodrigo-abreu-lq9PxpwDZUk-unsplash.jpg
 tags: [guide, finder, ftp]

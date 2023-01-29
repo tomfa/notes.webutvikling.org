@@ -1,5 +1,5 @@
 ---
-title: 'bash backup of webserver (FTP and SQL)'
+title: "bash backup of webserver (FTP and SQL)"
 pubDate: 2014-04-02
 heroImage: /images/jc-gellidon-56eqH9opaUU-unsplash.jpg
 tags: [guide, backup, bash, ftp, script, sql, webserver]
@@ -82,4 +82,4 @@ git commit -m "Scheduled backup $DATE"
 
 ### Scheduling
 
-See [cron-tabs](http://notes.webutvikling.org/cron-tabs/ 'Cron tabs: create and delete') on how to set up this file to run every hour/day/week/month.
+See [cron-tabs](http://notes.webutvikling.org/cron-tabs/ "Cron tabs: create and delete") on how to set up this file to run every hour/day/week/month.

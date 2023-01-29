@@ -1,5 +1,5 @@
 ---
-title: 'Cron tabs: create and delete'
+title: "Cron tabs: create and delete"
 pubDate: 2014-02-03
 heroImage: /images/lukas-blazek-UAvYasdkzq8-unsplash.jpg
 tags: [guide, bash, cron, scheduling]

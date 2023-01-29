@@ -20,6 +20,7 @@ For instance, a post has a user (author). But the post typically won't have a "a
 Instead, it may have an author "object" field containing the user id, name and username.
 
 Two good rules of thumb are:
+
 - including all data shown about the author in a render of the Post
 - not including data that change often
 
@@ -44,18 +45,18 @@ import { firestore, doc, updateDoc, deleteField } from "firebase/firestore";
 
 // Add limit() to delete in smaller batches
 const posts = await firestore
-  .collection('posts')
-  // orderBy excludes where draft is missing
-  .orderBy('draft')
-  .get()
+	.collection("posts")
+	// orderBy excludes where draft is missing
+	.orderBy("draft")
+	.get();
 
 let batch = firestore.batch();
 
-posts.docs.forEach(doc => {
-  batch.update(doc.ref, {
-    capital: deleteField()
-  });
-})
+posts.docs.forEach((doc) => {
+	batch.update(doc.ref, {
+		capital: deleteField(),
+	});
+});
 await batch.commit();
 ```
 
@@ -85,6 +86,7 @@ I think this might change in the next few years with services like
 not there yet](/aurora-serverless-is-not-for-your-hobby-project/).
 
 ### Data modeling should match the UI
+
 **Somewhat correct.**
 
 The reason that we denormalize data is to reduce number of reads. We don't know

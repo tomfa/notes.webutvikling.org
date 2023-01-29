@@ -1,8 +1,8 @@
 ---
-title: 'Boto3 - copy, create files + cloudfront invalidations'
+title: "Boto3 - copy, create files + cloudfront invalidations"
 pubDate: 2017-10-31
 heroImage: /images/maksym-kaharlytskyi-Q9y3LRuuxmg-unsplash.jpg
-tags: ['guide', aws, python, s3]
+tags: ["guide", aws, python, s3]
 ---
 
 A 1-2-3 on Python3 boto3 package with my most common operations

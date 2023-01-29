@@ -1,9 +1,8 @@
 ---
-title: 'CSS systems and principles'
+title: "CSS systems and principles"
 pubDate: 2017-03-30
 heroImage: /images/sample.png
-tags:
-  [atomic css, atomic design, bem, css, oocss, pattern lab, smacss]
+tags: [atomic css, atomic design, bem, css, oocss, pattern lab, smacss]
 ---
 
 What's wrong with CSS? How do you write scalable CSS? What's the difference between [SMACSS](https://smacss.com/book/), [BEM](http://getbem.com/introduction/), [OOCSS](https://github.com/stubbornella/oocss/wiki), [SUIT CSS](http://suitcss.github.io/) and [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/)? Here's some _opinionated_ thoughts on the confusing world of CSS.
@@ -79,25 +78,25 @@ Below an example of how you **could use** Atomic Design for a css naming convent
 ```css
 /* organism */
 .o-header {
-  width: 100%;
+	width: 100%;
 }
 
 /* molecule */
 .m-menu {
-  width: 50%;
+	width: 50%;
 }
 
 /* atoms */
 .a-logo {
-  width: 50px;
+	width: 50px;
 }
 .a-menu__item {
-  list-style: none;
+	list-style: none;
 }
 
 /* atom modifier */
 .a-menu__item--active {
-  font-weight: 600;
+	font-weight: 600;
 }
 ```
 
@@ -116,23 +115,23 @@ Below an example of how you **could use** Atomic Design for a css naming convent
 ```css
 /* blocks */
 .header {
-  width: 100%;
+	width: 100%;
 }
 .menu {
-  width: 50%;
+	width: 50%;
 }
 .logo {
-  width: 50px;
+	width: 50px;
 }
 
 /* element */
 .menu__item {
-  list-style: none;
+	list-style: none;
 }
 
 /* element with modifier */
 .menu__item--active {
-  font-weight: 600;
+	font-weight: 600;
 }
 ```
 
@@ -153,10 +152,10 @@ In short, BEM tells you to use 3 different categories of classes. It's quite s
 
 ```css
 .header .search {
-  width: 16.666666666%;
-  color: pink;
-  background-color: green;
-  border: 1px solid black;
+	width: 16.666666666%;
+	color: pink;
+	background-color: green;
+	border: 1px solid black;
 }
 ```
 
@@ -164,13 +163,13 @@ In short, BEM tells you to use 3 different categories of classes. It's quite s
 
 ```css
 .main-theme-skin {
-  color: pink;
-  background-color: green;
-  border: 1px solid black;
+	color: pink;
+	background-color: green;
+	border: 1px solid black;
 }
 
 .col-md-2 {
-  width: 16, 666666666%;
+	width: 16, 666666666%;
 }
 ```
 
@@ -196,23 +195,23 @@ it also have a few extra categorizations of classes:
 ```css
 /* Component */
 .Header {
-  width: 100%;
+	width: 100%;
 }
 .Menu {
-  width: 50%;
+	width: 50%;
 }
 .Logo {
-  width: 50px;
+	width: 50px;
 }
 
 /* Descendant */
 .MenuItem {
-  list-style: none;
+	list-style: none;
 }
 
 /* State */
 .MenuItem.is-active {
-  font-weight: 600;
+	font-weight: 600;
 }
 ```
 
@@ -237,38 +236,38 @@ The naming convention is (as you can see) very similar to BEM. The difference is
 ```css
 /* Base */
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 h1 {
-  font-size: 26px;
+	font-size: 26px;
 }
 
 /* Layout */
 .l-header {
-  width: 100%;
+	width: 100%;
 }
 
 /* Module rules */
 .m-menu {
-  width: 50%;
+	width: 50%;
 }
 .m-logo {
-  width: 50px;
+	width: 50px;
 }
 
 /* Descendant */
 .d-menu-item {
-  list-style: none;
+	list-style: none;
 }
 
 /* State rules */
 .d-menu-item.is-active {
-  font-weight: 600;
+	font-weight: 600;
 }
 
 /* Theme */
 .l-header {
-  background-color: orange;
+	background-color: orange;
 }
 ```
 

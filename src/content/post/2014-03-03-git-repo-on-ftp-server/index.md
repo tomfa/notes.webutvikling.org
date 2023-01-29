@@ -1,5 +1,5 @@
 ---
-title: 'Git repo on FTP-server'
+title: "Git repo on FTP-server"
 pubDate: 2014-03-03
 heroImage: /images/markus-spiske-hL8slYnc-bM-unsplash.jpg
 tags: [guide, ftp, git]

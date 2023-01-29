@@ -1,5 +1,5 @@
 ---
-title: 'Why is Javascript so popular?'
+title: "Why is Javascript so popular?"
 pubDate: 2016-10-13
 tags: []
 draft: true

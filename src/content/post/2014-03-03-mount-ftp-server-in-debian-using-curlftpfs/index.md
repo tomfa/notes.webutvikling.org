@@ -1,5 +1,5 @@
 ---
-title: 'Mount FTP-server in debian using curlftpfs'
+title: "Mount FTP-server in debian using curlftpfs"
 pubDate: 2014-03-03
 heroImage: /images/thomas-jensen-qTEj-KMMq_Q-unsplash.jpg
 tags: [guide, curlftpfs, debian, ftp]

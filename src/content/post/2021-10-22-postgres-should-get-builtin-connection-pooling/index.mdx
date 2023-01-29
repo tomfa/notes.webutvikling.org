@@ -14,7 +14,6 @@ The future is serverless, and Postgres has issues fitting into that.
 2. The slow startup time eliminates Postgres on-demand service.
    You pay for standby capacity instead.
 
-
 ### Connection cost problems
 
 Postgres performance decline rapidly with number of connections.
@@ -27,7 +26,6 @@ has included by default on its database services. Since connection pooling
 is run on separate host, it's not surprising that Digital Ocean charges
 [almost twice the amount](https://www.digitalocean.com/pricing) of e.g.
 [render.com](https://render.com/pricing/#databases) for a minimal database.
-
 
 ### Paying for standby capacity
 
@@ -72,7 +70,6 @@ The result of all this is alternative database services adapted to a serverless
 environment, like [Firestore](https://firebase.google.com/docs/firestore) and [FaunaDB](https://fauna.com/).
 While that's cool and all, I'd really like to keep living in a Postgres world.
 I'm just not sure I can anymore.
-
 
 ## Related
 

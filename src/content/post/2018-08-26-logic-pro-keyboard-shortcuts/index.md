@@ -1,5 +1,5 @@
 ---
-title: 'Logic Pro keyboard shortcuts'
+title: "Logic Pro keyboard shortcuts"
 pubDate: 2018-08-26
 tags: []
 draft: true

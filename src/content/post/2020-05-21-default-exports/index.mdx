@@ -19,11 +19,11 @@ Why do I use default exports?
 ### 1. No brackets on imports!
 
 ```js
-import LandingPage from "./pages/LandingPage"
+import LandingPage from "./pages/LandingPage";
 
 // instead of
 
-import { LandingPage } from "./pages/LandingPage"
+import { LandingPage } from "./pages/LandingPage";
 ```
 
 Nice syntax right? Even better, let me import and rename in one go:
@@ -31,11 +31,11 @@ Nice syntax right? Even better, let me import and rename in one go:
 ### 2. Rename imports in one go!
 
 ```js
-import FrontPage from "./pages/LandingPage"
+import FrontPage from "./pages/LandingPage";
 
 // instead of
 
-import { LandingPage as FrontPage } from "./pages/LandingPage"
+import { LandingPage as FrontPage } from "./pages/LandingPage";
 ```
 
 Neat, huh? Well, you better love it, because that's where the pros end.
@@ -63,16 +63,16 @@ But you'd be wrong, because of the next con.
 
 ```js
 // HomePage.js
-const LandingPage = () => <div>Welcome</div>
-export default LandingPage
+const LandingPage = () => <div>Welcome</div>;
+export default LandingPage;
 
 // App.js
-import HomePage from "./pages/HomePage"
+import HomePage from "./pages/HomePage";
 return (
-  <Wrapper>
-    <HomePage />
-  </Wrapper>
-)
+	<Wrapper>
+		<HomePage />
+	</Wrapper>
+);
 ```
 
 - Going to class "HomePage" would yield no results.
@@ -107,16 +107,16 @@ naming, refactoring requires one additional step per file where it's used.**
 
 ```js
 // LandingPage.js
-const LandingPage = () => <div>Welcome</div>
-export default LandingPage
+const LandingPage = () => <div>Welcome</div>;
+export default LandingPage;
 
 // App.js
-import LandingPage from "./pages/LandingPage"
+import LandingPage from "./pages/LandingPage";
 return (
-  <Wrapper>
-    <LandingPage />
-  </Wrapper>
-)
+	<Wrapper>
+		<LandingPage />
+	</Wrapper>
+);
 ```
 
 > Me: Please rename this class to FrontPage
@@ -129,16 +129,16 @@ Even if your IDE decides to rename default impors, you might have imported it as
 
 ```js
 // FrontPage.js
-const FrontPage = () => <div>Welcome</div>
-export default FrontPage
+const FrontPage = () => <div>Welcome</div>;
+export default FrontPage;
 
 // App.js
-import LandingPage from "./pages/FrontPage"
+import LandingPage from "./pages/FrontPage";
 return (
-  <Wrapper>
-    <LandingPage />
-  </Wrapper>
-)
+	<Wrapper>
+		<LandingPage />
+	</Wrapper>
+);
 ```
 
 ### 5. Code readability suffers
@@ -152,10 +152,10 @@ Isn't it then ironic that it actually decreases code readability?
 
 ```js
 return (
-  <Wrapper>
-    <LandingPage />
-  </Wrapper>
-)
+	<Wrapper>
+		<LandingPage />
+	</Wrapper>
+);
 ```
 
 This line above makes sense. But let's say `LandingPage` was refactored to

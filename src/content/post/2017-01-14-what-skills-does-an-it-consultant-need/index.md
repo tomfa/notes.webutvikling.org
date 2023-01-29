@@ -1,5 +1,5 @@
 ---
-title: 'What skills does an it consultant need?'
+title: "What skills does an it consultant need?"
 pubDate: 2017-01-14
 heroImage: /images/Essential-Skills-Top-10-shutterstock_285431867.png
 tags: [consultancy]

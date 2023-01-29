@@ -1,8 +1,8 @@
 ---
-title: 'Git commits'
+title: "Git commits"
 pubDate: 2020-06-23
-eImage: 'https://unsplash.com/photos/lUaaKCUANVI/download?force=true&w=1920'
-tags: ['guide', 'statement', 'git', 'github']
+eImage: "https://unsplash.com/photos/lUaaKCUANVI/download?force=true&w=1920"
+tags: ["guide", "statement", "git", "github"]
 draft: true
 ---
 

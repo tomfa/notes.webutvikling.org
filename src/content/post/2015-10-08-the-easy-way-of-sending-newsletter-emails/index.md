@@ -1,8 +1,8 @@
 ---
-title: 'Do not design your own newsletter emails!'
+title: "Do not design your own newsletter emails!"
 pubDate: 2015-10-08
 heroImage: /images/erica-steeves-G_lwAp0TF38-unsplash.jpg
-tags: ['statement', email, mailchimp, rant]
+tags: ["statement", email, mailchimp, rant]
 ---
 
 I've been working a bit with automatic emails, newsletter etc. lately. And if there's one thing I have to say, it would be: **FUCK OUTLOOK**.

@@ -1,5 +1,5 @@
 ---
-title: 'Fresh Macbook and a set of neat tools'
+title: "Fresh Macbook and a set of neat tools"
 pubDate: 2015-04-03
 heroImage: /images/patrick-ward-z_dLXnQg0JY-unsplash.jpg
 tags: [tools, mac, software]

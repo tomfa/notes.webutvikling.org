@@ -30,21 +30,23 @@ for different teams.
 I think of dashboards as belonging to one of three categories, each answering their own variant of the question "What's up?".
 
 #### Motivational dashboard: How are we progressing?
+
 A motivational dashboard is ment to give feedback on how you're progressing on the metrics you're caring about (this year/quarter/month).
 This is usually not based on system logs, though it could be.
 
 _Example metric: Successful signup ratio, displayed as a timeline over the last 3 months._
 
 #### High level dashboard: Is everything OK?
+
 A high level dashboard can tell you if something is wrong, or out of the ordinary.
 
 _Example metric: HTTP status 400+ as a percentage of total requests, displayed over the last 1-2 weeks._
 
 #### Detail dashboard: Where is something not OK?
+
 A low level dashboard can let you narrow your search for the causes of something being "wrong".
 
 _Example: List of URLs taking over 1000ms to respond, sorted by request counts over the last 1-2 weeks._
-
 
 ## Suggested metrics
 
@@ -60,7 +62,6 @@ We want to identify which URLs are both commonly used and slow, so we can target
 
 _Which percentiles to choose depends on the nature of your system, but the three above is a good place to start._
 
-
 ### High level: HTTP status >= 400
 
 Having many metrics to pay attention to, can lower the engagement with a dashboard.
@@ -70,7 +71,6 @@ Similarily if you have a lot of metrics – it can become too much and we become
 In an overview dashboard, you can skip 400, 404 and 500, and just show the percentage of requests that are "bad",
 i.e. HTTP status 400 and above. When that number becomes large, a developer can then dive deeper into the numbers to identify
 what kind of 400+ status codes is happening, and where it
-
 
 ### Detail: HTTP status 500
 
@@ -94,7 +94,6 @@ We'll want to identify the sources of these requests, and fix them.
 HTTP status 400 means someone has requested or passed data that doesn't conform to API specifications.
 This can be an API that changed, without the consumer application being updated.
 We want to identify these URLs, the consuming application and fix them.
-
 
 ## Setting it up in Logz.io
 
@@ -235,7 +234,6 @@ Done! The graph shows both traffic count (left axis) and median response time (r
 
 If you go back to the performance dashboard, it's now complete! 🎀
 
-
 ### Creating visualization: HTTP errors
 
 Let's create a visualization for different types of error HTTP status.
@@ -257,7 +255,6 @@ Under Buckets, add a "Split series" sub bucket.
 Click play, and your visualization is done. Add it to your dashboard 📈
 
 _As with other visualizations, note that it may look useless until you have a few days worth of logs._
-
 
 ### Detail data: Identifying slow URLS
 
@@ -283,7 +280,6 @@ Voilla, we got ourselves a table of slow urls. A great place to start if our per
 ![Table visualization](/images/table-vis.png)
 
 I'm sure you now know how to add it to a dashboard 🙌
-
 
 ### Detail data: Identifying HTTP error URLs
 

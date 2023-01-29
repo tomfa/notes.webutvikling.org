@@ -1,9 +1,9 @@
 ---
-title: 'Facebook: Invite all friends to event'
+title: "Facebook: Invite all friends to event"
 pubDate: 2014-02-05
 heroImage: /images/kon-karampelas-HUBofEFQ6CA-unsplash.jpg
 imageAlt: Image by Kon Karampelas on Unsplash
-tags: [guide, 'developer tools', facebook]
+tags: [guide, "developer tools", facebook]
 ---
 
 So you have created an event, and wish to invite all your friends (or all friends in a circle), but don't want to manually click all of them?

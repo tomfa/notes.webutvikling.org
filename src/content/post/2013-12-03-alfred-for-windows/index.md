@@ -1,5 +1,5 @@
 ---
-title: 'Alfred for Windows'
+title: "Alfred for Windows"
 pubDate: 2013-12-03
 heroImage: /images/markus-winkler-afW1hht0NSs-unsplash.jpg
 imageAlt: Image by Markus Winkler on Unsplash

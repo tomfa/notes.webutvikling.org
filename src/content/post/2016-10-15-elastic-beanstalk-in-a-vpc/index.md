@@ -1,8 +1,8 @@
 ---
-title: 'Elastic Beanstalk – In a VPC'
+title: "Elastic Beanstalk – In a VPC"
 pubDate: 2016-10-15
 heroImage: /images/beanstalk.jpg
-tags: ['guide', aws, beanstalk, ec2, elb, loadbalancer, vpc]
+tags: ["guide", aws, beanstalk, ec2, elb, loadbalancer, vpc]
 ---
 
 > "The EC2 instances failed to communicate with AWS Elastic Beanstalk."

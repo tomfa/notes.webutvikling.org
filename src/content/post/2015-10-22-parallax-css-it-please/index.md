@@ -1,8 +1,8 @@
 ---
-title: 'Parallax: solve it with CSS'
+title: "Parallax: solve it with CSS"
 pubDate: 2015-10-22
 heroImage: /images/parallax.png
-tags: ['statement', css]
+tags: ["statement", css]
 ---
 
 Parallax is hot. But in so many implementations, it's not. Because it's implemented shittily.

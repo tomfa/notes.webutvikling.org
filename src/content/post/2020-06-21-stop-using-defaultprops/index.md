@@ -1,8 +1,8 @@
 ---
-title: 'Stop using defaultProps'
+title: "Stop using defaultProps"
 pubDate: 2020-06-21
 heroImage: /images/raphael-biscaldi-5PEy9UraJ5c-unsplash.jpg
-tags: ['statement', 'react', 'javascript']
+tags: ["statement", "react", "javascript"]
 author: tomfaed
 ---
 
@@ -12,11 +12,11 @@ Question of the day:
 
 ```jsx
 // Default values
-const Hand = ({ hand = 'left' }) => <h1>{left}</h1>;
+const Hand = ({ hand = "left" }) => <h1>{left}</h1>;
 
 // Default props
 const Hand = ({ hand }) => <h1>{left}</h1>;
-Hand.defaultProps = { hand: 'left' };
+Hand.defaultProps = { hand: "left" };
 ```
 
 ## TLDR:
@@ -65,14 +65,14 @@ const Hand = ({ hand }) => {
 ```jsx
 // default values: messy method signature
 const Body = ({
-  arm,
-  ear = '2',
-  eye = 'brown',
-  head = 'round',
-  nail = 'polished',
-  toe = 'stubbed',
+	arm,
+	ear = "2",
+	eye = "brown",
+	head = "round",
+	nail = "polished",
+	toe = "stubbed",
 }) => {
-  // ...
+	// ...
 };
 ```
 
@@ -80,15 +80,15 @@ vs
 
 ```jsx
 const Body = ({ arm, ear, eye, head, nail, toe }) => {
-  // ...
+	// ...
 };
 
 Body.defaultProps = {
-  ear: '2',
-  eye: 'brown',
-  head: 'round',
-  nail: 'polished',
-  toe: 'stubbed',
+	ear: "2",
+	eye: "brown",
+	head: "round",
+	nail: "polished",
+	toe: "stubbed",
 };
 ```
 

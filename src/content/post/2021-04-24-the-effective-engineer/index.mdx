@@ -8,25 +8,30 @@ imageAlt: "The Effective Engineer on my sunny balcony ☀️"
 
 The Effective Engineer is a frickin good book. Everyone who works with digital products should read it.
 
-----
+---
 
 Here's a few notes that summarizes what I wanted to keep remembering from it, intertwined with a few thoughts of my own.
-
 
 ## Part 1: Adopting ther right mindsets
 
 ### Have _leverage_ in the back of your mind
+
 Leverage = value produced / time invested. In the back of your mind, ask: Is this a valuable activity? Will that thing take too long? Low pri and quick – let's just do it.
+
 ### Adopt a _growth mindset_
+
 Learn what you need – there's nothing you can't do. Never think that you know everything – even about a single topic.
 
 ### Invest in improving your skills
+
 Learn new hotkeys, even though it may cost you slightly in the short term. What else do you need to learn or do to increase your throughput?
 
 ### Learn on the job
+
 Make sure you learn on the job – don't just _do_ a job.
 
 Questions to consider for evaluating a job:
+
 - What goals does the company have for the next 12 months? Are this something only CXOs know? Do they revolve around expansion, profitability or culture?
 - How do employees learn? Is there onboarding? Mentorship? Is there weekly demos? Talks and conferences?
 - Are there any reviews or retrospects or postmortems after failurs and projects? (Or is it just _"Next!"_)
@@ -37,8 +42,8 @@ Questions to consider for evaluating a job:
 **Learn, learn, learn**. You're responsible for your own learning. Read books, do online courses, request reviews from the harshest critics, say yes to tasks because you _don't_ know how to solve them. Try new things – never stop learning and don't blame your surroundings.
 You don't need anyones approval to learn new things.
 
-
 ### Prioritize
+
 - **Limit work in progress**. _Lean_ will say a lot of clever things about reducing incomplete work, but most important to me is that it gives clarity – The less things in my head, the clearer everything gets.
 - **Plan with implementation intentions**. Don't just say you'll do X. Say you'll do X once Y is shipped. Or on Thursday. It magically improves completion rate.
 - **Focus on important, non-urgent things**. A majority of the time we overemphesize _urgent_ things, leading to systemically underprioritizing important, non-urgent things. Ironically, this is often the root cause of the urgent things we do. So focus more on those non-urgent things.
@@ -51,7 +56,6 @@ You don't need anyones approval to learn new things.
 - **Automate recurring manual work**. ESLint, Prettier, Contiuous integration, automated testing and deployment, monitoring alerts. If you have to do something manually more than twice, then write a tool for the third time (Raffi Kriorian, former VP of Platform Engineering at Twitter).
 - **Shorten debugging cycles**: More generally, shorten feedback loops. How fast you learn depend on how fast someone/something tells you how you're right or wrong.
 - **Measure what you care about**: From performance to convertion, high level or detailed – what do you want to keep in focus? Measure it, and make sure it's a good metric – (See also [Logz.io + Kibana dashboards](/adding-system-metrics-dashboard-to-logz.io/))
-
 
 ### Find good metrics
 
@@ -95,7 +99,6 @@ Lau lists a neat little list of useful measurements to know (here adapted slight
 - **Validate product changes with A/B testing**. Yes, it'll take some time setting up. Yes, it'll be worth it.
 - **Don't be a 1 person team**: Get feedback from others. Commit and push in smaller chunks. Design or plan, and get review before implementing.
 
-
 ### Improve your estimation skills
 
 - **Estimation is usually optimistic**: ["Treat an estimate as the most optimistic prediction that has a non-zero probability of becoming true"](https://www.offerzen.com/blog/estimating-software-projects-time-and-cost-like-a-pro)
@@ -114,13 +117,11 @@ The response that I am most happy with was something ala:
 > Last year we did a project X, which is similar. It took 3 months to set up, and we spent 200k over the initial 6 months.
 > Similary, I think we can launch in 3 months here. This projects can not reuse any of those parts, plus some parts are a bit more complex because of Y and Z. I therefore think 300k is a better estimate for the first 6 months.
 
-
 ### Define goals and milestones
 
 - Goals are often motivating, and can bring a team together
 - Splitting up a projects in parts lets us ship value faster and avoid the potential for it to become a "monster".
 - Having milestones makes it easier to keep your eye on the ball, instead of thinking _"while we're here, shouldn't we also..."_
-
 
 #### Personal mini rant
 
@@ -135,19 +136,17 @@ _Why has this happened?_ This can't be ideal, can it?
 
 - One reason _could_ be that I love house chores, and want to do it more than what's reasonable.
 - Another explaination can be that I don't have managers that care about tech debt – Or that they don't bother,
-since I'm going to take that responsibility anyway.
+  since I'm going to take that responsibility anyway.
 - A third can be that it is my tactic of avoiding the energy it takes to explain why we must clean, and the potential frustration of getting a no.
 - Maybe I'm just not really working in a _team_ team. We work quite (too?) independently, and it's easier for everyone on the "outside" not to be bothered with details.
 
 I think that the last reason might be it, and maybe it actually _is_ ideal (for my current situation)? ... The nice thing about it, is that I can double
 my perceived productivity by ignoring tech debt and maybe adding a bit of overtime when it's really necessary.
 
-
 ### Reduce risk
 
 - **Set up end-to-end scaffold early**: Avoid postponing the risky tasks, by getting the app running early with all the large building blocks.
 - **Don't do large rewrite projects**: Think thrice before deciding to rewrite "everything". If you do, _split it up into several, shippable smaller rewrites_.
-
 
 ### It's a marthon – running should not be normal
 
@@ -164,7 +163,6 @@ I don't know, but expecting employees to work more than 40 hour work weeks is no
 If I work in weekends, I try not mention it or create any PRs – so I don't contribute to it becoming normal.
 And I might be better off taking more personal time outside of work, and get away from the computer more in general?
 
-
 ## Part 3: Build long term value
 
 ### Make a sustainable review process
@@ -174,7 +172,6 @@ And I might be better off taking more personal time outside of work, and get awa
 - **Review extra thoroughly for new employees**: It's not just that new employees have a lower understanding of the systems. They also need to learn your style and standards. Companies have different standards, and culture. It's not that more correct code is always better; high standards also come with a cost. But new employees should be taught our standards so they know what's expected from them.
 - **Higher code quality = more agile**: Trying to make changes in a stinking debt-ridden code area easily takes more than 10x the effort.
 - **Use tests and linters**: Don't make your reviewers responsible for checking that you haven't broken unrelated code, comment on code formatting or consider common pitfalls. Add a ticket reference if applicable and a screenshot if there's UI changes. Be nice to your reviewers ❤️, so they can look for the things that matters most.
-
 
 ### Use good abstractions
 
@@ -186,6 +183,7 @@ but if you keep jumping sideways in abstraction level, your code can become a me
 [Single layer of abstraction principle](http://principles-wiki.net/principles:single_level_of_abstraction) can be helpful by making you think (as a rule of thumb, though not always) that a function call should be towards a lesser abstraction.
 
 According to Lau, good abstractions are:
+
 - Easy to learn
 - Hard to misuse
 - Easy to extend
@@ -223,7 +221,6 @@ Engineers typiically automate less than they should, for a few common reasons:
 
 This is very related to spending time [learning hotkeys](/ide-shortcuts/) – investment today, but pays of dividends in the future.
 
-
 ### Hone your ability to recover quickly
 
 You can move faster, more confidently if you got two things in place:
@@ -252,7 +249,6 @@ And all those I _want_ to work with, are already settled in nice, high paying jo
 - **Make a process out of interviews!**: Make interviews rigorous and _fun_. Pair program on a hobby project. Send in a PR to an open source project. Refactor a self-contained section of the code. But it should be on the candidates turf – their language. It's uncomfortable to _learn_ new things in an interview
 - **Have a live coding session.** It can be as easy as you want. Just let them use their computer. You want to see how someone uses their tools – navigating their IDE, how they use their terminal, git, googling and running programs.
 
-
 ### Formalize an onboarding process
 
 Research Google's EngEDU training program or Facebook's 6-week Bootcamp onboarding. You don't have to invest as much, but training an engineer for a couple of hours a day during their first month gneerates much more organizational impact than spending those same hours working on product.
@@ -261,8 +257,6 @@ Research Google's EngEDU training program or Facebook's 6-week Bootcamp onboardi
 - Have a mentor the first month, working together an hour a day
 - Have them learn or do things that align with your team culture: Set up IDE shortcuts, git aliases, automate something.
 - Organize social events
-
-
 
 ## Summary
 

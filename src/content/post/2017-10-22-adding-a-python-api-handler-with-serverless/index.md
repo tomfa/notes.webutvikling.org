@@ -1,8 +1,8 @@
 ---
-title: 'Adding a python API handler with serverless'
+title: "Adding a python API handler with serverless"
 pubDate: 2017-10-22
 heroImage: /images/allow-200-response.png
-tags: ['guide', api-gateway, aws, lambda, python, serverless]
+tags: ["guide", api-gateway, aws, lambda, python, serverless]
 ---
 
 Create an AWS Lambda function with Python3 and integrate with S3?

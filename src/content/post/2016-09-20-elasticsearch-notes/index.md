@@ -1,5 +1,5 @@
 ---
-title: 'Elasticsearch notes'
+title: "Elasticsearch notes"
 pubDate: 2016-09-20
 tags: [elasticsearch]
 draft: true

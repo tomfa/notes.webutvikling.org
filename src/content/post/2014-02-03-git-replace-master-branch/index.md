@@ -1,5 +1,5 @@
 ---
-title: 'git: Replace master branch'
+title: "git: Replace master branch"
 pubDate: 2014-02-03
 heroImage: /images/simon-berger-Qa2tSHWgh84-unsplash.jpg
 imageAlt: Image by Simon Berger on Unsplash

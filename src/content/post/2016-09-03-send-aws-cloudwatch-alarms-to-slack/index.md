@@ -1,8 +1,8 @@
 ---
-title: 'Send AWS CloudWatch Alarms to Slack'
+title: "Send AWS CloudWatch Alarms to Slack"
 pubDate: 2016-09-03
 heroImage: /images/slack-large.png
-tags: ['guide', monitoring, aws, cloudwatch, lambda, slack]
+tags: ["guide", monitoring, aws, cloudwatch, lambda, slack]
 ---
 
 **I have** a few servers on AWS. Some information on those, e.g. high load, would be nice to be notified of. Preferably on Slack. How do I do that?

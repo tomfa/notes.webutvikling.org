@@ -2,7 +2,7 @@
 title: "No module named '_sqlite3'"
 pubDate: 2014-12-08
 heroImage: /images/tim-gouw-1K9T5YiZ2WU-unsplash.jpg
-tags: ['debugging', django, python, python3, sqlite]
+tags: ["debugging", django, python, python3, sqlite]
 ---
 
 ## TLDR
@@ -15,7 +15,7 @@ sudo apt-get install python-dev
 sudo apt-get install libsqlite3-dev
 ```
 
-And recompile python ([see own post](http://notes.webutvikling.org/darn-installation-of-python-3-4/ 'Darn installation of Python 3.4'))
+And recompile python ([see own post](http://notes.webutvikling.org/darn-installation-of-python-3-4/ "Darn installation of Python 3.4"))
 
 ## Long version
 
@@ -54,6 +54,6 @@ sudo apt-get install libsqlite3-dev
 sudo apt-get install python-dev
 ```
 
-Followed by recompiling python3.4 ([see own post](http://notes.webutvikling.org/darn-installation-of-python-3-4/ 'Darn installation of Python 3.4')), which fixed everything.
+Followed by recompiling python3.4 ([see own post](http://notes.webutvikling.org/darn-installation-of-python-3-4/ "Darn installation of Python 3.4")), which fixed everything.
 
 Finally :D

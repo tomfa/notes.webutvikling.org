@@ -1,8 +1,8 @@
 ---
-title: 'Django autocomplete in (virtualenv) shell'
+title: "Django autocomplete in (virtualenv) shell"
 pubDate: 2015-01-10
 heroImage: /images/joan-you-KFuX5rmAWZ4-unsplash.jpg
-tags: ['guide', autocomplete, bash, django, python, shell]
+tags: ["guide", autocomplete, bash, django, python, shell]
 ---
 
 1. Create a file .pythonrc in `~/.pythonrc`

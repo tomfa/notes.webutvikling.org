@@ -7,7 +7,6 @@ tags: ["guide", "tools", "brew"]
 
 Converting mp4 to gif on can be done with [ffmpeg](https://ffmpeg.org/). On a Mac it can be done from command line with the following script:
 
-
 ```bash
 # Add this to your ~/.bash_profile file
 makeGif() {
@@ -38,6 +37,7 @@ alias giphify=makeGif
 ```
 
 Now you can convert videos with
+
 ```
 giphify my-video.mp4
 ```
@@ -55,13 +55,11 @@ gipify my-video.mp4 24 1080
 
 ### An example
 
-#### Original GIF from giphify (*5.2MB*)
+#### Original GIF from giphify (_5.2MB_)
 
 ![Original gif](https://media.giphy.com/media/DHFUvl7EK111mMKobq/giphy.gif)
 
-
-
-#### Directly compressed GIF (*4.4MB*)
+#### Directly compressed GIF (_4.4MB_)
 
 ![Compressed version of original gif](https://user-images.githubusercontent.com/1502702/95243703-4f219800-0811-11eb-9e61-c0480c0963d4.gif)
 
@@ -69,10 +67,10 @@ gipify my-video.mp4 24 1080
 giphify facemask-original.gif
 ```
 
-#### Quicktime screen capture (*4.1MB .mov*)
+#### Quicktime screen capture (_4.1MB .mov_)
 
 <video width="480" autoplay loop>
-  <source src="/resources/facemask.mov" type="video/mp4" />
+	<source src="/resources/facemask.mov" type="video/mp4" />
 </video>
 
 Mac have a built-in screen capture tool which is quite handy. You with the default hotkey CMD + SHIFT + 5 or by using QuickTime manually.
@@ -80,7 +78,7 @@ Capturing the original gif reduces the file size, but changes the file type to `
 
 _When I create GIFs from features in GitHub PRs, I usually use this, combined with the giphify'ing below._
 
-#### GIF from screen capture (*1.8MB*)
+#### GIF from screen capture (_1.8MB_)
 
 ![mov file converted to lower quality gif](https://user-images.githubusercontent.com/1502702/95243685-49c44d80-0811-11eb-9811-a19bc42bedf5.gif)
 

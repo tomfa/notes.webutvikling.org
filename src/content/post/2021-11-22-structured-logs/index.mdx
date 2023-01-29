@@ -14,12 +14,12 @@ required if you want to use log for anything useful besides local debugging.
 Logging is used to find answers for questions for internal use, unlike most stored files or database data which is
 used to provide features and information to end users.
 
-Logging can give answers to *(by containing)*
+Logging can give answers to _(by containing)_
 
-- Why something is in the state it is *(what was changed, when and by who)*
-- Who has accessed sensitive data *(what was read, when and by who)*
-- How are we progressing on business metrics *(products sold, payment amount, signup, userId, cancellation)*
-- Where are there an issue, and what was the context *(url paths, query params, http status codes, request ids, response time)*
+- Why something is in the state it is _(what was changed, when and by who)_
+- Who has accessed sensitive data _(what was read, when and by who)_
+- How are we progressing on business metrics _(products sold, payment amount, signup, userId, cancellation)_
+- Where are there an issue, and what was the context _(url paths, query params, http status codes, request ids, response time)_
 
 ## Suggested structure
 
@@ -37,10 +37,10 @@ Unlike application logs, HTTPLogs are typically automatically logged on each req
 > User 12345 reads their own medical journal.
 
 ```ts
-Logger.info('Read user journal', {
-  action: 'READ_JOURNAL',
-  value: 'user:12345',
-})
+Logger.info("Read user journal", {
+	action: "READ_JOURNAL",
+	value: "user:12345",
+});
 
 /* Logs
 {
@@ -64,21 +64,21 @@ Logger.info('Read user journal', {
 > User 12345 completes purchase of 2 x Sunscreen 500ml
 
 ```ts
-Logger.info('Purchase completed', {
-   action: 'PURCHASE_COMPLETED',
-   value: order.id,
-   userId: '12345',
-   monetaryValue: 100000,
-})
-productsPurchase.forEach(product =>
-   Logger.info(`'Purchase item ${product.name}'`, {
-      action: 'PURCHASED_ITEM',
-      value: product.id,
-      userId: '12345',
-      quantity: product.quantity,
-      monetaryValue: product.price * product.quantity,
-   })
-)
+Logger.info("Purchase completed", {
+	action: "PURCHASE_COMPLETED",
+	value: order.id,
+	userId: "12345",
+	monetaryValue: 100000,
+});
+productsPurchase.forEach((product) =>
+	Logger.info(`'Purchase item ${product.name}'`, {
+		action: "PURCHASED_ITEM",
+		value: product.id,
+		userId: "12345",
+		quantity: product.quantity,
+		monetaryValue: product.price * product.quantity,
+	})
+);
 
 /* Logs
 {
@@ -178,4 +178,3 @@ Some typical rules of thumbs when setting up support for request ids are:
 - The requestId should be used in all logging that handles the given request.
 
 These rules applies for the communication between the app client and the API, but also between internal APIs.
-

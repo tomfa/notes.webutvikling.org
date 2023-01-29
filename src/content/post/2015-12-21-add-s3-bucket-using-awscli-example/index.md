@@ -1,8 +1,8 @@
 ---
-title: 'Add S3 bucket using awscli (example)'
+title: "Add S3 bucket using awscli (example)"
 pubDate: 2015-12-21
 heroImage: /images/samur-isma-7pSpz7hXox0-unsplash.jpg
-tags: ['guide', aws, awscli, cloudfront, iam, policy, s3]
+tags: ["guide", aws, awscli, cloudfront, iam, policy, s3]
 ---
 
 Here's a simple step by step guide on how to create a s3 bucket, with an attached cloudfront and a user with write access. This is typically what you want if you need quick hosting for static files for you website. This is made in contrast to the [terraform guide](http://notes.webutvikling.org/add-s3-bucket-using-terraform/), which does the same, but using different tools If you haven't already, setup awscli (using [python](https://www.python.org/downloads/) and [pip](https://pip.pypa.io/en/stable/installing/))
@@ -52,11 +52,9 @@ You here have to provide your access key and secret key, which can be found at [
     ```
 10. Again, replace `[[YOUR-BUCKET-NAME]]` with your actual bucket name.
 
-
     ```
     sed 's/\[\[YOUR-BUCKET-NAME\]\]/my-cool-bucket/g' iam-template.json > iam.json
     ```
-
 
 11. Create the user
     ```
@@ -68,11 +66,9 @@ You here have to provide your access key and secret key, which can be found at [
     ```
 13. Attach the iam policy to the user (_policy-arn will be in output from previous command_)
 
-
     ```
     aws iam attach-user-policy --usr-name CoolBucketGuy --policy-arn arn:aws:iam::938109129012:policy/cool-bucket-write
     ```
-
 
 14. You probably want the access and secret key for your user to use somewhere:
     ```bash
