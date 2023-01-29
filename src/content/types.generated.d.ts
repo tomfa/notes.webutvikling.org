@@ -764,9 +764,9 @@ declare module 'astro:content' {
   collection: "post",
   data: InferEntrySchema<"post">
 },
-"2020-06-19-mp4-to-gif/index.mdx": {
-  id: "2020-06-19-mp4-to-gif/index.mdx",
-  slug: "2020-06-19-mp4-to-gif",
+"2020-06-19-mp4-to-gifs/index.mdx": {
+  id: "2020-06-19-mp4-to-gifs/index.mdx",
+  slug: "2020-06-19-mp4-to-gifs",
   body: string,
   collection: "post",
   data: InferEntrySchema<"post">

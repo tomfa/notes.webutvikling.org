@@ -178,7 +178,7 @@ resource "aws_cloudfront_distribution" "prod_distribution" {
 
 ### Profit
 
-Alright, you say, but the config file is quite ugly. So, can we extract the variables out of the mess? Yeah, sure. Replace all the red text above with **${var.test_bucket_name} **instead of `YOUR_TEST_BUCKET_NAME` etc. Then create a **variables.tf,** containing
+Alright, you say, but the config file is quite ugly. So, can we extract the variables out of the mess? Yeah, sure. Replace all the red text above with **`${var.test_bucket_name}` **instead of `YOUR_TEST_BUCKET_NAME` etc. Then create a **variables.tf,** containing
 
 ```yaml
 variable "aws_region" {}

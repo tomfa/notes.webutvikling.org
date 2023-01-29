@@ -1,7 +1,7 @@
 ---
 title: 'Always use Exact types in Flow'
 pubDate: 2020-05-09
-heroImage: /images/yelling.jpeg
+heroImage: /images/yelling.jpg
 tags: [statement, flow, react, typing]
 ---
 
@@ -42,7 +42,7 @@ Props shoulder be typed as a closed object, as not to allow extra parameters to 
 
 ### Example Prop type
 
-```flow
+```typescript jsx
 // Bad
 type Props = { extraFish?: number }
 
@@ -52,7 +52,7 @@ type Props = { extraFish?: number }
 <Box width="100%">  // No error for wrong assumption about component
 ```
 
-```flow
+```typescript jsx
 // Good
 type Props = {| extraFish?: number |}
 
@@ -66,7 +66,7 @@ type Props = {| extraFish?: number |}
 
 That's OK, just type the style props you forward, and reuse that type in your components:
 
-```flow
+```typescript jsx
 type StyleProps = {|
    width: string
    ...
@@ -84,19 +84,19 @@ eslint and [eslint-plugin-flowtype](https://github.com/gajus/eslint-plugin-flowt
 
 ## Enable eslint for exact Flow types
 
-```
+```sh
 yarn add -D eslint-plugin-flowtype
 ```
 
 Add the following rule to your eslint configuration:
 
-```
+```json
 'flowtype/require-exact-type': [2, 'always']
 ```
 
 You can then make types exact with
 
-```
+```sh
 eslint --fix
 ```
 
@@ -104,7 +104,7 @@ eslint --fix
 
 Some times, you might be dealing with inexact props exposed from somewhere outside your code. When you do, you can make them exact by destructuring them into an exact prop.
 
-```flow
+```typescript jsx
 type ExactProps = {| fish: number |};
 type IshProps = { cat: number };
 

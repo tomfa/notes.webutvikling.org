@@ -41,7 +41,7 @@ pip3.4 install pysqlite
 
 That should fix it, yep? Nope.
 
-```ex
+```text
 File "/home/tomas/optimaltrener/env/build/pysqlite/setup.py", line 85
 
 print "Is sphinx installed? If not, try 'sudo easy_install sphinx'."
