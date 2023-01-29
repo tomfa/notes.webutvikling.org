@@ -3,7 +3,7 @@ title: "Monitor-driven development"
 pubDate: 2015-11-04
 heroImage: /images/carlos-muza-hpjSkU2UYSU-unsplash.jpg
 tags: ["monitoring", devops, montoring]
-category: resource
+category: scribble
 ---
 
 Monitor-driven or Metric-driven development (MDD). It's becoming more and more relevant parallell with continuous delivery, devops etc, and I think it's super awesome.

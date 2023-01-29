@@ -4,7 +4,7 @@ pubDate: 2014-02-04
 heroImage: /images/harpal-singh-_zKxPsGOGKg-unsplash.jpg
 imageAlt: Image by Harpal Singh on Unsplash
 tags: [icon]
-category: resource
+category: scribble
 ---
 
 So you want font-icons for your page?

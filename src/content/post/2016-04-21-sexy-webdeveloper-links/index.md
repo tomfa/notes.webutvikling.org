@@ -3,7 +3,7 @@ title: "Awesome webdeveloper links"
 pubDate: 2016-04-21
 heroImage: /images/Screen-Shot-2016-11-26-at-14.00.47.png
 tags: [css]
-category: resource
+category: scribble
 ---
 
 Just a collection of links that allow you to create webpages **faster** or **simpler** or **sexier**.

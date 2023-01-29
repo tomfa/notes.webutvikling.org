@@ -8,7 +8,6 @@ export const POST_CATEGORY = [
 	"question",
 	"scribble",
 	"statement",
-	"resource",
 	"debugging",
 	"book",
 	"idea",
