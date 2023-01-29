@@ -27,4 +27,17 @@ const article = defineCollection({
 	},
 });
 
-export const collections = { post, article };
+const video = defineCollection({
+	schema: {
+		url: z.string().url(),
+		title: z.string().max(60),
+		description: z.string().min(50).max(320),
+		pubDate: z.any().transform((str) => str && new Date(str)),
+		tags: z.array(z.string()).default([]),
+	},
+	slug(entry) {
+		return entry.defaultSlug.split("/")[0]!.substring(11);
+	},
+});
+
+export const collections = { post, article, video };
