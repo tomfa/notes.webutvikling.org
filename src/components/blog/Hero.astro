@@ -3,7 +3,7 @@ import { getFormattedDate } from "@/utils";
 import type { CollectionEntry } from "astro:content";
 
 interface Props {
-	content: CollectionEntry<"post">;
+	content: CollectionEntry<"post"> | CollectionEntry<"link">
 }
 
 const { content } = Astro.props;
@@ -61,3 +61,5 @@ const postDate = getFormattedDate(content.data.pubDate);
 	)
 }
 <p class="mt-8">{content.data.description}</p>
+{content.data.url && <a href={content.data.url} class="link block mt-8">Go to content</a>}
+

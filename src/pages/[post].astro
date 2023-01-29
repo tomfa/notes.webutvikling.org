@@ -6,7 +6,9 @@ import PostLayout from "@/layouts/BlogPost";
 
 export async function getStaticPaths(): Promise<GetStaticPathsResult> {
 	const posts: CollectionEntry<"post">[] = await getCollection("post");
-	const params = posts.map((post) => ({
+	const links: CollectionEntry<"link">[] = await getCollection("link");
+	const all = [...posts, ...links];
+	const params = all.map((post) => ({
 		params: { post: post.slug },
 		props: { post },
 	}));
