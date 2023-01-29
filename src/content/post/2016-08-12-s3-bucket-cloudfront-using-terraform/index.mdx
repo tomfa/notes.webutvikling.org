@@ -5,11 +5,11 @@ heroImage: /images/cloudds.jpg
 tags: ['guide', aws, cloudfront, s3, terraform]
 ---
 
-Case: I have some frontend app that consists of static files, e.g. a React app packed with WebPack. I want to deploy it to S3, with CloudFront in front of it. (Optional) I also want index.html to be rendered when other paths are requested (such as /food/cake-is-best), and for the site to return 200 status instead of 404.
+Case: I have some frontend app that consists of static files, e.g. a React app packed with WebPack. I want to deploy it to S3, with CloudFront in front of it. (Optional) I also want index.html to be rendered when other paths are requested (such as /food/cake-is-best), and for the site to return 200 status instead of 404.
 
-### Setup AWS + terraform
+### Setup AWS + terraform
 
-1.  You [sign up](http://aws.amazon.com/s3/) with Amazon if you haven't already.
+1.  You [sign up](http://aws.amazon.com/s3/) with Amazon if you haven't already.
 
 2.  Create a secret key / access key pair from [here](https://console.aws.amazon.com/iam/home?#security_credential).
 
@@ -17,18 +17,18 @@ Case: I have some frontend app that consists of static files, e.g. a React app 
     ```bash
     ~/bin/terraform/<files>
     ```
-4.  Add the path to your path by adding this line to _~/.bash_profile_
+4.  Add the path to your path by adding this line to _~/.bash_profile_
     ```bash
     export PATH=$PATH:~/bin/terraform
     ```
 
-Alright, that should be it. You can confirm that terraform is setup by typing `terraform` in the terminal. It should respond something that seems sensible.
+Alright, that should be it. You can confirm that terraform is setup by typing `terraform` in the terminal. It should respond something that seems sensible.
 
 ### Short version
 
 _2021 update: Follow the wizard at [ihasabucket.it](https://ihasabucket.it/) to generate terraform files. This supports static pages better, and terraform v0.12+. The code below is written for terraform v0.11-)_
 
-When you have Terraform installed, all you need to do is do the line below. It will prompt you for anything it needs, and set up a buckets on AWS, with Cloudfront caches in front of it to optimize site speed.
+When you have Terraform installed, all you need to do is do the line below. It will prompt you for anything it needs, and set up a buckets on AWS, with Cloudfront caches in front of it to optimize site speed.
 
 ```
 terraform apply github.com/tomfa/terraform-sandbox/s3-webfiles-with-cloudfront
@@ -178,7 +178,7 @@ resource "aws_cloudfront_distribution" "prod_distribution" {
 
 ### Profit
 
-Alright, you say, but the config file is quite ugly. So, can we extract the variables out of the mess? Yeah, sure. Replace all the red text above with **${var.test_bucket_name} **instead of `YOUR_TEST_BUCKET_NAME` etc. Then create a **variables.tf,** containing
+Alright, you say, but the config file is quite ugly. So, can we extract the variables out of the mess? Yeah, sure. Replace all the red text above with **${var.test_bucket_name} **instead of `YOUR_TEST_BUCKET_NAME` etc. Then create a **variables.tf,** containing
 
 ```yaml
 variable "aws_region" {}
@@ -190,7 +190,7 @@ variable "prod_bucket_name" {}
 variable "test_bucket_name" {}
 ```
 
-You will then be prompted for the variables instead of having to change them in s3.tf. You can also configure the answers to these, by adding the following to **terraform.tfvars**
+You will then be prompted for the variables instead of having to change them in s3.tf. You can also configure the answers to these, by adding the following to **terraform.tfvars**
 
 ```yaml
 aws_region = "my-aws_region-value"

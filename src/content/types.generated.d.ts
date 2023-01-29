@@ -134,15 +134,15 @@ declare module 'astro:content' {
   collection: "post",
   data: InferEntrySchema<"post">
 },
-"2014-04-06-clean-code-iii-functions/index.md": {
-  id: "2014-04-06-clean-code-iii-functions/index.md",
+"2014-04-06-clean-code-iii-functions/index.mdx": {
+  id: "2014-04-06-clean-code-iii-functions/index.mdx",
   slug: "2014-04-06-clean-code-iii-functions",
   body: string,
   collection: "post",
   data: InferEntrySchema<"post">
 },
-"2014-06-13-7-ineffective-coding-habits/index.md": {
-  id: "2014-06-13-7-ineffective-coding-habits/index.md",
+"2014-06-13-7-ineffective-coding-habits/index.mdx": {
+  id: "2014-06-13-7-ineffective-coding-habits/index.mdx",
   slug: "2014-06-13-7-ineffective-coding-habits",
   body: string,
   collection: "post",
@@ -162,8 +162,8 @@ declare module 'astro:content' {
   collection: "post",
   data: InferEntrySchema<"post">
 },
-"2014-10-07-building-a-better-bootstrap/index.md": {
-  id: "2014-10-07-building-a-better-bootstrap/index.md",
+"2014-10-07-building-a-better-bootstrap/index.mdx": {
+  id: "2014-10-07-building-a-better-bootstrap/index.mdx",
   slug: "2014-10-07-building-a-better-bootstrap",
   body: string,
   collection: "post",
@@ -281,8 +281,8 @@ declare module 'astro:content' {
   collection: "post",
   data: InferEntrySchema<"post">
 },
-"2015-12-13-add-s3-bucket-using-terraform/index.md": {
-  id: "2015-12-13-add-s3-bucket-using-terraform/index.md",
+"2015-12-13-add-s3-bucket-using-terraform/index.mdx": {
+  id: "2015-12-13-add-s3-bucket-using-terraform/index.mdx",
   slug: "2015-12-13-add-s3-bucket-using-terraform",
   body: string,
   collection: "post",
@@ -323,8 +323,8 @@ declare module 'astro:content' {
   collection: "post",
   data: InferEntrySchema<"post">
 },
-"2016-01-04-chromes-awesome-developer-tools/index.md": {
-  id: "2016-01-04-chromes-awesome-developer-tools/index.md",
+"2016-01-04-chromes-awesome-developer-tools/index.mdx": {
+  id: "2016-01-04-chromes-awesome-developer-tools/index.mdx",
   slug: "2016-01-04-chromes-awesome-developer-tools",
   body: string,
   collection: "post",
@@ -379,8 +379,8 @@ declare module 'astro:content' {
   collection: "post",
   data: InferEntrySchema<"post">
 },
-"2016-07-19-d3-article-combo-ideas/index.md": {
-  id: "2016-07-19-d3-article-combo-ideas/index.md",
+"2016-07-19-d3-article-combo-ideas/index.mdx": {
+  id: "2016-07-19-d3-article-combo-ideas/index.mdx",
   slug: "2016-07-19-d3-article-combo-ideas",
   body: string,
   collection: "post",
@@ -442,8 +442,8 @@ declare module 'astro:content' {
   collection: "post",
   data: InferEntrySchema<"post">
 },
-"2016-08-12-s3-bucket-cloudfront-using-terraform/index.md": {
-  id: "2016-08-12-s3-bucket-cloudfront-using-terraform/index.md",
+"2016-08-12-s3-bucket-cloudfront-using-terraform/index.mdx": {
+  id: "2016-08-12-s3-bucket-cloudfront-using-terraform/index.mdx",
   slug: "2016-08-12-s3-bucket-cloudfront-using-terraform",
   body: string,
   collection: "post",
@@ -540,8 +540,8 @@ declare module 'astro:content' {
   collection: "post",
   data: InferEntrySchema<"post">
 },
-"2016-09-25-graphql/index.md": {
-  id: "2016-09-25-graphql/index.md",
+"2016-09-25-graphql/index.mdx": {
+  id: "2016-09-25-graphql/index.mdx",
   slug: "2016-09-25-graphql",
   body: string,
   collection: "post",
@@ -659,8 +659,8 @@ declare module 'astro:content' {
   collection: "post",
   data: InferEntrySchema<"post">
 },
-"2017-03-31-prettier-javascript/index.md": {
-  id: "2017-03-31-prettier-javascript/index.md",
+"2017-03-31-prettier-javascript/index.mdx": {
+  id: "2017-03-31-prettier-javascript/index.mdx",
   slug: "2017-03-31-prettier-javascript",
   body: string,
   collection: "post",
