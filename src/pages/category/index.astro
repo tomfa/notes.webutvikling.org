@@ -1,0 +1,38 @@
+---
+import PageLayout from "@/layouts/Base";
+import { getUniqueCategoriesWithCount } from "@/utils";
+import { getCollection } from "astro:content";
+
+const allPosts = await getCollection("post");
+const allCategories = getUniqueCategoriesWithCount(allPosts);
+
+const meta = {
+	title: "All categories",
+	description: "All categories from my blogs",
+};
+---
+
+<PageLayout meta={meta}>
+	<h1 class="title mb-6">Categories</h1>
+	<ul class="space-y-4">
+		{
+			Object.entries(allCategories)
+				.sort((a, b) => b[1] - a[1])
+				.map(([category, val]) => (
+					<li class="flex items-center gap-x-2">
+						<a
+							class="link inline-block"
+							href={`/category/${category}`}
+							title={`View posts with the category: ${category}`}
+							rel="prefetch"
+						>
+							&#35;{category}
+						</a>
+						<span class="inline-block">
+							- {val} Post{val > 1 && "s"}
+						</span>
+					</li>
+				))
+		}
+	</ul>
+</PageLayout>

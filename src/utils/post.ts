@@ -14,6 +14,14 @@ export function getUniqueTags(posts: CollectionEntry<"post">[] = []) {
 	return [...uniqueTags];
 }
 
+export function getUniqueCategories(posts: CollectionEntry<"post">[] = []) {
+	const uniqueCategories = new Set<string>();
+	posts.forEach((post) => {
+		uniqueCategories.add(post.data.category.toLowerCase());
+	});
+	return [...uniqueCategories];
+}
+
 export function getUniqueTagsWithCount(posts: CollectionEntry<"post">[] = []): {
 	[key: string]: number;
 } {
@@ -23,5 +31,15 @@ export function getUniqueTagsWithCount(posts: CollectionEntry<"post">[] = []): {
 			runningTags[tag] = (runningTags[tag] || 0) + 1;
 		});
 		return runningTags;
+	}, {});
+}
+
+export function getUniqueCategoriesWithCount(posts: CollectionEntry<"post">[] = []): {
+	[key: string]: number;
+} {
+	return posts.reduce((prev, post) => {
+		const runningCategories: { [key: string]: number } = { ...prev };
+		runningCategories[post.data.category] = (runningCategories[post.data.category] || 0) + 1;
+		return runningCategories;
 	}, {});
 }
