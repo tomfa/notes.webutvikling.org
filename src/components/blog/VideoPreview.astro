@@ -22,7 +22,7 @@ const useLink = !isYouTube && !isVimeo;
 <Element>
 	{
 		useLink && (
-			<a href={post.data.url} class="cactus-link block text-xl line-clamp-1" rel="prefetch">
+			<a href={post.data.url} class="cactus-link block text-xl" rel="prefetch">
 				{post.data.title}
 			</a>
 		)
