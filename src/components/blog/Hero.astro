@@ -1,5 +1,6 @@
 ---
 import { getFormattedDate } from "@/utils";
+import { Image, Picture } from '@astrojs/image/components';
 import type { CollectionEntry } from "astro:content";
 
 interface Props {
@@ -14,7 +15,7 @@ const postDate = getFormattedDate(content.data.pubDate);
 
 {
 	content.data.heroImage && (
-		<img class="mb-2 w-full" src={content.data.heroImage} alt={content.data.imageAlt} />
+		<Image width="493px" height="300px" class="mb-2" src={content.data.heroImage} alt={content.data.imageAlt} />
 	)
 }
 {
