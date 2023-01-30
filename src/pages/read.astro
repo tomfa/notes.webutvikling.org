@@ -10,7 +10,7 @@ const allLinks = await getCollection("link");
 const articles = allLinks.filter((p) => p.data.type === "article");
 const allPosts = await getCollection("post");
 const bookPosts = allPosts.filter((p) => p.data.category === "book");
-const entries = [...articles, ...bookPosts];
+const entries = [...articles, ...bookPosts].filter(p => !p.data.draft || import.meta.env.DEV);
 const entriesByDate = sortMDByDate(entries);
 const uniqueTags = getUniqueTags(entries);
 ---

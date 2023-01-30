@@ -6,7 +6,7 @@ import SocialList from "@/components/SocialList";
 import { getUniqueTags, getUniqueCategories, sortMDByDate } from "@/utils";
 
 const allPosts = await getCollection("post");
-const posts = allPosts.filter(p => p.data.category !== "book");
+const posts = allPosts.filter(p => p.data.category !== "book").filter(p => !p.data.draft || import.meta.env.DEV);
 const allPostsByDate = sortMDByDate(posts);
 const mainTags = [
 	"management",

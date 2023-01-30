@@ -5,7 +5,7 @@ import { getCollection } from "astro:content";
 
 const allPosts = await getCollection("post");
 const allLinks = await getCollection("link");
-const allTags = getUniqueTagsWithCount([...allPosts, ...allLinks]);
+const allTags = getUniqueTagsWithCount([...allPosts, ...allLinks].filter(p => !p.data.draft || import.meta.env.DEV));
 
 const meta = {
 	title: "All Tags",

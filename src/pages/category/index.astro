@@ -4,7 +4,7 @@ import { getUniqueCategoriesWithCount } from "@/utils";
 import { getCollection } from "astro:content";
 
 const allPosts = await getCollection("post");
-const allCategories = getUniqueCategoriesWithCount(allPosts);
+const allCategories = getUniqueCategoriesWithCount(allPosts.filter(p => !p.data.draft || import.meta.env.DEV));
 
 const meta = {
 	title: "All categories",

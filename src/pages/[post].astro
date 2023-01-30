@@ -8,7 +8,7 @@ export async function getStaticPaths(): Promise<GetStaticPathsResult> {
 	const posts: CollectionEntry<"post">[] = await getCollection("post");
 	const links: CollectionEntry<"link">[] = await getCollection("link");
 	const all = [...posts, ...links];
-	const params = all.map((post, i) => ({
+	const params = all.filter(p => !p.data.draft || import.meta.env.DEV).map((post, i) => ({
 		params: { post: post.slug },
 		props: { post, prev: all[i - 1], next: all[i + 1] },
 	}));

@@ -22,6 +22,7 @@ export default defineConfig({
 			theme: "dracula",
 			wrap: true,
 		},
+		drafts: true,
 	},
 	integrations: [
 		mdx({}),

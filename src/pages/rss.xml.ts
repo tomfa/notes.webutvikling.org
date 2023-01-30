@@ -6,7 +6,9 @@ import { sortMDByDate } from "@/utils";
 export const get = async () => {
 	const posts = await getCollection("post");
 	const links = await getCollection("link");
-	const content = sortMDByDate([...links, ...posts]);
+	const content = sortMDByDate(
+		[...links, ...posts].filter((p) => !p.data.draft || import.meta.env.DEV)
+	);
 
 	return rss({
 		title: siteMeta.title,
