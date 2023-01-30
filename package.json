@@ -52,6 +52,7 @@
 		"astro-embed": "^0.2.1",
 		"react": "^18.0.0",
 		"react-dom": "^18.0.0",
+		"react-gist": "^1.2.4",
 		"sharp": "^0.31.3"
 	}
 }

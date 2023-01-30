@@ -5,6 +5,7 @@ heroImage: /images/gbigquery.png
 tags: ["big query", python]
 imageAlt: "Just the logo of Google BigQuery. Stock photos that fit are kind of boring: a spreadsheet, magnifying glass, spreadsheets, binoculars?"
 ---
+import Gist from "../../../components/Gist";
 
 Notes made while using Google BigQuery for the first time. This includes creating my first BigQuery table, importing via python, queries, deletion and altering table schemas.
 
@@ -29,7 +30,8 @@ Install dependencies from the file below by running
 pip install -r requirements.txt
 ```
 
-`gist:9492ac855ad0095a5e595822d5aada75#requirements.txt`
+
+<Gist client:load id="9492ac855ad0095a5e595822d5aada75" file="requirements.txt" />
 
 Now, either paste your downloaded service account json into the file below,
 or export it as an env var ala
@@ -47,7 +49,7 @@ You can then run the file below with
 python bigquery_import.py
 ```
 
-`gist:9492ac855ad0095a5e595822d5aada75#bigquery_import.py`
+<Gist client:load id="9492ac855ad0095a5e595822d5aada75" file="bigquery_import.py" />
 
 ## Selecting, updating and deleting BigQuery data
 
