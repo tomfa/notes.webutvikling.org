@@ -29,19 +29,19 @@ const { Content } = await post.render();
 		(prev || next) && (
 			<div class="pt-20 text-xs flex justify-between">
 				{prev && (
-					<div class="mb-2 flex gap-2">
-						<span class="text-xs">&lt;</span>
+					<div class="mb-2 flex gap-1 flex-col">
+						<span class="text-xs">Previous post</span>
 						<a class="text-xs" href={`/${prev.slug}`}>
 							{prev.data.title}
 						</a>
 					</div>
 				)}
 				{next && (
-					<div class="text-right flex gap-2">
+					<div class="text-right flex gap-1 flex-col">
+						<span class="text-xs">Next Post</span>
 						<a class="text-xs" href={`/${next.slug}`}>
 							{next.data.title}
 						</a>
-						<span class="text-xs">&gt;</span>
 					</div>
 				)}
 			</div>
