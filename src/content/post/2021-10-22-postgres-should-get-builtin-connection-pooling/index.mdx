@@ -15,9 +15,9 @@ The future is serverless, and Postgres has issues fitting into that.
 2. The slow startup time eliminates Postgres on-demand service.
    You pay for standby capacity instead.
 
-### Connection cost problems
+### Performance issue on multiple clients
 
-Postgres performance decline rapidly with number of connections.
+Postgres' performance decline rapidly with number of connections.
 The cost of holding and creating connections is to an extent solvable
 with connection-pooling. Postgres does not have pooling built-in,
 but it can be done with software like [pgBouncer](https://www.pgbouncer.org/).
@@ -28,7 +28,7 @@ is run on separate host, it's not surprising that Digital Ocean charges
 [almost twice the amount](https://www.digitalocean.com/pricing) of e.g.
 [render.com](https://render.com/pricing/#databases) for a minimal database.
 
-### Paying for standby capacity
+### Paying for capacity
 
 Maybe the biggest issue with paying for initial standby capacity is how
 it drives developers away from Postgres and towards other options like
