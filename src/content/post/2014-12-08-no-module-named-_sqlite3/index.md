@@ -16,7 +16,7 @@ sudo apt-get install python-dev
 sudo apt-get install libsqlite3-dev
 ```
 
-And recompile python ([see own post](http://notes.webutvikling.org/darn-installation-of-python-3-4/ "Darn installation of Python 3.4"))
+And recompile python ([see own post](http://notes.webutvikling.org/darn-installation-of-python-3-4/ "Darn installation of Python 3.4"))
 
 ## Long version
 
@@ -48,13 +48,13 @@ File "/home/tomas/optimaltrener/env/build/pysqlite/setup.py", line 85
 print "Is sphinx installed? If not, try 'sudo easy_install sphinx'."
 ```
 
-So the pysqlite does not support Python3+ (since its using that old syntax)? huh. Googling around said Python3+ (and earlier) should already be delivered with an appropriate sqlite3. But that didn't seem to do it. But i found [this](http://stackoverflow.com/questions/26208328/tango-with-django-no-module-named-sqlite3) and [this](http://stackoverflow.com/questions/12572038/whats-wrong-why-python-manage-py-runserver-failed), which lead me to
+So the pysqlite does not support Python3+ (since its using that old syntax)? huh. Googling around said Python3+ (and earlier) should already be delivered with an appropriate sqlite3. But that didn't seem to do it. But i found [this](http://stackoverflow.com/questions/26208328/tango-with-django-no-module-named-sqlite3) and [this](http://stackoverflow.com/questions/12572038/whats-wrong-why-python-manage-py-runserver-failed), which lead me to
 
 ```bash
 sudo apt-get install libsqlite3-dev
-sudo apt-get install python-dev
+sudo apt-get install python-dev
 ```
 
-Followed by recompiling python3.4 ([see own post](http://notes.webutvikling.org/darn-installation-of-python-3-4/ "Darn installation of Python 3.4")), which fixed everything.
+Followed by recompiling python3.4 ([see own post](http://notes.webutvikling.org/darn-installation-of-python-3-4/ "Darn installation of Python 3.4")), which fixed everything.
 
 Finally :D

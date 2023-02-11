@@ -17,7 +17,7 @@ Idet jeg starter å skrive algdat, kommer søkeresultatene opp fortløpende, noe
 
 Etter "alg", foreslår spotlight først "Algiers", som jeg ærlig talt ikke har den fjerneste anelse om hva er. Så jeg åpner den av nysgjerrighet, og finner at dette er en programfil jeg aldri har rørt før. Og her har vi den tredje og siste svakheten: Ved valg mellom mange relaterte treff, prioriteres ikke de som blir brukt.
 
-Programvare skal lære seg å kjenne meg, og vite hva jeg vil, ikke omvendt. Disse tre tingene vil jeg gjøre noe med. Disse tre svakhetene er de *jeg _irriterer meg over, og dersom _jeg _irriterer meg over noe, og vil ha de forbedret, er det garantert mange andre som vil ha det også. Alfred er i mine øyne \_perfekt* for mac, men selv om jeg har forsøkt (se [Alternativesto.com](http://alternativeto.net/software/alfred/)), klarer jeg ikke finne noe som er like perfekt for Windows. Så klarer man å lage det selv?
+Programvare skal lære seg å kjenne meg, og vite hva jeg vil, ikke omvendt. Disse tre tingene vil jeg gjøre noe med. Disse tre svakhetene er de *jeg _irriterer meg over, og dersom _jeg _irriterer meg over noe, og vil ha de forbedret, er det garantert mange andre som vil ha det også. Alfred er i mine øyne \_perfekt* for mac, men selv om jeg har forsøkt (se [Alternativesto.com](http://alternativeto.net/software/alfred/)), klarer jeg ikke finne noe som er like perfekt for Windows. Så klarer man å lage det selv?
 
 ### Fordeler og lærdom
 

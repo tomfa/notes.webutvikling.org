@@ -96,7 +96,7 @@ from django.core.servers.fastcgi import runfastcgi
 runfastcgi(method="threaded", daemonize="false")
 ```
 
-- write the file and set permissions: `chmod 755 projectname.fcgi`
+- write the file and set permissions: `chmod 755 projectname.fcgi`
 - `vim .htaccess` with the following content:
 
 ```

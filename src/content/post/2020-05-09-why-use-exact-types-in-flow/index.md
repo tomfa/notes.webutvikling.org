@@ -31,7 +31,7 @@ code that others have made.
 
 **You thank them for typing** because when you write Button type="", you get Secondary and Primary as options right there.
 
-**You're happy you typed your codebase last yea**r, because when you remove Secondary as a button type, you will be told exactly which 12 callers that you'll have to fix first.
+**You're happy you typed your codebase last yea**r, because when you remove Secondary as a button type, you will be told exactly which 12 callers that you'll have to fix first.
 
 **It's easier to read a difficult methods**, maybe created long ago by people who no longer work here, because you can look at that method in isolation and see exactly what it will be called with and return.
 

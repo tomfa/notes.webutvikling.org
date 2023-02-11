@@ -10,7 +10,7 @@ Notes on adding a Google Service worker that enables you to query Google Analyti
 
 ---
 
-**Create service user and add key file on server side **
+**Create service user and add key file on server side **
 
 #### Step 1: Generate JSON key
 
@@ -25,15 +25,15 @@ Notes on adding a Google Service worker that enables you to query Google Analyti
 9.  Select Analytics API, Other UI and Application data --> What Credentials do I need
 10. Type an account name. Note down the service account ID for later
 11. Role: Project viewer and Project browser
-12. A JSON will be downloaded. Keep this safe – you have the only copy, and it grants you access to your Analytics data
+12. A JSON will be downloaded. Keep this safe – you have the only copy, and it grants you access to your Analytics data
 
 ---
 
-**Allow service user read access to your google analytics**
+**Allow service user read access to your google analytics**
 
 #### Step 2: Give permissions
 
-Add permissions to your google analytics for that service worker. Think of as service worker as a separate account. It will need to be added in your google analytics -> Admin -> User management
+Add permissions to your google analytics for that service worker. Think of as service worker as a separate account. It will need to be added in your google analytics -> Admin -> User management
 
 ---
 
@@ -73,4 +73,4 @@ System.out.println(credential.getAccessToken());
 
 #### Step 4: How to use the access key
 
-Use the Access key to read from your Google Analytics. The API can be explored [here](https://ga-dev-tools.appspot.com/query-explorer/), and you'll see the URL you need to request (and where to put the access key). You can now go ahead and knock yourself out.
+Use the Access key to read from your Google Analytics. The API can be explored [here](https://ga-dev-tools.appspot.com/query-explorer/), and you'll see the URL you need to request (and where to put the access key). You can now go ahead and knock yourself out.

@@ -6,9 +6,9 @@ tags: [aws, python, s3]
 category: guide
 ---
 
-A 1-2-3 on Python3 boto3 package with my most common operations
+A 1-2-3 on Python3 boto3 package with my most common operations
 
-### Copy object between two S3 buckets
+### Copy object between two S3 buckets
 
 ```python
 s3 = boto3.client('s3')
@@ -23,7 +23,7 @@ s3.copy_object(
 )
 ```
 
-### Upload file to S3 bucket
+### Upload file to S3 bucket
 
 ```python
 s3 = boto3.resource('s3')
@@ -41,7 +41,7 @@ bucket.put_object(
 
 ### Create Cloudfront invalidation
 
-Remember `/` before each file name
+Remember `/` before each file name
 
 ```python
 files = ["/index.html"]

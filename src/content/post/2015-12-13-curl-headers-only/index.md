@@ -29,7 +29,7 @@ curl --head -i https://google.com
 # content-length: 0
 ```
 
-**Show headers response** as if you ask from google.com
+**Show headers response** as if you ask from google.com
 
 This might be useful when debugging CORS errors.
 

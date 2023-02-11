@@ -14,7 +14,7 @@ category: guide
 
 ## How:
 
-_Edit: If you're on ES6 with webpack or similar, checkout this [Github Gist](https://gist.github.com/tomfa/fc334a7e69f6289d81168b31ebe76735) instead._
+_Edit: If you're on ES6 with webpack or similar, checkout this [Github Gist](https://gist.github.com/tomfa/fc334a7e69f6289d81168b31ebe76735) instead._
 
 ### 1\. You include google analytics in your page
 

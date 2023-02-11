@@ -6,7 +6,7 @@ tags: [django, redirect, rewrite, urls]
 category: guide
 ---
 
-I changed the MEDIA_URL and STATIC_URL, but wanted the previously used urls "/media/" and "/static/" to rewrite to the new url. It would better be done via your DNS settings, or with an .htaccess file, but can also be done via **urls.py **if your circumstances don't allow the other two.
+I changed the MEDIA_URL and STATIC_URL, but wanted the previously used urls "/media/" and "/static/" to rewrite to the new url. It would better be done via your DNS settings, or with an .htaccess file, but can also be done via **urls.py **if your circumstances don't allow the other two.
 
 ```python
 from django.conf import settings

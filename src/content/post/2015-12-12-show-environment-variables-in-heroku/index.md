@@ -6,7 +6,7 @@ tags: ["heroku"]
 category: guide
 ---
 
-I was looking for **WEB_CONCURRENCY** environment variable on my Django-app. This is used for the number of concurrent webworkers for gunicorn, and is automatically scaled depending on the memory usage of your app.
+I was looking for **WEB_CONCURRENCY** environment variable on my Django-app. This is used for the number of concurrent webworkers for gunicorn, and is automatically scaled depending on the memory usage of your app.
 
 I can do it with the [toolbelt](https://toolbelt.heroku.com/), and the command
 

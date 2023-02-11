@@ -6,7 +6,7 @@ tags: ["python", "twilio", "pushbullet"]
 category: guide
 ---
 
-Sending SMS using [twilio.com](http://twilio.com) is nice, but it also costs money. If you want something free that you can use for your hobby projects, check out [pushbullet.com](https://www.pushbullet.com/). If you sign up (it's free), you can push SMS with the following:
+Sending SMS using [twilio.com](http://twilio.com) is nice, but it also costs money. If you want something free that you can use for your hobby projects, check out [pushbullet.com](https://www.pushbullet.com/). If you sign up (it's free), you can push SMS with the following:
 
 1.  Sign up at [pushbullet.com](https://www.pushbullet.com)
 2.  Get the app

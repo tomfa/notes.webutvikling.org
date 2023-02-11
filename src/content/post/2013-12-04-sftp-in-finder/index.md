@@ -6,13 +6,13 @@ tags: [finder, ftp]
 category: guide
 ---
 
-OK, so here's the thing. I use a Mac and I edit files located on a server somewhere on the Internet. I want to have the files and folders on that server mounted in Finder, so I can easily navigate and edit those files without having to up- and download files manually. Since I don't want everyone listening to be able to read my files, I can't use AFP, SMB or similar. I need something secure.  **I need to mount a SFTP volume through Macs native Finder.** That this isn't supported  natively by OS X is somewhat odd to me, but I accept that from time to time I need a third party program. So what programs are there?
+OK, so here's the thing. I use a Mac and I edit files located on a server somewhere on the Internet. I want to have the files and folders on that server mounted in Finder, so I can easily navigate and edit those files without having to up- and download files manually. Since I don't want everyone listening to be able to read my files, I can't use AFP, SMB or similar. I need something secure.  **I need to mount a SFTP volume through Macs native Finder.** That this isn't supported  natively by OS X is somewhat odd to me, but I accept that from time to time I need a third party program. So what programs are there?
 
-- [MacFUSE](http://code.google.com/p/macfuse/) exists. However, it's out of development since 2008, and now is shit.
-- [FUSE for OSX](http://osxfuse.github.io/) does the trick. However,  it's so slow I almost cry.
+- [MacFUSE](http://code.google.com/p/macfuse/) exists. However, it's out of development since 2008, and now is shit.
+- [FUSE for OSX](http://osxfuse.github.io/) does the trick. However,  it's so slow I almost cry.
 - [Transmit](https://www.panic.com/transmit/) does the trick. It even works at a decent speed. But it costs 34$. Bah.
-- [ExpanDrive](http://www.expandrive.com/expandrive) also does the trick.  But it costs 39.95$.
-- [ForkLift](http://www.binarynights.com/) is a cheaper alternative at 19.99$. It has some other neat tricks as well.
+- [ExpanDrive](http://www.expandrive.com/expandrive) also does the trick.  But it costs 39.95$.
+- [ForkLift](http://www.binarynights.com/) is a cheaper alternative at 19.99$. It has some other neat tricks as well.
 
 ### There is nothing free
 

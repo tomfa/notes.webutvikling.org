@@ -10,7 +10,7 @@ category: guide
 aws s3 website $MY_BUCKET_NAME --index-document index.html
 ```
 
-Note: Your index.html will **not** be rendered when the short s3-path is requested (e.g. bucket.s3.amazonaws.com), only when the full dns is used (e.g.bucket.s3-website.eu-central-1.amazonaws.com/)
+Note: Your index.html will **not** be rendered when the short s3-path is requested (e.g. bucket.s3.amazonaws.com), only when the full dns is used (e.g.bucket.s3-website.eu-central-1.amazonaws.com/)
 
 If that doesn't work, make sure you've fulfilled the prerequisites below.
 

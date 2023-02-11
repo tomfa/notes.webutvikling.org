@@ -6,7 +6,7 @@ tags: ["tools", bash, performance]
 categroy: guide
 ---
 
-From time to time, I'd like to see how the performance gain/loss was after a code change. Say I've updated locahost:8000/search and I'd like to do 100 http calls to localhost:8000/search?q=fish to see how it performs:
+From time to time, I'd like to see how the performance gain/loss was after a code change. Say I've updated locahost:8000/search and I'd like to do 100 http calls to localhost:8000/search?q=fish to see how it performs:
 
 1.  Save the file below as **benchmark.sh**
 

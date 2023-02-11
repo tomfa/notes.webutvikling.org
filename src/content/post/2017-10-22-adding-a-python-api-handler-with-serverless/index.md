@@ -30,8 +30,8 @@ https://gist.github.com/tomfa/7bb519a34262353087a83712539eb6b0
 ### Python Lambda accept file and save to S3
 
 This one is more tricky! We can
-[add an API-Gateway as an S3 proxy](http://docs.aws.amazon.com/apigateway/latest/developerguide/integrating-api-with-aws-services-s3.html)
-, and fire a trigger lambda after the upload. That is probably also the advisable
+[add an API-Gateway as an S3 proxy](http://docs.aws.amazon.com/apigateway/latest/developerguide/integrating-api-with-aws-services-s3.html)
+, and fire a trigger lambda after the upload. That is probably also the advisable
 thing to do. If you persist in going in the wrong direction on this, you can
 end up solving it like this:
 

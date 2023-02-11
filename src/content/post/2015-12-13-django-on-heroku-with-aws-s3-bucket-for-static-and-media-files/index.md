@@ -13,13 +13,13 @@ Case: You want efficient collectstatic and serving of files
 - (optional) You have a non-US S3 bucket.
 - (optional) You use Heroku
 
-_Disclaimer: Have not tested with python 2.7, can't say if it's working there._
+_Disclaimer: Have not tested with python 2.7, can't say if it's working there._
 
 ##### 0\. Add the buckets to Amazon S3
 
-Do this: [How to add an S3 bucket](http://notes.webutvikling.org/add-s3-bucket-using-awscli-example/)
+Do this: [How to add an S3 bucket](http://notes.webutvikling.org/add-s3-bucket-using-awscli-example/)
 
-##### 1\. Add the dependencies
+##### 1\. Add the dependencies
 
 ```
 pip install django-redis-cache==1.6.5
@@ -27,13 +27,13 @@ pip install django-storages-redux==1.3
 pip install Collectfast==0.2.3
 ```
 
-You probably want these added in **your requirements.txt** as well
+You probably want these added in **your requirements.txt** as well
 
 ```
 pip freeze > requirements.txt
 ```
 
-**If you** **do use heroku**, you will need redis-cache as well:
+**If you** **do use heroku**, you will need redis-cache as well:
 
 ```
 heroku plugins:install heroku-redis --app myherokuappname
@@ -41,11 +41,11 @@ heroku plugins:install heroku-redis --app myherokuappname
 
 ##### 2\. Change your settings.py
 
-_Note: These settings file are not an easy example settings, but they're damn awesome. You can naively copy them (replace the red parts) ._
+_Note: These settings file are not an easy example settings, but they're damn awesome. You can naively copy them (replace the red parts) ._
 
-**If you** **do use heroku**, remember to set environment variables on the app dashboard. Required vars are AWS_ACCESS_KEY, S3_BUCKET, AWS_SECRET_KEY and AWS_REGION (e.g. eu-west-1) Also, if you use e.g. CloudFront to front your S3 bucket, you can set the MEDIA_URL and STATIC_URL environment variables to point to these (optional)
+**If you** **do use heroku**, remember to set environment variables on the app dashboard. Required vars are AWS_ACCESS_KEY, S3_BUCKET, AWS_SECRET_KEY and AWS_REGION (e.g. eu-west-1) Also, if you use e.g. CloudFront to front your S3 bucket, you can set the MEDIA_URL and STATIC_URL environment variables to point to these (optional)
 
-**If you don't use heroku,** put your value for these 4 variables in between the ' ' at the end of the line.
+**If you don't use heroku,** put your value for these 4 variables in between the ' ' at the end of the line.
 
 ```python
 AWS_REGION = os.environ.get('AWS_REGION', '')  # e.g. eu-west-1
@@ -106,9 +106,9 @@ CACHES = {
 COLLECTFAST_CACHE = 'collectfast'
 ```
 
-##### 3. Add customstorages file
+##### 3. Add customstorages file
 
-This allows you to have a bucket outside the default US-region. Also it makes sure we can use one bucket for both media and static files. Store this file in the same folder as your settings file (or settings-folder):
+This allows you to have a bucket outside the default US-region. Also it makes sure we can use one bucket for both media and static files. Store this file in the same folder as your settings file (or settings-folder):
 
 ```python
 from django.conf import settings
@@ -144,4 +144,4 @@ class MediaStorage(S3BotoStorage):
 
 #### 4\. Profit!
 
-Note that when you now run collectstatic (or Heroku does it for you), it will take a while. Collectfast utilizes its own cache, stores md5-sums for the collected files and checks them vs your AWS bucket. I think it took ~10 minutes for our ~3000 files. However, it will store these in the specified cache, and be blazingly fast next time :)
+Note that when you now run collectstatic (or Heroku does it for you), it will take a while. Collectfast utilizes its own cache, stores md5-sums for the collected files and checks them vs your AWS bucket. I think it took ~10 minutes for our ~3000 files. However, it will store these in the specified cache, and be blazingly fast next time :)

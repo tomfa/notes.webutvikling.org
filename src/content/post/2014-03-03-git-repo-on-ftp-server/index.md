@@ -6,19 +6,19 @@ tags: [ftp, git]
 category: idea
 ---
 
-Often, you have to deal with limited web hotels that only provide a customly made (and usually poor) administration page, FTP- and SQL-access. **How can you, on **a cheap web hotel,** use git without ssh access?** If you're comfortable giving your git-password and ftp-password to a third party, using [deployhq](http://www.deployhq.com) (guide [here](http://code.tutsplus.com/tutorials/how-to-use-git-with-ftp--net-27610)) is a simple and better alternative than the method below.
+Often, you have to deal with limited web hotels that only provide a customly made (and usually poor) administration page, FTP- and SQL-access. **How can you, on **a cheap web hotel,** use git without ssh access?** If you're comfortable giving your git-password and ftp-password to a third party, using [deployhq](http://www.deployhq.com) (guide [here](http://code.tutsplus.com/tutorials/how-to-use-git-with-ftp--net-27610)) is a simple and better alternative than the method below.
 
 ### Assumptions
 
 Let's call the cheap hotel for _"SimpleHost"_ and your own server/machine for "_MyAwesomeClient"_.
 
-- You have FTP-access to *SimpleHost. *
+- You have FTP-access to *SimpleHost. *
 - You have sudo on _MyAwesomeClient_
 - _MyAwesomeClient_ has git
 
 **Incorrect Step-by-step (How you hope it would've been):**
 
-1.  Connect from MyAwesomeClient to SimpleHost with FTP from the command line.
+1.  Connect from MyAwesomeClient to SimpleHost with FTP from the command line.
 2.  [Mount FTP-server in debian using curlftpfs](http://notes.webutvikling.org/mount-ftp-server-in-debian-using-curlftpfs/)
 3.  Use git as normally.
 

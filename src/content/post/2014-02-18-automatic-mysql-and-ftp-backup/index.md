@@ -14,11 +14,11 @@ category: idea
 
 ### Solution #1: Mover
 
-[Mover](https://mover.io/ "Mover") is a web application that has a very sleek interface. It's.. sweet. Simple. The transitions alone make me happy.  Water is running in my mouth. I wanted this  before I knew what it was. You simply select a source, a destination and (if you want) set up a schedule for it to be run. The source and destination nodes (called Connectors) can be SFTP, FTP, MySQL, Dropbox, Google Drive and more. **It costs money.** A basic account gives 10 GB of free "try-out" transfer, and costs 1$ for every GB after that. For large consumers, it probably has cheaper pricing models. This might say itself, but in order for Mover to schedule a transfer of your files, **you'll have to provide them with the login information** for the connectors you use. And I'm not very keen giving away database, Dropbox and Google passwords.
+[Mover](https://mover.io/ "Mover") is a web application that has a very sleek interface. It's.. sweet. Simple. The transitions alone make me happy.  Water is running in my mouth. I wanted this  before I knew what it was. You simply select a source, a destination and (if you want) set up a schedule for it to be run. The source and destination nodes (called Connectors) can be SFTP, FTP, MySQL, Dropbox, Google Drive and more. **It costs money.** A basic account gives 10 GB of free "try-out" transfer, and costs 1$ for every GB after that. For large consumers, it probably has cheaper pricing models. This might say itself, but in order for Mover to schedule a transfer of your files, **you'll have to provide them with the login information** for the connectors you use. And I'm not very keen giving away database, Dropbox and Google passwords.
 
 ### **Solution #2: Backing up MySQL with automysqlbackup**
 
-[AutoMySQLbackup](http://sourceforge.net/projects/automysqlbackup/) is a very decent script. It allows you to do automatic mysql-backups, even with email notification if that's your thing. It can even **even** send you the sql-backup as an attached file in the e-mail.
+[AutoMySQLbackup](http://sourceforge.net/projects/automysqlbackup/) is a very decent script. It allows you to do automatic mysql-backups, even with email notification if that's your thing. It can even **even** send you the sql-backup as an attached file in the e-mail.
 
 #### Setup automysqlbackup
 
@@ -70,7 +70,7 @@ CONFIG_db_names=( 'table_name1' 'table_name2' )
     ./automysqlbackup '/path/config/myserver.conf'
     ```
 
-Now the backup should be stored within the path you located in CONFIG_backup_dir in the previous step.
+Now the backup should be stored within the path you located in CONFIG_backup_dir in the previous step.
 
 #### Setting up e-mail
 
@@ -95,7 +95,7 @@ This step will make the script send you an e-mail when it's run.
 
 #### Running automysqlbackup regulary
 
-[Set up crontab](http://notes.webutvikling.org/cron-tabs/ "Cron tabs: create and delete") to run the script with parameters for daily at 2AM:
+[Set up crontab](http://notes.webutvikling.org/cron-tabs/ "Cron tabs: create and delete") to run the script with parameters for daily at 2AM:
 
 ```
 crontab -e

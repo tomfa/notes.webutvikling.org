@@ -6,7 +6,7 @@ tags: [awscli, cloudfront, iam, policy, s3]
 category: guide
 ---
 
-Here's a simple step-by-step guide on how to create a s3 bucket, with an attached cloudfront and a user with write access. This is typically what you want if you need quick hosting for static files for you website. This is made in contrast to the [terraform guide](http://notes.webutvikling.org/add-s3-bucket-using-terraform/), which does the same, but using different tools If you haven't already, setup awscli (using [python](https://www.python.org/downloads/) and [pip](https://pip.pypa.io/en/stable/installing/))
+Here's a simple step-by-step guide on how to create a s3 bucket, with an attached cloudfront and a user with write access. This is typically what you want if you need quick hosting for static files for you website. This is made in contrast to the [terraform guide](http://notes.webutvikling.org/add-s3-bucket-using-terraform/), which does the same, but using different tools If you haven't already, setup awscli (using [python](https://www.python.org/downloads/) and [pip](https://pip.pypa.io/en/stable/installing/))
 
 ```
 pip install awscli
@@ -19,7 +19,7 @@ You here have to provide your access key and secret key, which can be found at [
     ```
     aws s3api create-bucket --bucket my-cool-bucket --acl public read --region eu-west-1
     ```
-2.  Get public read policy for bucket
+2.  Get public read policy for bucket
     ```
     curl https://raw.githubusercontent.com/tomfa/aws-policies/master/s3-bucket-public-read.json > s3-template.json
     ```
@@ -47,7 +47,7 @@ You here have to provide your access key and secret key, which can be found at [
     ```
     aws cloudfront create-distribution --distribution-config file://cf.json
     ```
-9.  Get user policy (for write access to your bucket)
+9.  Get user policy (for write access to your bucket)
     ```
     curl https://raw.githubusercontent.com/tomfa/aws-policies/master/iam-bucket-write.json > iam-template.json
     ```

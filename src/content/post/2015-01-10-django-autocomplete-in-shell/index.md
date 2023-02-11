@@ -19,7 +19,7 @@ else:
     readline.parse_and_bind("tab: complete")
 ```
 
-2. Export it by adding this export to your profile file (if you use zsh, append to ~/.zprofile instead)
+2. Export it by adding this export to your profile file (if you use zsh, append to ~/.zprofile instead)
 
 ```bash
 echo "export PYTHONSTARTUP=~/.pythonrc" >> ~/.bash_profile
