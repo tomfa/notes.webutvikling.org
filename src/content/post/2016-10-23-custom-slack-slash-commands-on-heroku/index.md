@@ -1,5 +1,5 @@
 ---
-title: "Custom Slack slash commands (on Heroku)"
+title: "Custom Slack slash commands"
 pubDate: 2016-10-23
 heroImage: /images/slash.jpg
 tags: [chatops, hubot, slack, slash command]

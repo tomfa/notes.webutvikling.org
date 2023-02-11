@@ -1,7 +1,7 @@
 ---
-title: "Django with AWS s3 media files (on Heroku)"
+title: "Django with S3 media files"
 pubDate: 2016-09-20
-tags: [aws, django, pip, python, s3]
+tags: [aws, django, python, s3, heroku]
 category: scribble
 draft: true
 ---
