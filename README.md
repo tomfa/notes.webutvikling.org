@@ -1,11 +1,4 @@
-<div align="center">
-  <img alt="Astro Theme Cactus logo" src="./gh-assets/astro-cactus-logo.png" width="70" />
-</div>
-<h1 align="center">
-  🚀 Astro Theme Cactus 🌵
-</h1>
-
-Astro Theme Cactus is a simple opinionated starter built with the Astro framework. Use it to create an easy-to-use blog or website.
+Blog for [notes.webutvikling.org](https://notes.webutvikling.org)
 
 ## Key Features
 
@@ -21,16 +14,6 @@ Astro Theme Cactus is a simple opinionated starter built with the Astro framewor
 - Shiki code syntax styling
 - Auto-generated [sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/)
 
-## Demo 💻
-
-Check out the [Demo](https://astro-theme-cactus.netlify.app/), hosted on Netlify
-
-## Quick start
-
-[Create a new repo](https://github.com/chrismwilliams/astro-theme-cactus/generate) from this template.
-
-[![Deploy with Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/chrismwilliams/astro-theme-cactus) [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fchrismwilliams%2Fastro-theme-cactus&project-name=astro-theme-cactus)
-
 ## Commands
 
 Replace pnpm with your choice of npm / yarn
@@ -42,6 +25,10 @@ Replace pnpm with your choice of npm / yarn
 | `pnpm build`   | Build your production site to `./dist/`                        |
 | `pnpm preview` | Preview your build locally, before deploying                   |
 | `pnpm sync`    | Generate types based on your config in `src/content/config.ts` |
+
+## Deploy
+
+You just push to `main`, and Github CI will pick it up and deploy it to Github Pages.
 
 ## Configure
 
@@ -64,12 +51,37 @@ Adding a post is a simple as adding your .md(x) file(s) to the `src/content/post
 
 ### Frontmatter
 
+
+#### Type post
+
+A regular type blog post.
+
 | Property (\* required) | Description                                                                                                                                                                       |
-|:-----------------------| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|:-----------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | title \*               | Self explanatory. Used as the text link to the post, the h1 on the posts' page, and the pages title property. Has a max length of 60 chars, set in `src/content/config.ts`        |
-| description \*         | Similar to above, used as the seo description property. Has a min length of 50 and a max length of 160 chars, set in the post schema.                                             |
 | pubDate \*             | Again pretty simple. To change the date format/locale, currently **en-GB**, update/pass the **locale** arg to function **getFormattedDate**, found in `src/utils/date.ts`.        |
+| category \*            | A category of post                                                                                                                                                                |
+| description            | Similar to above, used as the seo description property. Has a min length of 50 and a max length of 160 chars, set in the post schema.                                             |
 | tags                   | Tags are optional with any created post. Any new tag(s) will be shown in `yourdomain.com/posts` + `yourdomain.com/tags`, and generate the page(s) `yourdomain.com/tags/[yourTag]` |
+| heroImage              | Optional URL of a post hero image                                                                                                                                                 |
+| imageAlt               | image description of hero image                                                                                                                                                   |
+| draft                  | set to true to hide from production build                                                                                                                                         |
+
+
+#### Type link
+
+A type of post with no content (only description). Like a link on reddit, but allowing you to write a paragraph.
+
+| Property (\* required) | Description                                                                                                                                                                       |
+|:-----------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| title \*               | Self explanatory. Used as the text link to the post, the h1 on the posts' page, and the pages title property. Has a max length of 60 chars, set in `src/content/config.ts`        |
+| pubDate \*             | Again pretty simple. To change the date format/locale, currently **en-GB**, update/pass the **locale** arg to function **getFormattedDate**, found in `src/utils/date.ts`.        |
+| description \*         | Similar to above, used as the seo description property. Has a min length of 50 and a max length of 160 chars, set in the post schema.                                             |
+| type \*                | A sort of category, `video`, `lib` or `article`.                                                                                                                                  |
+| tags                   | Tags are optional with any created post. Any new tag(s) will be shown in `yourdomain.com/posts` + `yourdomain.com/tags`, and generate the page(s) `yourdomain.com/tags/[yourTag]` |
+| heroImage              | Optional URL of a hero image, not visible atm                                                                                                                                     |
+| imageAlt               | image description of hero image                                                                                                                                                   |
+| draft                  | set to true to hide from production build                                                                                                                                         |
 
 ## Analytics
 
@@ -99,15 +111,9 @@ import { GoogleAnalytics } from 'astro-google-analytics';
 </head>
 ```
 
-## Deploy
-
-[Astro docs](https://docs.astro.build/en/guides/deploy/) has a great section and breakdown of how to deploy your own Astro site on various platforms and their idiosyncrasies.
-
-By default the site will be built (see Commands section above) to a `/dist` directory.
-
 ## Acknowledgment
 
-This theme is inspired by [Hexo Theme Cactus](https://github.com/probberechts/hexo-theme-cactus)
+This blog is based and extended from the [Cactus theme](https://github.com/chrismwilliams/astro-theme-cactus), which in turn was inspired by [Hexo Theme Cactus](https://github.com/probberechts/hexo-theme-cactus)
 
 ## License
 
