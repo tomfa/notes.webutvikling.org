@@ -7,3 +7,4 @@ export {
 	getUniqueTagsWithCount,
 	getUniqueCategoriesWithCount,
 } from "./post";
+export { getVideoData } from "./urls";

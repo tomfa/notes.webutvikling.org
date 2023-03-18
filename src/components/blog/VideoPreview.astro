@@ -1,8 +1,8 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import type { IElement } from "@/data/shared";
-import { getFormattedDate } from "@/utils";
-import { YouTube, Vimeo } from "astro-embed";
+import { getFormattedDate, getVideoData } from "@/utils";
+import { Vimeo, YouTube } from "astro-embed";
 
 interface Props extends IElement {
 	post: CollectionEntry<"video">;
@@ -14,24 +14,23 @@ const { post, as: Element = "div", withDesc = true, withTags = true } = Astro.pr
 const date = new Date(post.data.pubDate || Date.now());
 const datetime = date.toISOString();
 const postDate = getFormattedDate(date, { month: "short" });
-const isYouTube = post.data.url.includes("youtube.com");
-const isVimeo = post.data.url.includes("vimeo.com");
-const useLink = !isYouTube && !isVimeo;
+const { id: videoId, params, provider } = getVideoData(post.data.url);
+const isVideo = !!provider;
 ---
 
 <Element>
 	{
-		useLink && (
+		!isVideo && (
 			<a href={post.data.url} class="cactus-link block text-xl" rel="prefetch">
 				{post.data.title}
 			</a>
 		)
 	}
-	{!useLink && <span class="block text-lg">{post.data.title}</span>}
+	{isVideo && <span class="block text-lg">{post.data.title}</span>}
 </Element>
 <div class="mt-2 w-full">
-	{isYouTube && <YouTube id={post.data.url} />}
-	{isVimeo && <Vimeo id={post.data.url} />}
+	{provider === 'youtube' && <YouTube id={videoId} params={params} />}
+	{provider === 'video'  && <Vimeo id={videoId} />}
 </div>
 
 <div class="align-start mt-1 flex w-full justify-between">
