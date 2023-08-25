@@ -19,14 +19,9 @@ const isVideo = !!provider;
 ---
 
 <Element>
-	{
-		!isVideo && (
-			<a href={post.data.url} class="cactus-link block text-xl" rel="prefetch">
-				{post.data.title}
-			</a>
-		)
-	}
-	{isVideo && <span class="block text-lg">{post.data.title}</span>}
+	<a href={post.data.url} class="cactus-link block text-md" rel="prefetch">
+    {post.data.title}
+  </a>
 </Element>
 <div class="mt-2 w-full">
 	{provider === 'youtube' && <YouTube id={videoId} params={params} />}
@@ -55,4 +50,3 @@ const isVideo = !!provider;
 </div>
 
 {withDesc && <q class="mt-2 block italic">{post.data.description}</q>}
-<div class="mb-12"></div>
