@@ -2,7 +2,6 @@
 import { getCollection } from "astro:content";
 import PageLayout from "@/layouts/Base";
 import PostPreview from "@/components/blog/PostPreview";
-import SocialList from "@/components/SocialList";
 import { getUniqueTags, getUniqueCategories, sortMDByDate } from "@/utils";
 import ArticlePreview from "../components/blog/ArticlePreview.astro";
 import VideoPreview from "../components/blog/VideoPreview.astro";
@@ -49,16 +48,18 @@ const uniqueCategories = getUniqueCategories(posts);
           {
             allPostsByDate.map((p) => (
               <li class="flex flex-wrap items-center gap-x-2 [&_q]:w-full">
-                {p.type === 'post' && <PostPreview post={p} as="h2" />}
-                {p.type === 'link' && p.data.type === "article" && p.data.url && (
-                  <ArticlePreview post={p} as="h2" withDesc />
-                )}
-                {p.type === 'link' && p.data.type === "article" && !p.data.url && (
-                  <PostPreview post={p} as="h2" />
-                )}
-                {p.type === 'link' && p.data.type === "video" && (
-                  <VideoPreview post={p} as="h2" withDesc />
-                )}
+                {p.type === 'post' && <PostPreview post={p} as="h2" />
+                  || p.type === 'link' && p.data.type === "video" && (
+                    <VideoPreview post={p} as="h2" withDesc />
+                  )
+                  || p.data.url && (
+                    <ArticlePreview post={p} as="h2" withDesc />
+                  )
+                  || !p.data.url && (
+                    <PostPreview post={p} as="h2" />
+                  )
+                  || <p>&apos;{p.slug}&apos; is not rendered</p>
+                }
 
               </li>
             ))
