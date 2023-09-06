@@ -1,7 +1,6 @@
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import tailwind from "@astrojs/tailwind";
-import image from "@astrojs/image";
 import sitemap from "@astrojs/sitemap";
 import prefetch from "@astrojs/prefetch";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -14,9 +13,6 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
 	site: "https://notes.webutvikling.org",
-	experimental: {
-		contentCollections: true,
-	},
 	markdown: {
 		shikiConfig: {
 			theme: "dracula",
@@ -25,18 +21,13 @@ export default defineConfig({
 		drafts: true,
 	},
 	integrations: [
-		mdx({}),
+    embeds(),
+		mdx(),
+    sitemap(),
 		tailwind({
-			config: {
 				applyBaseStyles: false,
-			},
 		}),
-		image({
-			serviceEntryPoint: "@astrojs/image/sharp",
-		}),
-		sitemap(),
 		prefetch(),
 		react(),
-		embeds(),
 	],
 });

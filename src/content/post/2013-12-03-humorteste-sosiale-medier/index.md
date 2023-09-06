@@ -2,6 +2,7 @@
 title: "Humørteste sosiale medier"
 pubDate: 2013-12-03
 heroImage: /images/mark-adriane-muS2RraYRuQ-unsplash.jpg
+imageAlt: "Can this be it?"
 tags: [ai, api, twitter]
 category: idea
 ---
