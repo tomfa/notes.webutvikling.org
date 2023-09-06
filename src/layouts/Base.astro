@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
 import type { SiteMeta } from "@/data/siteMeta";
 import BaseHead from "@/components/BaseHead";
 import Header from "@/components/layout/Header";
@@ -49,7 +50,11 @@ const {
 
 			// initailse root class attribute
 			root.classList.toggle("dark", isDark);
+      document.addEventListener('astro:after-swap', () => {
+        root.classList.toggle("dark", getThemePreference() === "dark");
+      });
 		</script>
+    <ViewTransitions />
 	</head>
 	<body>
 		<SkipLink />
