@@ -12,7 +12,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
 	const allPostsByDate = sortMDByDate(allPosts);
 	const uniqueCategories = getUniqueCategories(allPostsByDate);
 
-	return uniqueCategories.map((category) => {
+	return uniqueCategories.flatMap((category) => {
 		const filterPosts = allPostsByDate.filter((post) => post.data.category === category);
 		return paginate(filterPosts, {
 			params: { category },
