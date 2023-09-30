@@ -1,0 +1,51 @@
+---
+title: "Nginx - why would I use it?"
+pubDate: 2023-09-30
+heroImage: /images/taylor-vick-M5tzZtFCOfs-unsplash.jpg
+tags: [nginx, infrastructure]
+imageAlt: "Photo by Taylor Vick on Unsplash. There's some generic servers and cables on the image. Lighting is dark and mystic."
+---
+
+I talked to a consultant that suggested using nginx for serving our express applications (running in own pods in kubernetes). I didn't quite understand why, but since it was a sidenote I didn't inquiry to why (or have the confidence to do so).
+
+_So what's Nginx really?_
+
+### A reverse proxy
+
+[A reverse proxy](https://www.nginx.com/blog/reverse-proxy-using-nginx-plus/) accepts requests from the internet and routes it to the server that should reply. Like a bastion host, it can then be a signle point of security breaches, so it may be hardened, while other servers can "relax" internally.
+
+In other words, Nginx can be exposed to the internet so your services don't have to.
+
+_Comment: Cool. We don't really need that however, as we already use Apollo Router as our functioning reverse proxy._
+
+### A load balancer
+
+Nginx can also be set up to do a [round-robin or weighted load balancing](https://www.nginx.com/resources/glossary/round-robin-load-balancing/), handling having multiple servers with a shared responsibility and endpoint. It can do health checks against your servers to determine if they're still capable of handling new requests.
+
+_Comment: Nice, but isn't that already handled well as we use Kubernetes?_
+
+### HTTPS termination
+
+Nginx can be [handle HTTPS termination](https://docs.nginx.com/nginx/admin-guide/security-controls/terminating-ssl-http/) for your website.
+
+_Comment: Neat. We have an AWS ELB that does this though._
+
+### Serving static files
+
+Nginx can serve your [static files](https://docs.nginx.com/nginx/admin-guide/web-server/serving-static-content/), such as HTML/JS, images.
+
+_Comment: Solid, but we run a NextJS app on Vercel. Media uploaded files are served from S3._
+
+### Serve video streams
+[Stream video](https://www.nginx.com/blog/video-streaming-for-remote-learning-with-nginx/) to users is also a part of Nginx's capabilities.
+
+_Comment: Fancy, but we don't do that. And we still got S3._
+
+## Summary
+
+Nginx seems great. I'm still in the blue on our motivation for using it, and why the consultant wound recommend it. I'll ask next time, I'm sure there some Kubernetes + Nginx interplay I don't understand yet, like the [Nginx Ingress Controller](https://docs.nginx.com/nginx-ingress-controller/intro/overview/).
+
+
+
+
+
