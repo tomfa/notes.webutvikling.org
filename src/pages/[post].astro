@@ -4,14 +4,28 @@ import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 import BlogPost from "@/layouts/BlogPost";
 
+
 export async function getStaticPaths(): Promise<GetStaticPathsResult> {
 	const posts: CollectionEntry<"post">[] = await getCollection("post");
 	const links: CollectionEntry<"link">[] = await getCollection("link");
 	const all = [...posts, ...links];
-	const params = all.filter(p => !p.data.draft || import.meta.env.DEV).map((post, i) => ({
-		params: { post: post.slug },
-		props: { post, prev: all[i - 1], next: all[i + 1] },
-	}));
+  const isPublishable = (post: CollectionEntry<"post">) => !post.data.draft || import.meta.env.DEV;
+	const params = all.filter(isPublishable).flatMap((post, i) => {
+    const slug = post.slug.match(/^\d{4}\-\d{2}\-\d{2}\-/) ? post.slug.substring(11) : post.slug;
+    const param = [
+      {
+        params: { post: slug },
+        props: { post, prev: all[i - 1], next: all[i + 1] },
+      },
+    ];
+    if (slug !== post.slug) {
+      param.push({
+        params: { post: post.slug },
+        props: { post, prev: all[i - 1], next: all[i + 1], redirect: slug },
+      });
+    }
+    return param
+  });
 	return params;
 }
 
@@ -19,9 +33,15 @@ interface Props {
 	post: CollectionEntry<"post">;
 }
 
-const { post, prev, next } = Astro.props;
+const { post, prev, next, redirect } = Astro.props;
 const { Content } = await post.render();
 ---
+{redirect ? (
+<meta
+  http-equiv="refresh"
+  content={ `0; url=/${ redirect }` }
+/>
+  ) : null}
 
 <BlogPost post={post}>
 	<Content />
