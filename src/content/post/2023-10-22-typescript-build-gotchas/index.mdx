@@ -1,0 +1,181 @@
+---
+title: "Turborepo: TypeScript gotchas"
+pubDate: 2023-10-22
+heroImage: /images/typescript.png
+tags: [turbo, turborepo, typescript, tsc]
+imageAlt: "A TypeScript logo. I was intending to combine it with a Turbo logo, but then I realized it was time to go to bed."
+---
+
+Let's say we have a tsconfig that specifies `src` folder as input and `dist` folder as output.
+What are the differences between `tsc`, `tsc --build` and `tsc --incremental`, which package.json scripts do I use, and how would we cache using `turbo.json`?
+
+### Setup
+
+```json5
+// tsconfig.json
+{
+  // ...
+  "include": ["src"],
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "src"
+  }
+}
+```
+
+```json5
+// package.json
+{
+  // ...
+  "scripts": {
+    // ⬇️ We'll get back to why later
+    "build": "tsc",
+    "dev:build": "tsc --incremental",
+    "dev": "concurrently -n compile,run \"tsc --incremental --watch\" \"nodemon dist/index.js --watch dist\"",
+  }
+}
+```
+
+## tsc
+`tsc` will simply look through our `src` folder, and compile output to `dist` folder.
+If there exists any typescript errors, it will fail and report it.
+
+Running `tsc` is "safe", but it can get slow to do after a while – especially in a larger project.
+
+### --noEmit
+[`--noEmit`](https://www.typescriptlang.org/tsconfig#noEmit) will run the same
+typechecking, but not output any compiled `js`/`.d.ts` files.
+
+We can use that in a monorepo if we have packages that NextJS transpiles itself.
+
+### -b or --build option
+[`-b` or `--build`](https://www.typescriptlang.org/docs/handbook/compiler-options.html) will skip building any files that are "up to date".
+
+There's a huge gotcha with this: "up to date" seems to be based on time stamps
+(though it's not found in the documentation, instead see [#46661](https://github.com/microsoft/TypeScript/issues/46661))
+on files. This can be unreliable, especially when combined with external tooling
+like `turbo`. You may then end up with successful builds even when there exists a
+type error in the input file.
+
+### --incremental
+[`--incremental`](https://www.typescriptlang.org/tsconfig#incremental) will run like `tsc` the first time, but also create a
+`.tsbuildinfo` with hashes of input files.
+
+When running `--incremental` the second time, it'll hash input files and compare
+them with the stored version to see if it needs recompiling.
+If the file has changed since last build, it will be recompiled.
+
+Unlike `-b` or `--build`, `--incremental` will catch type errors, even if you've built before.
+
+There's a different gotcha here though. It assumes that the `.tsbuildinfo` file is in sync with the `build` folder.
+Test this by running `tsc --incremental`, then delete the `dist` folder. It won't reappear after running `tsc --incremental` again.
+
+### --watch
+[`--watch`](https://www.typescriptlang.org/tsconfig#watch) will watch our `src` folder for changes, and recompile any files that changes.
+
+It consists of an initial build phase, followed by a watch phase.
+The watch phase recompiles any file in `src`, on change. While the initial build can be affected with `--build` or `--incremental`, but it won't affect the watch phase.
+
+### Which should I use?
+#### Production (and CI)
+When building for production, correctness is more important than speed.
+`tsc` without any extra args, avoids assuming that `.tsbuildinfo` is in sync
+with the `dist` folder, and not attempting to skip any files.
+
+I'd therefore run `tsc` in production, same for CI.
+
+#### Local build
+When building locally, speed being more important than correctness.
+
+I'd therefore run `tsc --incremental` when building locally + add `tsconfig.tsbuildinfo`
+to `.gitignore` to prevent it affecting other environments (where code might not yet exists in output folder).
+
+#### Local development
+While coding, we'll frequent updates in a single file at a time. We want
+to catch type errors as soon as possible, but correctness is not vital.
+
+I'd therefore run `tsc --incremental --watch` in development.
+
+_Note: There's some gotchas here if you end up combining `tsc --incremental`
+in some, but not all tasks: `tsconfig.tsbuildinfo` will quickly become invalid._
+
+## tsc + turbo
+When we add [turbo](https://turbo.build/) caching to our project, we must specify
+which files are considered inputs and outputs. This is done in `turbo.json`.
+
+```json5
+// turbo.json
+{ "pipeline": {
+    // ...
+    "build": {
+      // Depend on build script in any other packages
+      "dependsOn": ["^build"],
+      // Not specifying inputs will default to any
+      //   file in app folder. One may also want to
+      //   optimize this, by only relevant files, e.g.
+      //   inputs: [
+      //     "src",
+      //     "tsconfig.json",
+      //     "package.json"
+      //   ]
+      "outputs": [
+        "dist/**",
+        ".next/**",
+        "!.next/cache/**"
+      ]
+    },
+    "dev:build": {
+      "dependsOn": ["^dev:build"],
+      "outputs": [
+        "dist/**",
+        ".next/**",
+        "!.next/cache/**",
+        "tsconfig.tsbuildinfo"
+      ]
+    },
+    // New script, see updated package below
+    "dev:watch": {
+      "cache": false
+    }
+} }
+```
+
+We also make an update of our `package.json` scripts:
+
+```json5
+// package.json
+{
+  // ...
+  "scripts": {
+    "build": "tsc",
+    "dev:build": "tsc --incremental",
+    // This was our old dev command
+    "dev:watch": "concurrently -n compile,run \"tsc --incremental --watch\" \"nodemon dist/index.js --watch dist\"",
+
+    // In a mono repo, you can simply move the
+    // dev-command below to the root package.json
+    //
+    // Sidenote: we run dev:build first to prevent
+    // nodemon restarts due to incremental build updates
+    "dev": "turbo run dev:build && turbo run dev:watch --parallel",
+  }
+}
+```
+
+**🎉 TADA! We're now ready to run `dev` and just program.**
+
+## Conclusion
+Caching is hard.
+
+### Sidenote: Why an own dev:build script?
+You may ask: _Why not use `dev:build` as the `build` script?_
+
+That's a totally reasonable question! It should work just fine for CI and production too.
+A benefit of doing that (in combination with external cache), would be cache hits
+on CI due to the commands having been run locally first.
+
+I prefer to have them separate though. By doing that, I can specify different
+`dependsOn` jobs for each that optimizes for speed locally and correctness on CI.
+In the examples above however, it shouldn't really matter.
+
+
