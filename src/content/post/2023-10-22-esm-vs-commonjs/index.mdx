@@ -1,0 +1,82 @@
+---
+title: "ESM vs CommonJS"
+pubDate: 2023-09-20
+heroImage: ./images/imports.jpg
+tags: [javascript, esm, commonjs]
+imageAlt: "An illustration of imports of physical good. Open qustion: can you tree-shake a cargo ship? "
+---
+
+This is a topic I've been postponing to understand forever. What is what and why should I care as a web-developer.
+
+> What's the syntax difference?
+
+```ts
+// commonjs
+const { readFile } = require("fs");
+
+// esm
+import { readFile } from "fs";
+```
+
+> So I guess I use esm today?
+
+Hmm, not so fast. We, like many others, write our code with the `esm` import syntax, but our code is still being transpiled to `commonjs` by `typescript`.
+This is a setting in our `tsconfig.json`
+
+> So I don't need to care
+
+Well, maybe you should. If you use `commonjs`, you may have noticed some issues when installing the latest version of `node-fetch`? That's because `node-fetch` is now using `esm` and you're using `commonjs`.
+
+> Why can't I use `commonjs` while `node-fetch` uses `esm`?
+
+Because `commonjs` does not support import of `esm` modules.
+`esm` however, does support import of `commonjs` modules.
+
+> So I don't have to care anymore if I use `esm`?
+
+Right, spot on!
+
+> But things work today. Is there any other benefits I gain by changing to `esm`?
+
+- Better interoperability with `node-fetch` and other `esm` modules. This benefit will only increase over time.
+- [Top-level await](https://nodejs.org/api/esm.html#top-level-await)
+- [Better tree-shaking](https://blog.logrocket.com/tree-shaking-and-code-splitting-in-webpack/)
+
+> And downsides?
+
+If you're developing packages for others to consume, you might annoy `commonjs` consumers by publishing an `esm` package. 
+`node-fetch` published [this esm/commonjs FAQ](https://github.com/node-fetch/node-fetch/issues/1279) as a response to all the questions after they transitioned to esm.
+
+I believe a main difference being `esm` modules are imported asyncronously on use, while `commonjs` are imported sync immediately. 
+If that's correct, you could argue commonjs to be more suitable serverside?
+
+> Ok, lets go. How do I start using `esm`?
+
+Follow [this guide](https://github.com/node-fetch/node-fetch/issues/1279#issuecomment-915062146)
+
+[In NextJS](https://nextjs.org/docs/pages/api-reference/next-config-js), rename `next.config.js` to `next.config.mjs`.
+
+> My imports are not working anymore. What's up with that?
+
+You need to add the file extension to your imports. So instead of `import { fish } from "rod"` you need to write `import { fish } from "rod.js"`.
+
+There's a codemod for that, [cjs2esm](https://homer0.github.io/cjs2esm/):
+
+```
+npx cjs2esm
+```
+
+> __dirname and __filename are not defined anymore. What's up with that?
+
+`__dirname` and `__filename` are not defined in `esm`. You can use `import.meta.url` instead, like in the example below;
+
+```ts
+import * as url from 'url';
+const __filename = url.fileURLToPath(import.meta.url);
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+```
+
+> Is life better now?
+
+Probably. You should check your apps bundle size before and after to see.
+
