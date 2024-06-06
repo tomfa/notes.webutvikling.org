@@ -1,0 +1,180 @@
+---
+title: "Manager: I am worried about dev speed"
+pubDate: 2024-06-06
+heroImage: /images/jason-hafso-56kt2kToZV4-unsplash.jpg
+tags: [management, rant, trust]
+imageAlt: "Screetch! One bird talking to another, who looks away unfathomed. Image by Jason Hafso from Unsplash."
+---
+
+> "I am worried about the development speed", the manager said.
+
+This post won't be about dev speed. It will be about trust. A lot can be said (and I have opinions there too) about dev speed and how to increase it. I'll keep it short.
+
+## Grunt work speed
+Painting a house is grunt work. There's not much thinking, almost just doing.
+
+> Move the ladder. Paint the wall. Move the ladder. Paint the wall. Repeat.
+
+There's some ways of making it go faster<sup>1</sup>
+- One coat is enough.
+- Use a ladder, don't bother with scaffolding<sup>2</sup> or harness.
+- Skip tape, some paint on the windows is fine.
+- Don't wait for shade to get a better result, but live with the imperfections that come with painting in sunshine.
+
+<small className={'block'}><sup>1</sup> Not that I necessarily recommend them.</small>
+<small className={'block'}><sup>2</sup> Depending on your equipment, skills and height of house, scaffolding may be quicker. But that's besides the point.</small>
+
+## Development speed
+
+Development is not grunt work. It's problem-solving – thinking work. Finding use-cases and empathizing with the user. It's understanding a complex problem or system, and breaking it down in simpler parts.
+
+The speed in development comes from great tools, few features, clear direction, trust and a well rested, motivated head.
+
+And there's some quick ways of making it go faster<sup>1</sup>:
+- Sleep well. Tired brain programs backwards.
+- Reduce the scope of the task.
+- Avoid (most) meetings. If it's important, the information will reach you.
+- Don't solve for edge cases. Let users report missing needs instead<sup>2</sup>
+- Don't QA edge cases. Let users report bugs instead<sup>2</sup>
+
+
+<small className={'block'}><sup>1</sup> Not that I always recommend them. There's also a lot I don't cover here: using efficient tools, increasing trust and autonomy of the team, having high degree of automation, being on a greenfield project – but those aren't quick fixes.</small>
+<small className={'block'}><sup>2</sup> There's of course a balance to this. It may make you slower in the long run. If the consequences of missing those edge cases causes a lot of work, it may even make you slower short-term.</small>
+
+## Trust
+
+> Saying "I am worried about the development speed", is destructive to speed.
+
+By itself, that's a statement that indirectly saying "I think you're slow" and implies one or more of...
+
+* "I don't trust that you put in the hours"
+* "I don't trust you to know your tools"
+* "I don't trust you've built a good project setup"
+* "I don't trust you know which things matter"
+
+And that's a problem, because trust is the foundation of an autonomous, motivated, high-performing team.
+Alone, this statement is likely to erode trust, motivation and mental clarity – at worst even sleep.
+
+## How to constructively talk about speed
+
+It's not wrong to talk about speed. It can be warranted, and it can be quite useful to bring up.
+
+So how can it be done constructively?
+
+### Make sure it's not you
+
+Rather than blurting out "I am worried about _you_", ask yourself first it's maybe about _you_?
+Worrying about speed is a typical stress response, and it's easy to project that onto others.
+
+If you don't think that's it, ask someone in the team if they feel the same way. If
+you're unable to find a single person on the team that thinks speed is an issue, you may want to reframe the problem. It's very hard to change a team (or person) that doesn't see the problem, even if it's real. Perhaps it's about re-prioritization rather than velocity.
+
+### Give context
+
+Give context to why speed is important _now_.
+Is it because of a deadline? Are we running out of cash?
+
+Speed _now_, makes speed slow down _later_, just like an investment (reduced speed) now can increase speed later.
+Make sure the team knows that you are aware of that.
+
+### What trade-off should be made?
+
+"Just be faster" is not a real option. The closest thing to "everything, faster, now" is overtime work, but you'll have to pay that back with interests<sup>1</sup>.
+
+Unless that's your situation, you'll have to figure out what trade-off should be made.
+What should we have focus on, and what can we let slide?
+
+Maybe there's a quarterly report or money-raising event that makes inbound sales extra important the next 3 months.
+A result from that could be to implement some campaigns asap, while postponing that shiny insurance feature.
+
+<small className={'block'}> <sup>1</sup> I believe overtime work might work in a short period, but has to be followed by vacation/reduced work very quickly. Or else, dev brains melt and work halts even more.</small>
+
+### Consider investing in future speed
+
+Is there nothing pressing, no real deadline, no real cash-flow problem, but more
+of a nagging feeling that things are slow?
+
+Then consider investing in future speed, by asking the team:
+> What can we do in a month to ensure we are faster in 3 months?
+
+Let them ponder this question while working for a week or two, then workshop it out.
+
+<details>
+  <summary>_Possible velocity improvements_</summary>
+
+  Below are some suggestions of things that, in my experience, can give velocity to developers.
+
+  **Autogenerated API clients**
+
+  Time spent writing out JSON parsing, data validation and re-typing of fields in frontend/backend is such a waste of time. The time spent identifying and fixing bugs related to this is also a soul drain.
+
+  Invest in having autogenerated internal API clients, for instance [TRPC](https://trpc.io/), [GraphQL Code Generator](https://the-guild.dev/graphql/codegen/), or [OpenAPI Generator](https://openapi-generator.tech/).
+
+  **End-to-end type safety**
+
+  Similarly to autogenerated API clients, having end-to-end type safety can save a lot of time.
+  For instance, [Prisma](https://www.prisma.io/) can generate types for your database.
+
+  **A good form library**
+
+  Forms are always 10x more complex than I first imagined.
+
+  [React Hook Form](https://react-hook-form.com/) is one of the great ones out there.
+
+  **Component library**
+
+  A component library can save a lot of time, especially if it's well-documented and has a good API.
+
+  I am impressed with the component selection of [shadcn](https://ui.shadcn.com/), and use it with every new project.
+  [Storybook](https://storybook.js.org/) is also a great way to document them with examples. This reduces the time developers wonder "what was the proper way to create an error dialog again". _But_ avoid overengineering the setup.
+
+  **Use Tailwind (and popular libs in general)**
+
+  [Tailwind](https://tailwindcss.com/) will take some investment to learn, but it's f-ing awesome.
+
+  - Your knowledge is transferable between projects (and languages!).
+  - Great IDE support for e.g. editor preview of the included CSS for class.
+  - Emmet support for className makes for faster typing.
+
+  The benefits of selecting a popular tool (like Tailwind) has the benefits of
+  being battle-tested, large community/online resources, well-integrated with
+  other tools.
+
+  **Learn your editor**
+
+  Knowing your tools is important, but some things require an investment of time that
+  not everyone _give themselves time_ to learn at work.
+
+  Here's some tips on getting started:
+
+  - Use [multiple cursors](https://code.visualstudio.com/docs/getstarted/tips-and-tricks#_multi-cursor-selection) while solving your next task.
+  - Disallow yourself to use the mouse in the editor for 1 week (except for finding shortcuts/changing keyboard setting).
+  - [Add 3 snippets for](https://code.visualstudio.com/docs/getstarted/tips-and-tricks#_snippets)
+  - Set up and solve 1 bug by using the [debugger](https://code.visualstudio.com/docs/getstarted/tips-and-tricks#_debugging)
+
+  **Autoformatting and linting**
+
+  Never should a developer:
+  - discuss how many spaces should be in a tab
+  - doubt on the placement of curly braces
+  - consider which quotes to use
+  - wonder if they have indented correctly
+  - [reorder imports](https://www.npmjs.com/package/eslint-plugin-import)
+
+  [Prettier](https://prettier.io/) and [ESLint](https://eslint.org/) can help with that.
+
+  Spend time setting up a good config, with automated fixes on save.
+  CI should check that the code is formatted correctly on PRs.
+
+  **Reduce meetings**
+
+  How can we be more aligned and effective, but with less meetings?
+
+  For a company, consider a simple version of OKRs, and letting teams be self-reliant / autonomous.
+
+  For a team, consider a daily standup in Slack (rather than in person) and read a [book](https://basecamp.com/books) on how to decide/spec/design work they way they feel motivate for.
+
+</details>
+
+
+
