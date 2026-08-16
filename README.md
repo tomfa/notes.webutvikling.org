@@ -63,7 +63,7 @@ A regular type blog post.
 | category \*            | A category of post                                                                                                                                                                |
 | description            | Similar to above, used as the seo description property. Has a min length of 50 and a max length of 160 chars, set in the post schema.                                             |
 | tags                   | Tags are optional with any created post. Any new tag(s) will be shown in `yourdomain.com/posts` + `yourdomain.com/tags`, and generate the page(s) `yourdomain.com/tags/[yourTag]` |
-| heroImage              | Optional URL of a post hero image                                                                                                                                                 |
+| heroImage              | Optional hero image: a local path (`/images/…`), an Unsplash photo page (`https://unsplash.com/photos/…`), or an `images.unsplash.com` URL                                        |
 | imageAlt               | image description of hero image                                                                                                                                                   |
 | draft                  | set to true to hide from production build                                                                                                                                         |
 

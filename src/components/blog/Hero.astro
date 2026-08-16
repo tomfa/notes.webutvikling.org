@@ -1,5 +1,5 @@
 ---
-import { getFormattedDate } from "@/utils";
+import { getFormattedDate, isRemoteImageSrc, resolveHeroImage } from "@/utils";
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from "astro:content";
 
@@ -11,11 +11,20 @@ const { content } = Astro.props;
 
 const datetime = (content.data.pubDate || new Date()).toISOString();
 const postDate = getFormattedDate(content.data.pubDate);
+const heroImage = content.data.heroImage
+	? await resolveHeroImage(content.data.heroImage)
+	: undefined;
+const imageAlt = content.data.imageAlt || 'A decorative, semi-related stock photo that adds less value than this comment.';
 ---
 
 {
-	content.data.heroImage && (
-		<Image width="493" height="300" class="mb-2" src={content.data.heroImage} alt={content.data.imageAlt || 'A decorative, semi-related stock photo that adds less value than this comment.'} />
+	heroImage && isRemoteImageSrc(heroImage) && (
+		<img width="493" height="300" class="mb-2 w-full object-cover" src={heroImage} alt={imageAlt} />
+	)
+}
+{
+	heroImage && !isRemoteImageSrc(heroImage) && (
+		<Image width="493" height="300" class="mb-2" src={heroImage} alt={imageAlt} />
 	)
 }
 {

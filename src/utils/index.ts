@@ -8,3 +8,4 @@ export {
 	getUniqueCategoriesWithCount,
 } from "./post";
 export { getVideoData } from "./urls";
+export { isRemoteImageSrc, resolveHeroImage } from "./unsplash";
