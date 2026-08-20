@@ -1,6 +1,48 @@
 const SPOTIFY_TYPES = ["episode", "track", "album", "playlist", "show", "artist"] as const;
 export type SpotifyType = (typeof SPOTIFY_TYPES)[number];
 
+const VIDEO_DOMAINS = ["youtube.com", "youtu.be", "vimeo.com"];
+const AUDIO_DOMAINS = ["spotify.com"];
+const LIB_DOMAINS = [
+	"github.com",
+	"gitlab.com",
+	"bitbucket.org",
+	"codeberg.org",
+	"sr.ht",
+	"npmjs.com",
+	"npmjs.org",
+	"pypi.org",
+	"crates.io",
+	"packagist.org",
+	"rubygems.org",
+	"nuget.org",
+	"hub.docker.com",
+	"jsr.io",
+	"pkg.go.dev",
+	"deno.land",
+	"pub.dev",
+	"hex.pm",
+];
+
+export const getLinkTypeFromUrl = (
+	url: string
+): "video" | "audio" | "lib" | undefined => {
+	const hostname = new URL(url).hostname.replace(/^www\./, "").toLowerCase();
+	if (VIDEO_DOMAINS.some((domain) => hostMatches(hostname, domain))) {
+		return "video";
+	}
+	if (AUDIO_DOMAINS.some((domain) => hostMatches(hostname, domain))) {
+		return "audio";
+	}
+	if (LIB_DOMAINS.some((domain) => hostMatches(hostname, domain))) {
+		return "lib";
+	}
+	return undefined;
+};
+
+const hostMatches = (hostname: string, domain: string): boolean =>
+	hostname === domain || hostname.endsWith(`.${domain}`);
+
 export type SpotifyData = {
 	id: string;
 	type: SpotifyType;

@@ -1,4 +1,5 @@
 import { z, defineCollection } from "astro:content";
+import { getLinkTypeFromUrl } from "../utils/urls";
 
 export const LINK_TYPE = ["lib", "article", "video", "audio"] as const;
 
@@ -27,16 +28,24 @@ const post = defineCollection({
 });
 
 const link = defineCollection({
-	schema: z.object({
-		draft: z.boolean().default(false),
-		archived: z.boolean().default(false),
-		url: z.string().url(),
-		title: z.string().max(60),
-		description: z.string().min(50).max(320),
-		pubDate: z.any().transform((str) => str && new Date(str)),
-		tags: z.array(z.string()).default([]),
-		type: z.enum(LINK_TYPE).default("article"),
-	}),
+	schema: z
+		.object({
+			draft: z.boolean().default(false),
+			archived: z.boolean().default(false),
+			url: z.string().url(),
+			title: z.string().max(60),
+			description: z.string().min(50).max(320),
+			pubDate: z.any().transform((str) => str && new Date(str)),
+			tags: z.array(z.string()).default([]),
+			type: z.enum(LINK_TYPE).optional(),
+		})
+		.transform((data) => {
+			const type = getLinkTypeFromUrl(data.url) ?? data.type;
+			if (!type) {
+				throw new Error(`Unable to determine link type from url: ${data.url}`);
+			}
+			return { ...data, type };
+		}),
 });
 
 export const collections = { post, link };
