@@ -1,5 +1,7 @@
 const HERO_IMAGE_WIDTH = 986;
 const HERO_IMAGE_HEIGHT = 600;
+const OG_IMAGE_WIDTH = 1200;
+const OG_IMAGE_HEIGHT = 630;
 
 export function isRemoteImageSrc(src: string): boolean {
 	return /^https?:\/\//i.test(src);
@@ -36,10 +38,10 @@ function isUnsplashCdnUrl(src: string): boolean {
 	}
 }
 
-function withHeroImageParams(src: string): string {
+function withImageParams(src: string, width: number, height: number): string {
 	const url = new URL(src);
-	url.searchParams.set("w", String(HERO_IMAGE_WIDTH));
-	url.searchParams.set("h", String(HERO_IMAGE_HEIGHT));
+	url.searchParams.set("w", String(width));
+	url.searchParams.set("h", String(height));
 	url.searchParams.set("fit", "crop");
 	url.searchParams.set("auto", "format");
 	url.searchParams.set("q", "80");
@@ -47,8 +49,12 @@ function withHeroImageParams(src: string): string {
 	return url.toString();
 }
 
-async function resolveUnsplashPhotoId(photoId: string): Promise<string> {
-	const downloadUrl = `https://unsplash.com/photos/${photoId}/download?w=${HERO_IMAGE_WIDTH}`;
+async function resolveUnsplashPhotoId(
+	photoId: string,
+	width: number,
+	height: number
+): Promise<string> {
+	const downloadUrl = `https://unsplash.com/photos/${photoId}/download?w=${width}`;
 	const response = await fetch(downloadUrl, { method: "HEAD", redirect: "manual" });
 	const location = response.headers.get("location");
 
@@ -58,16 +64,16 @@ async function resolveUnsplashPhotoId(photoId: string): Promise<string> {
 		);
 	}
 
-	return withHeroImageParams(location);
+	return withImageParams(location, width, height);
 }
 
-export async function resolveHeroImage(src: string): Promise<string> {
+async function resolveUnsplashImage(src: string, width: number, height: number): Promise<string> {
 	if (!isUnsplashUrl(src)) {
 		return src;
 	}
 
 	if (isUnsplashCdnUrl(src)) {
-		return withHeroImageParams(src);
+		return withImageParams(src, width, height);
 	}
 
 	const photoId = extractUnsplashPhotoId(src);
@@ -77,5 +83,13 @@ export async function resolveHeroImage(src: string): Promise<string> {
 		);
 	}
 
-	return resolveUnsplashPhotoId(photoId);
+	return resolveUnsplashPhotoId(photoId, width, height);
+}
+
+export async function resolveHeroImage(src: string): Promise<string> {
+	return resolveUnsplashImage(src, HERO_IMAGE_WIDTH, HERO_IMAGE_HEIGHT);
+}
+
+export async function resolveOgImage(src: string): Promise<string> {
+	return resolveUnsplashImage(src, OG_IMAGE_WIDTH, OG_IMAGE_HEIGHT);
 }

@@ -6,6 +6,8 @@ export {
 	getEntryUrl,
 	getPreviewKind,
 	getPublicSlug,
+	getOgDescription,
+	getOgImageSrc,
 	getRelatedEntries,
 	sortMDByDate,
 	getUniqueTags,
@@ -14,4 +16,4 @@ export {
 	getUniqueCategoriesWithCount,
 } from "./post";
 export { getVideoData, getSpotifyData, getLinkTypeFromUrl } from "./urls";
-export { isRemoteImageSrc, resolveHeroImage } from "./unsplash";
+export { isRemoteImageSrc, resolveHeroImage, resolveOgImage } from "./unsplash";

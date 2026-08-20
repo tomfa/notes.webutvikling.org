@@ -4,6 +4,7 @@ import { render } from "astro:content";
 
 import Base from "./Base.astro";
 import Hero from "@/components/blog/Hero";
+import { getOgDescription, getOgImageSrc, resolveOgImage } from "@/utils";
 
 interface Props {
 	post: CollectionEntry<"post"> | CollectionEntry<"link">;
@@ -12,9 +13,22 @@ interface Props {
 const { post } = Astro.props;
 const { headings } = await render(post);
 const minDepth = headings.reduce((min, { depth }) => Math.min(min, depth), Infinity);
+
+const ogImageSrc = getOgImageSrc(post);
+const image = ogImageSrc ? await resolveOgImage(ogImageSrc) : undefined;
+const imageAlt = "imageAlt" in post.data ? post.data.imageAlt : undefined;
 ---
 
-<Base meta={{ title: post.data.title, description: post.data.description }}>
+<Base
+	meta={{
+		title: post.data.title,
+		description: getOgDescription(post),
+		image,
+		imageAlt,
+		ogType: "article",
+		publishDate: post.data.pubDate,
+	}}
+>
 	<div class="sm:grid sm:grid-cols-[3fr_1fr] sm:items-start sm:gap-x-10">
 		<article class="break-words">
 			<Hero content={post} />

@@ -14,6 +14,50 @@ export function getPublicSlug(entry: Entry) {
 	return DATE_PREFIX.test(entry.id) ? entry.id.substring(11) : entry.id;
 }
 
+const OG_DESCRIPTION_MAX = 160;
+
+export function getOgDescription(entry: Entry): string | undefined {
+	const fromFrontmatter = entry.data.description?.trim();
+	if (fromFrontmatter) {
+		return fromFrontmatter;
+	}
+	return excerptFromBody(entry.body);
+}
+
+export function getOgImageSrc(entry: Entry): string | undefined {
+	if ("heroImage" in entry.data) {
+		return entry.data.heroImage;
+	}
+	return undefined;
+}
+
+function excerptFromBody(body: string | undefined): string | undefined {
+	if (!body?.trim()) {
+		return undefined;
+	}
+	const text = body
+		.replace(/```[\s\S]*?```/g, " ")
+		.replace(/`([^`]+)`/g, "$1")
+		.replace(/!\[[^\]]*\]\([^)]+\)/g, " ")
+		.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+		.replace(/<[^>]+>/g, " ")
+		.replace(/^#{1,6}\s+/gm, "")
+		.replace(/^>\s+/gm, "")
+		.replace(/[*_~]/g, "")
+		.replace(/\s+/g, " ")
+		.trim();
+	if (!text) {
+		return undefined;
+	}
+	if (text.length <= OG_DESCRIPTION_MAX) {
+		return text;
+	}
+	const sliced = text.slice(0, OG_DESCRIPTION_MAX);
+	const lastSpace = sliced.lastIndexOf(" ");
+	const clipped = lastSpace > 80 ? sliced.slice(0, lastSpace) : sliced;
+	return `${clipped.trimEnd()}…`;
+}
+
 function matchesRelatedRef(entry: Entry, ref: string) {
 	const normalized = ref.replace(/^\//, "");
 	return entry.id === normalized || getPublicSlug(entry) === normalized;
