@@ -1,6 +1,6 @@
 import { z, defineCollection } from "astro:content";
 
-export const LINK_TYPE = ["lib", "article", "video"] as const;
+export const LINK_TYPE = ["lib", "article", "video", "audio"] as const;
 
 export const POST_CATEGORY = [
 	"guide",

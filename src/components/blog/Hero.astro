@@ -1,7 +1,8 @@
 ---
-import { getFormattedDate, isRemoteImageSrc, resolveHeroImage } from "@/utils";
+import { getFormattedDate, getSpotifyData, isRemoteImageSrc, resolveHeroImage } from "@/utils";
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from "astro:content";
+import SpotifyEmbed from "./SpotifyEmbed.astro";
 
 interface Props {
 	content: CollectionEntry<"post"> | CollectionEntry<"link">
@@ -15,6 +16,7 @@ const heroImage = content.data.heroImage
 	? await resolveHeroImage(content.data.heroImage)
 	: undefined;
 const imageAlt = content.data.imageAlt || 'A decorative, semi-related stock photo that adds less value than this comment.';
+const spotify = "url" in content.data ? getSpotifyData(content.data.url) : null;
 ---
 
 {
@@ -70,5 +72,18 @@ const imageAlt = content.data.imageAlt || 'A decorative, semi-related stock phot
 	)
 }
 <p class="mt-8">{content.data.description}</p>
-{content.data.url && <a href={content.data.url} class="link block mt-8">Go to content</a>}
+{
+	spotify && "url" in content.data && (
+		<div class="mt-8 w-full">
+			<SpotifyEmbed url={content.data.url} title={content.data.title} />
+		</div>
+	)
+}
+{
+	content.data.url && (
+		<a href={content.data.url} class="link block mt-8">
+			{spotify ? "Open in Spotify" : "Go to content"}
+		</a>
+	)
+}
 

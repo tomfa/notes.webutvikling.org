@@ -26,7 +26,7 @@ Write the file in one go. No grill.
 - **url**: the given URL, valid.
 - **title**: as given, max 60. Shorten if needed, do not invent a new one.
 - **description**: the paragraph if given, else fetch the URL and write why you'd send someone there. 50–320 chars. First-person, informal, opinionated. Match existing Links.
-- **type**: `video` if YouTube/Vimeo, `lib` if a library or tool homepage, else `article`.
+- **type**: `video` if YouTube/Vimeo, `audio` if Spotify, `lib` if a library or tool homepage, else `article`.
 - **tags**: 1–5, lowercase. Prefer tags that already exist.
 - **pubDate**: same as the folder date.
 - **Draft** unless the user said to publish (`draft: true`).
@@ -50,7 +50,7 @@ draft: true
 
 - [ ] Folder date and `pubDate` match
 - [ ] Title ≤ 60, description 50–320, tags 1–5
-- [ ] `type` is `article`, `video`, or `lib`
+- [ ] `type` is `article`, `video`, `audio`, or `lib`
 - [ ] `url` is the given URL
 - [ ] File has frontmatter only
 - [ ] `draft: true` unless told to publish

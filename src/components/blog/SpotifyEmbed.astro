@@ -1,0 +1,31 @@
+---
+import { getSpotifyData } from "@/utils";
+
+interface Props {
+	url: string;
+	title?: string;
+}
+
+const { url, title } = Astro.props;
+const spotify = getSpotifyData(url);
+const src = spotify
+	? `https://open.spotify.com/embed/${spotify.type}/${spotify.id}${
+			spotify.startAt != null ? `?t=${spotify.startAt}` : ""
+		}`
+	: null;
+---
+
+{
+	src && (
+		<iframe
+			title={title ? `Spotify: ${title}` : "Spotify player"}
+			src={src}
+			width="100%"
+			height="152"
+			allowfullscreen
+			allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+			loading="lazy"
+			class="w-full rounded-xl border-0"
+		/>
+	)
+}

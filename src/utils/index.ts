@@ -7,5 +7,5 @@ export {
 	getUniqueTagsWithCount,
 	getUniqueCategoriesWithCount,
 } from "./post";
-export { getVideoData } from "./urls";
+export { getVideoData, getSpotifyData } from "./urls";
 export { isRemoteImageSrc, resolveHeroImage } from "./unsplash";

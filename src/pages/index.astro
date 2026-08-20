@@ -2,9 +2,10 @@
 import { getCollection } from "astro:content";
 import PageLayout from "@/layouts/Base";
 import PostPreview from "@/components/blog/PostPreview";
-import { getUniqueTags, getUniqueCategories, sortMDByDate } from "@/utils";
+import { getUniqueTags, getUniqueCategories, getSpotifyData, sortMDByDate } from "@/utils";
 import ArticlePreview from "../components/blog/ArticlePreview.astro";
 import VideoPreview from "../components/blog/VideoPreview.astro";
+import SpotifyPreview from "../components/blog/SpotifyPreview.astro";
 
 const allPosts = await getCollection("post");
 const posts = allPosts.filter(p => !p.data.draft || import.meta.env.DEV).map(p => ({ ...p, type: "post" }));
@@ -51,6 +52,9 @@ const uniqueCategories = getUniqueCategories(posts);
                 {p.type === 'post' && <PostPreview post={p} as="h2" />
                   || p.type === 'link' && p.data.type === "video" && (
                     <VideoPreview post={p} as="h2" withDesc />
+                  )
+                  || p.type === 'link' && (p.data.type === "audio" || getSpotifyData(p.data.url)) && (
+                    <SpotifyPreview post={p} as="h2" withDesc />
                   )
                   || p.data.url && (
                     <ArticlePreview post={p} as="h2" withDesc />
