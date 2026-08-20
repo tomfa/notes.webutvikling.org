@@ -1,11 +1,12 @@
 ---
 title: "Obesity is a thing of the past"
 pubDate: 2025-06-04
-heroImage: /images/blake-cheek-fnd1hZOuSUE-unsplash.jpg
+type: audio
+url: https://open.spotify.com/episode/42MPnbOskwDRGYWf0upXKb
 tags: [societal]
-imageAlt: ""
-draft: true
+description: Novo Nordisk spent a century on insulin, then disrupted themselves with Ozempic. Body composition as a class marker is just getting started.
 ---
+
 
 There are two major broad health issues that effect a ton of people.
 
@@ -16,7 +17,7 @@ These problems are going away in my lifetime. Here's why.
 
 
 Baseline assumption:
-> What a majority of people wants and is possible, happens, as long as the same people are willing to pay the costs for it (directly or through taxes).
+> What enough people wants and is possible, happens, as long as the same people are willing to pay the costs for it, directly or through taxes.
 
 Baseline implications:
 - There will be a pill for muscles (We're now working on [non-endrogenic anabolics](https://www.researchgate.net/publication/262254227_A_Novel_Non-Androgenic_Alternative_for_Muscle_Health_and_Performance))
@@ -26,8 +27,8 @@ Baseline implications:
 Predictions:
 - Social acceptance of obesity decreases
 - Importance of body composition as a social class indicator increases
-- Use of cosmetic surgery increases, as weight-control and toning is ✅
-- SoMe: Being fit becomes expected, not necessarily admired. 
+- Use of cosmetic surgery increases
+- SoMe: Being fit becomes expected, not necessarily admired
 
 Related effects:
 
