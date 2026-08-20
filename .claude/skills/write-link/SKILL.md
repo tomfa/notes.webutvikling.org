@@ -29,7 +29,7 @@ Write the file in one go. No grill.
 - **type**: `video` if YouTube/Vimeo, `lib` if a library or tool homepage, else `article`.
 - **tags**: 1–5, lowercase. Prefer tags that already exist.
 - **pubDate**: same as the folder date.
-- **Draft** unless the user said to publish (`draft: true`).
+- Omit `draft`. Schema default is published. `draft: true` only if the user asked for a Draft.
 - No body. No `heroImage`. No `author`. No `category`.
 
 Schema lives in `src/content/config.ts`. Trust that over the README.
@@ -42,7 +42,6 @@ type: article
 url: https://example.com/the-thing
 tags: [javascript]
 description: "Why you'd send someone here, in one or two sentences. Fifty to three hundred twenty characters."
-draft: true
 ---
 ```
 
@@ -53,4 +52,4 @@ draft: true
 - [ ] `type` is `article`, `video`, or `lib`
 - [ ] `url` is the given URL
 - [ ] File has frontmatter only
-- [ ] `draft: true` unless told to publish
+- [ ] Omit `draft` unless asked for a Draft
