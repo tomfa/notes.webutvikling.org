@@ -2,7 +2,7 @@
 title: "AI: Think of them as a summer intern"
 pubDate: 2026-08-15
 category: statement
-description: "Stop treating coding models as a tool on your machine. Encode the company, give them a narrow job, and fire them with a keystroke."
+description: "Stop treating coding models as a tool on your machine. Encode the company and give always-on AI a job."
 heroImage: https://unsplash.com/photos/three-people-sitting-in-front-of-table-laughing-together-g1Kr4Ozfoac
 tags: [ai, management]
 imageAlt: "Welcome to the team. Here's the markdown. Photo by Brooke Cagle on Unsplash."
