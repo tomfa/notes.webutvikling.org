@@ -3,6 +3,8 @@ export { elementHasClass, toggleClass } from "./domElement";
 export {
 	isVisible,
 	hasBody,
+	getEntryUrl,
+	getPreviewKind,
 	sortMDByDate,
 	getUniqueTags,
 	getUniqueCategories,

@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import PageLayout from "@/layouts/Base";
 import PostPreview from "@/components/blog/PostPreview";
-import { getUniqueTags, getUniqueCategories, getSpotifyData, sortMDByDate, isVisible } from "@/utils";
+import { getUniqueTags, getUniqueCategories, getPreviewKind, sortMDByDate, isVisible } from "@/utils";
 import ArticlePreview from "../components/blog/ArticlePreview.astro";
 import VideoPreview from "../components/blog/VideoPreview.astro";
 import SpotifyPreview from "../components/blog/SpotifyPreview.astro";
@@ -47,26 +47,17 @@ const uniqueCategories = getUniqueCategories(posts);
       <section aria-label="Blog post list">
         <ul class="space-y-8 text-left">
           {
-            allPostsByDate.map((p) => (
-              <li class="flex flex-wrap items-center gap-x-2">
-                {p.type === 'post' && <PostPreview post={p} as="h2" withDesc />
-                  || p.type === 'link' && p.data.type === "video" && (
-                    <VideoPreview post={p} as="h2" withDesc />
-                  )
-                  || p.type === 'link' && (p.data.type === "audio" || getSpotifyData(p.data.url)) && (
-                    <SpotifyPreview post={p} as="h2" withDesc />
-                  )
-                  || p.data.url && (
-                    <ArticlePreview post={p} as="h2" withDesc />
-                  )
-                  || !p.data.url && (
-                    <PostPreview post={p} as="h2" withDesc />
-                  )
-                  || <p>&apos;{p.slug}&apos; is not rendered</p>
-                }
-
-              </li>
-            ))
+            allPostsByDate.map((p) => {
+              const kind = getPreviewKind(p);
+              return (
+                <li class="flex flex-wrap items-center gap-x-2">
+                  {kind === "video" && <VideoPreview post={p} as="h2" withDesc />}
+                  {kind === "audio" && <SpotifyPreview post={p} as="h2" withDesc />}
+                  {kind === "article" && <ArticlePreview post={p} as="h2" withDesc />}
+                  {kind === "post" && <PostPreview post={p} as="h2" withDesc />}
+                </li>
+              );
+            })
           }
         </ul>
       </section>

@@ -24,6 +24,7 @@ const post = defineCollection({
 		imageAlt: z.string().optional(),
 		tags: z.array(z.string()).min(1).max(5),
 		category: z.enum(POST_CATEGORY).default("scribble"),
+		url: z.string().url().optional(),
 	}),
 });
 

@@ -1,12 +1,12 @@
 ---
-import type { CollectionEntry } from "astro:content";
 import type { IElement } from "@/data/shared";
-import { getFormattedDate, getVideoData, hasBody } from "@/utils";
+import { getEntryUrl, getFormattedDate, getVideoData, hasBody } from "@/utils";
+import type { Entry } from "@/utils/post";
 import { Vimeo, YouTube } from "astro-embed";
 import NotesIcon from "./NotesIcon.astro";
 
 interface Props extends IElement {
-	post: CollectionEntry<"video">;
+	post: Entry;
 	withDesc?: boolean;
 	withTags?: boolean;
 }
@@ -15,13 +15,14 @@ const { post, as: Element = "div", withDesc = true, withTags = true } = Astro.pr
 const date = new Date(post.data.pubDate || Date.now());
 const datetime = date.toISOString();
 const postDate = getFormattedDate(date, { month: "short" });
-const { id: videoId, params, provider } = getVideoData(post.data.url);
+const url = getEntryUrl(post) ?? "";
+const { id: videoId, params, provider } = getVideoData(url);
 const isVideo = !!provider;
 const notes = hasBody(post);
 ---
 
 <Element class="flex w-full items-baseline justify-between gap-x-2">
-	<a href={post.data.url} class="cactus-link inline-block text-md" rel="prefetch">
+	<a href={url} class="cactus-link inline-block text-md" rel="prefetch">
 		{post.data.title}
 	</a>
 	{notes && <NotesIcon slug={post.slug} />}

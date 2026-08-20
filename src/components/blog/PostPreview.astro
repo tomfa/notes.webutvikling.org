@@ -1,10 +1,10 @@
 ---
-import type { CollectionEntry } from "astro:content";
 import type { IElement } from "@/data/shared";
 import { getFormattedDate } from "@/utils";
+import type { Entry } from "@/utils/post";
 
 interface Props extends IElement {
-	post: CollectionEntry<"post">;
+	post: Entry;
 	withDesc?: boolean;
 	withTags?: boolean;
 }
@@ -23,8 +23,9 @@ const postDate = getFormattedDate(date, { month: "short" });
 <div class="align-start sm:mt-1 flex w-full justify-between flex-col sm:flex-row">
 	<div class="shrink-0">
 		<time class="text-xs text-gray-400" datetime={datetime}>{postDate}</time>
-
-		<span class="mr-3 text-xs text-gray-400"> • {post.data.category}</span>
+		{"category" in post.data && (
+			<span class="mr-3 text-xs text-gray-400"> • {post.data.category}</span>
+		)}
 	</div>
 	<div class="sm:text-right">
 		{

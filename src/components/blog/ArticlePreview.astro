@@ -1,11 +1,11 @@
 ---
-import type { CollectionEntry } from "astro:content";
 import type { IElement } from "@/data/shared";
-import { getFormattedDate, hasBody } from "@/utils";
+import { getEntryUrl, getFormattedDate, getLinkTypeFromUrl, hasBody } from "@/utils";
+import type { Entry } from "@/utils/post";
 import NotesIcon from "./NotesIcon.astro";
 
 interface Props extends IElement {
-	post: CollectionEntry<"link">;
+	post: Entry;
 	withDesc?: boolean;
 	withTags?: boolean;
 }
@@ -15,14 +15,18 @@ const date = new Date(post.data.pubDate || Date.now());
 const datetime = date.toISOString();
 const postDate = getFormattedDate(date, { month: "short" });
 const notes = hasBody(post);
+const url = getEntryUrl(post);
+const isLib =
+	("type" in post.data && post.data.type === "lib") ||
+	(url != null && getLinkTypeFromUrl(url) === "lib");
 ---
 
 <Element class="flex w-full items-baseline justify-between gap-x-2">
 	<span>
-		<a href={post.data.url} class="cactus-link inline-block" rel="prefetch">
+		<a href={url} class="cactus-link inline-block" rel="prefetch">
 			{post.data.title}
 		</a>
-		{post.data.type === "lib" && <span class="ml-2 text-xs text-gray-400">lib</span>}
+		{isLib && <span class="ml-2 text-xs text-gray-400">lib</span>}
 	</span>
 	{notes && <NotesIcon slug={post.slug} />}
 </Element>
