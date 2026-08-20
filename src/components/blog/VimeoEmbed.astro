@@ -1,0 +1,38 @@
+---
+interface Props {
+	id: string;
+	title?: string;
+}
+
+const { id, title } = Astro.props;
+const src = await getEmbeddablePlayerSrc(id);
+
+async function getEmbeddablePlayerSrc(videoId: string): Promise<string | null> {
+	try {
+		const oembed = new URL("https://vimeo.com/api/oembed.json");
+		oembed.searchParams.set("url", `https://vimeo.com/${videoId}`);
+		const res = await fetch(oembed);
+		if (!res.ok) {
+			return null;
+		}
+		return `https://player.vimeo.com/video/${videoId}`;
+	} catch {
+		return null;
+	}
+}
+---
+
+{
+	src && (
+		<div class="relative w-full" style="padding-bottom: 56.25%">
+			<iframe
+				title={title ? `Vimeo: ${title}` : "Vimeo video"}
+				src={src}
+				allow="autoplay; fullscreen; picture-in-picture"
+				allowfullscreen
+				loading="lazy"
+				class="absolute inset-0 h-full w-full border-0"
+			/>
+		</div>
+	)
+}

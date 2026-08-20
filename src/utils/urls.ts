@@ -61,7 +61,7 @@ export const getVideoData = (
 		if (provider === "youtube") {
 			return { ...getYoutubeVideoData(obj), provider };
 		}
-		return { id: obj.href, provider };
+		return { id: getVimeoId(obj), provider };
 	} catch (error) {
 		// This seems to work, actually
 		return { id: url, provider };
@@ -107,6 +107,13 @@ const parseStartAt = (t: string | null): number | undefined => {
 	}
 	return value;
 };
+
+const getVimeoId = (url: URL): string | undefined =>
+	url.pathname
+		.split("/")
+		.filter(Boolean)
+		.reverse()
+		.find((segment) => /^\d+$/.test(segment));
 
 const getYoutubeVideoData = (url: URL): { id: string; params?: string } => {
 	if (url.searchParams.get("t") && !url.searchParams.get("start")) {

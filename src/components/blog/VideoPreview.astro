@@ -2,8 +2,9 @@
 import type { IElement } from "@/data/shared";
 import { getEntryUrl, getFormattedDate, getPublicSlug, getVideoData, hasBody } from "@/utils";
 import type { Entry } from "@/utils/post";
-import { Vimeo, YouTube } from "astro-embed";
+import { YouTube } from "astro-embed";
 import NotesIcon from "./NotesIcon.astro";
+import VimeoEmbed from "./VimeoEmbed.astro";
 
 interface Props extends IElement {
 	post: Entry;
@@ -29,7 +30,7 @@ const notes = hasBody(post);
 </Element>
 <div class="mt-2 w-full">
 	{provider === 'youtube' && <YouTube id={videoId} params={params} />}
-	{provider === 'vimeo'  && <Vimeo id={videoId} />}
+	{provider === 'vimeo' && videoId && <VimeoEmbed id={videoId} title={post.data.title} />}
 </div>
 
 <div class="align-start mt-1 flex w-full justify-between">
