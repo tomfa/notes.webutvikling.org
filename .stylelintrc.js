@@ -1,5 +1,5 @@
 module.exports = {
-	extends: ["stylelint-config-standard", "stylelint-config-prettier"],
+	extends: ["stylelint-config-standard"],
 	overrides: [
 		{
 			files: ["*.astro", "**/*.astro"],
@@ -10,7 +10,20 @@ module.exports = {
 		"at-rule-no-unknown": [
 			true,
 			{
-				ignoreAtRules: ["tailwind", "apply", "variants", "responsive", "screen"],
+				ignoreAtRules: [
+					"tailwind",
+					"apply",
+					"variants",
+					"responsive",
+					"screen",
+					"layer",
+					"config",
+					"plugin",
+					"theme",
+					"source",
+					"utility",
+					"custom-variant",
+				],
 			},
 		],
 		"function-no-unknown": [true, { ignoreFunctions: ["theme"] }],

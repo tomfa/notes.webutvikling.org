@@ -1,6 +1,6 @@
 ---
 import type { IElement } from "@/data/shared";
-import { getEntryUrl, getFormattedDate, getVideoData, hasBody } from "@/utils";
+import { getEntryUrl, getFormattedDate, getPublicSlug, getVideoData, hasBody } from "@/utils";
 import type { Entry } from "@/utils/post";
 import { Vimeo, YouTube } from "astro-embed";
 import NotesIcon from "./NotesIcon.astro";
@@ -25,7 +25,7 @@ const notes = hasBody(post);
 	<a href={url} class="cactus-link inline-block text-md" rel="prefetch">
 		{post.data.title}
 	</a>
-	{notes && <NotesIcon slug={post.slug} />}
+	{notes && <NotesIcon slug={getPublicSlug(post)} />}
 </Element>
 <div class="mt-2 w-full">
 	{provider === 'youtube' && <YouTube id={videoId} params={params} />}

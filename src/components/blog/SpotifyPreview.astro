@@ -1,6 +1,6 @@
 ---
 import type { IElement } from "@/data/shared";
-import { getEntryUrl, getFormattedDate, hasBody } from "@/utils";
+import { getEntryUrl, getFormattedDate, getPublicSlug, hasBody } from "@/utils";
 import type { Entry } from "@/utils/post";
 import SpotifyEmbed from "./SpotifyEmbed.astro";
 import NotesIcon from "./NotesIcon.astro";
@@ -26,7 +26,7 @@ const url = getEntryUrl(post) ?? "";
 		</a>
 		<span class="ml-2 text-xs text-gray-400">Spotify</span>
 	</span>
-	{notes && <NotesIcon slug={post.slug} />}
+	{notes && <NotesIcon slug={getPublicSlug(post)} />}
 </Element>
 <div class="mt-2 w-full">
 	<SpotifyEmbed url={url} title={post.data.title} />

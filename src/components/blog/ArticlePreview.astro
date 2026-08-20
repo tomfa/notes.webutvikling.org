@@ -1,6 +1,6 @@
 ---
 import type { IElement } from "@/data/shared";
-import { getEntryUrl, getFormattedDate, getLinkTypeFromUrl, hasBody } from "@/utils";
+import { getEntryUrl, getFormattedDate, getLinkTypeFromUrl, getPublicSlug, hasBody } from "@/utils";
 import type { Entry } from "@/utils/post";
 import NotesIcon from "./NotesIcon.astro";
 
@@ -28,7 +28,7 @@ const isLib =
 		</a>
 		{isLib && <span class="ml-2 text-xs text-gray-400">lib</span>}
 	</span>
-	{notes && <NotesIcon slug={post.slug} />}
+	{notes && <NotesIcon slug={getPublicSlug(post)} />}
 </Element>
 <div class="align-start mt-1 flex w-full justify-between flex-col sm:flex-row">
 	<div class="shrink-0">

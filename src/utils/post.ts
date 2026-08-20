@@ -11,21 +11,21 @@ export function isVisible(entry: Entry) {
 }
 
 export function getPublicSlug(entry: Entry) {
-	return DATE_PREFIX.test(entry.slug) ? entry.slug.substring(11) : entry.slug;
+	return DATE_PREFIX.test(entry.id) ? entry.id.substring(11) : entry.id;
 }
 
 function matchesRelatedRef(entry: Entry, ref: string) {
 	const normalized = ref.replace(/^\//, "");
-	return entry.slug === normalized || getPublicSlug(entry) === normalized;
+	return entry.id === normalized || getPublicSlug(entry) === normalized;
 }
 
 export function getRelatedEntries(entry: Entry, catalog: Entry[]) {
 	return entry.data.related.flatMap((ref) => {
 		const match = catalog.find((candidate) => matchesRelatedRef(candidate, ref));
 		if (!match) {
-			throw new Error(`Unknown related slug "${ref}" in ${entry.slug}`);
+			throw new Error(`Unknown related slug "${ref}" in ${entry.id}`);
 		}
-		if (!isVisible(match) || match.slug === entry.slug) {
+		if (!isVisible(match) || match.id === entry.id) {
 			return [];
 		}
 		return [match];

@@ -58,7 +58,7 @@ const spotify = "url" in content.data ? getSpotifyData(content.data.url) : null;
 				<path d="M6 9h-.01" />
 			</svg>
 			{content.data.tags.map((tag, i) => (
-				<span className={i !== 0 && "before:content-['|']"}>
+				<span class={i !== 0 ? "before:content-['|']" : undefined}>
 					<a
 						class="link inline-block"
 						aria-label={`View more blogs with the tag ${tag}`}

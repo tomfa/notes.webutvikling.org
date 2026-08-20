@@ -1,7 +1,7 @@
 ---
 import type { GetStaticPathsResult } from "astro";
 import type { CollectionEntry } from "astro:content";
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import BlogPost from "@/layouts/BlogPost";
 import PostPreview from "@/components/blog/PostPreview";
 import { getPublicSlug, getRelatedEntries, isVisible } from "@/utils";
@@ -22,9 +22,9 @@ export async function getStaticPaths(): Promise<GetStaticPathsResult> {
         props: { post, prev: all[i - 1], next: all[i + 1], related },
       },
     ];
-    if (slug !== post.slug) {
+    if (slug !== post.id) {
       param.push({
-        params: { post: post.slug },
+        params: { post: post.id },
         props: { post, prev: all[i - 1], next: all[i + 1], related, redirect: slug },
       });
     }
@@ -39,7 +39,7 @@ interface Props {
 }
 
 const { post, prev, next, redirect, related } = Astro.props;
-const { Content } = await post.render();
+const { Content } = await render(post);
 ---
 {redirect ? (
 <meta
@@ -70,7 +70,7 @@ const { Content } = await post.render();
 				{prev && (
 					<div class="mb-2 flex gap-1 flex-col">
 						<span class="text-xs">Previous post</span>
-						<a class="text-xs" href={`/${prev.slug}`}>
+						<a class="text-xs" href={`/${getPublicSlug(prev)}`}>
 							{prev.data.title}
 						</a>
 					</div>
@@ -78,7 +78,7 @@ const { Content } = await post.render();
 				{next && (
 					<div class="text-right flex gap-1 flex-col">
 						<span class="text-xs">Next Post</span>
-						<a class="text-xs" href={`/${next.slug}`}>
+						<a class="text-xs" href={`/${getPublicSlug(next)}`}>
 							{next.data.title}
 						</a>
 					</div>

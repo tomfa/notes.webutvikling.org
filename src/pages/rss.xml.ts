@@ -1,24 +1,23 @@
+import type { APIRoute } from "astro";
 import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
 import siteMeta from "@/site-config";
-import { sortMDByDate, isVisible } from "@/utils";
+import { sortMDByDate, isVisible, getPublicSlug } from "@/utils";
 
-export const get = async () => {
+export const GET: APIRoute = async (context) => {
 	const posts = await getCollection("post");
 	const links = await getCollection("link");
-	const content = sortMDByDate(
-		[...links, ...posts].filter(isVisible)
-	);
+	const content = sortMDByDate([...links, ...posts].filter(isVisible));
 
 	return rss({
 		title: siteMeta.title,
 		description: siteMeta.description,
-		site: import.meta.env.SITE,
+		site: context.site!,
 		items: content.map((item) => ({
 			title: item.data.title,
 			description: item.data.description,
 			pubDate: item.data.pubDate,
-			link: item.slug,
+			link: getPublicSlug(item),
 		})),
 	});
 };

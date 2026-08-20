@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
+import { ClientRouter } from "astro:transitions";
 import type { SiteMeta } from "@/data/siteMeta";
 import BaseHead from "@/components/BaseHead";
 import Header from "@/components/layout/Header";
@@ -54,7 +54,7 @@ const {
         root.classList.toggle("dark", getThemePreference() === "dark");
       });
 		</script>
-    <ViewTransitions />
+		<ClientRouter />
 	</head>
 	<body>
 		<SkipLink />

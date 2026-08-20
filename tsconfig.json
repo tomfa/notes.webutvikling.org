@@ -22,13 +22,11 @@
         "src/site.config.ts"
       ]
     },
-    "types": [
-      "@astrojs/image/client"
-    ],
     "jsx": "react-jsx",
     "jsxImportSource": "react",
-    "moduleResolution": "node"
+    "moduleResolution": "bundler"
   },
+  "include": [".astro/types.d.ts", "**/*"],
   "exclude": [
     "node_modules",
     "**/node_modules/*",

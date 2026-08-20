@@ -1,6 +1,6 @@
 ---
 import type { IElement } from "@/data/shared";
-import { getFormattedDate } from "@/utils";
+import { getFormattedDate, getPublicSlug } from "@/utils";
 import type { Entry } from "@/utils/post";
 
 interface Props extends IElement {
@@ -16,7 +16,7 @@ const postDate = getFormattedDate(date, { month: "short" });
 ---
 
 <Element>
-	<a href={`/${post.slug}`} class="cactus-link pb:0 inline-block" rel="prefetch">
+	<a href={`/${getPublicSlug(post)}`} class="cactus-link pb:0 inline-block" rel="prefetch">
 		{post.data.title}
 	</a>
 </Element>
