@@ -38,7 +38,7 @@ const uniqueTags = getUniqueTags(videos);
 				<ul class="space-y-8 text-left">
 					{
 						videosByDate.map((p) => (
-							<li class="flex flex-wrap items-center gap-x-2 [&_q]:w-full">
+							<li class="flex flex-wrap items-center gap-x-2">
 								<VideoPreview post={p} as="h2" withDesc />
 							</li>
 						))

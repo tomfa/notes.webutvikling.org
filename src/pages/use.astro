@@ -29,13 +29,13 @@ const uniqueTags = getUniqueTags(entries);
 						entriesByDate.map((p) => {
 							if (p.data.url) {
 								return (
-									<li class="flex flex-wrap items-center gap-x-2 [&_q]:w-full">
+									<li class="flex flex-wrap items-center gap-x-2">
 										<ArticlePreview post={p} as="h2" withDesc />
 									</li>
 								);
 							}
 							return (
-								<li class="flex flex-wrap items-center gap-x-2 [&_q]:w-full">
+								<li class="flex flex-wrap items-center gap-x-2">
 									<PostPreview post={p} as="h2" />
 								</li>
 							);

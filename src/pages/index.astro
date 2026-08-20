@@ -48,7 +48,7 @@ const uniqueCategories = getUniqueCategories(posts);
         <ul class="space-y-8 text-left">
           {
             allPostsByDate.map((p) => (
-              <li class="flex flex-wrap items-center gap-x-2 [&_q]:w-full">
+              <li class="flex flex-wrap items-center gap-x-2">
                 {p.type === 'post' && <PostPreview post={p} as="h2" />
                   || p.type === 'link' && p.data.type === "video" && (
                     <VideoPreview post={p} as="h2" withDesc />
