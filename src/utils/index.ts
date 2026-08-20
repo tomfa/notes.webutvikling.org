@@ -5,6 +5,8 @@ export {
 	hasBody,
 	getEntryUrl,
 	getPreviewKind,
+	getPublicSlug,
+	getRelatedEntries,
 	sortMDByDate,
 	getUniqueTags,
 	getUniqueCategories,

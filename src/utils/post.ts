@@ -4,8 +4,32 @@ import { getLinkTypeFromUrl, getSpotifyData } from "./urls";
 export type Entry = CollectionEntry<"post"> | CollectionEntry<"link">;
 export type PreviewKind = "video" | "audio" | "article" | "post";
 
+const DATE_PREFIX = /^\d{4}-\d{2}-\d{2}-/;
+
 export function isVisible(entry: Entry) {
 	return !entry.data.archived && (!entry.data.draft || import.meta.env.DEV);
+}
+
+export function getPublicSlug(entry: Entry) {
+	return DATE_PREFIX.test(entry.slug) ? entry.slug.substring(11) : entry.slug;
+}
+
+function matchesRelatedRef(entry: Entry, ref: string) {
+	const normalized = ref.replace(/^\//, "");
+	return entry.slug === normalized || getPublicSlug(entry) === normalized;
+}
+
+export function getRelatedEntries(entry: Entry, catalog: Entry[]) {
+	return entry.data.related.flatMap((ref) => {
+		const match = catalog.find((candidate) => matchesRelatedRef(candidate, ref));
+		if (!match) {
+			throw new Error(`Unknown related slug "${ref}" in ${entry.slug}`);
+		}
+		if (!isVisible(match) || match.slug === entry.slug) {
+			return [];
+		}
+		return [match];
+	});
 }
 
 export function hasBody(entry: Entry) {

@@ -13,6 +13,9 @@ export const POST_CATEGORY = [
 	"book",
 	"idea",
 ] as const;
+
+const related = z.array(z.string()).default([]);
+
 const post = defineCollection({
 	schema: z.object({
 		draft: z.boolean().default(false),
@@ -25,6 +28,7 @@ const post = defineCollection({
 		tags: z.array(z.string()).min(1).max(5),
 		category: z.enum(POST_CATEGORY).default("scribble"),
 		url: z.string().url().optional(),
+		related,
 	}),
 });
 
@@ -39,6 +43,7 @@ const link = defineCollection({
 			pubDate: z.any().transform((str) => str && new Date(str)),
 			tags: z.array(z.string()).default([]),
 			type: z.enum(LINK_TYPE).optional(),
+			related,
 		})
 		.transform((data) => {
 			const type = getLinkTypeFromUrl(data.url) ?? data.type;

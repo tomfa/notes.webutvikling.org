@@ -3,25 +3,29 @@ import type { GetStaticPathsResult } from "astro";
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 import BlogPost from "@/layouts/BlogPost";
-import { isVisible } from "@/utils";
+import PostPreview from "@/components/blog/PostPreview";
+import { getPublicSlug, getRelatedEntries, isVisible } from "@/utils";
+import type { Entry } from "@/utils/post";
 
 
 export async function getStaticPaths(): Promise<GetStaticPathsResult> {
 	const posts: CollectionEntry<"post">[] = await getCollection("post");
 	const links: CollectionEntry<"link">[] = await getCollection("link");
-	const all = [...posts, ...links].filter(isVisible);
+	const catalog = [...posts, ...links];
+	const all = catalog.filter(isVisible);
 	const params = all.flatMap((post, i) => {
-    const slug = post.slug.match(/^\d{4}\-\d{2}\-\d{2}\-/) ? post.slug.substring(11) : post.slug;
+    const slug = getPublicSlug(post);
+    const related = getRelatedEntries(post, catalog);
     const param = [
       {
         params: { post: slug },
-        props: { post, prev: all[i - 1], next: all[i + 1] },
+        props: { post, prev: all[i - 1], next: all[i + 1], related },
       },
     ];
     if (slug !== post.slug) {
       param.push({
         params: { post: post.slug },
-        props: { post, prev: all[i - 1], next: all[i + 1], redirect: slug },
+        props: { post, prev: all[i - 1], next: all[i + 1], related, redirect: slug },
       });
     }
     return param
@@ -31,9 +35,10 @@ export async function getStaticPaths(): Promise<GetStaticPathsResult> {
 
 interface Props {
 	post: CollectionEntry<"post">;
+	related: Entry[];
 }
 
-const { post, prev, next, redirect } = Astro.props;
+const { post, prev, next, redirect, related } = Astro.props;
 const { Content } = await post.render();
 ---
 {redirect ? (
@@ -45,6 +50,20 @@ const { Content } = await post.render();
 
 <BlogPost post={post}>
 	<Content />
+	{
+		related.length > 0 && (
+			<section class="not-prose mt-16">
+				<h2 class="font-semibold">Related</h2>
+				<ul class="mt-4 space-y-6">
+					{related.map((entry) => (
+						<li>
+							<PostPreview post={entry} as="h3" withDesc />
+						</li>
+					))}
+				</ul>
+			</section>
+		)
+	}
 	{
 		(prev || next) && (
 			<div class="pt-20 text-xs flex justify-between">
