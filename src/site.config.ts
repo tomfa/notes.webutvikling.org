@@ -1,6 +1,6 @@
 const siteMeta = {
 	title: "Notes and anecdotes",
-	description: "Random notes, anecdotes and random scribbling from my tech life and work brain",
+	description: "Random scribbles, notes and anecdotes",
 	lang: "en-GB",
 	ogLocale: "en_GB",
 	image: "https://notes.webutvikling.org/images/notes.png",
