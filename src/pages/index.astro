@@ -49,7 +49,7 @@ const uniqueCategories = getUniqueCategories(posts);
           {
             allPostsByDate.map((p) => (
               <li class="flex flex-wrap items-center gap-x-2">
-                {p.type === 'post' && <PostPreview post={p} as="h2" />
+                {p.type === 'post' && <PostPreview post={p} as="h2" withDesc />
                   || p.type === 'link' && p.data.type === "video" && (
                     <VideoPreview post={p} as="h2" withDesc />
                   )
@@ -60,7 +60,7 @@ const uniqueCategories = getUniqueCategories(posts);
                     <ArticlePreview post={p} as="h2" withDesc />
                   )
                   || !p.data.url && (
-                    <PostPreview post={p} as="h2" />
+                    <PostPreview post={p} as="h2" withDesc />
                   )
                   || <p>&apos;{p.slug}&apos; is not rendered</p>
                 }
