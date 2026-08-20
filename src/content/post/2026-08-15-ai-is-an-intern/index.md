@@ -1,45 +1,29 @@
-How to think about AI option.
+AI: Think of them as a summer intern
 
-Now, the AI technology has come far enough to begin a revolution without _having_ to improve. 12 months ago, AI models coding was on par with a not-to-skilled intern. Today, they're on par with an experienced senior.
+Twelve months ago, coding models were on par with a not-too-skilled intern. Today they are on par with an experienced senior. 
 
-We need a change our preconceptions about how do work with computers in order to adopt AI efficiently before we, as individuals and as companies, are replaced. Unfortunately, my suggestion for your survival is: Considering hiring AI before hiring new employees.
+Where I have gone wrong, is thinking of AI as a tool on my machine – rather than as a part of the online company infrastructure. In this case I've realise the potential of thinking of them as a newly hired summer intern.
 
-## How to think about adopting AI
+1. Tell them about us
 
-AI gives you the ability to hire "interns" with special abilities. But we still need to keep a lot of the considerations we have when working with humans
+Encode company knowledge and workflows in markdown. Show them where they can get more information if need be.
 
-1. Exception: They gather knowledge fast.
+With clear boundaries and playbooks, both interns and AI can take a task end to end without you in the loop.
 
-So: try doing tasks that you've postponed because of knowledge uncertainties
+2. Give them narrow tasks (less context)
 
-2. Same: They need to be taught how we do it around here
+You slow down an intern with a vague problem description and lots of considerations. Same with AI.
 
-So you need to encode company knowledge and workflows in markdown files
+Define the different tasks involved in doing support, rather than access to the support inbox and tell it to solve tickets.
 
-3. Same: They becomes stupid with too much context.
+3. Diff: You can hire a 1% or 2000% role
 
-People can not work efficiently when they receive huge projects, with lots of context, stakeholders and considerations. Same with AI.
+Interns should have context, responsibilites and expected to gain/knowledge that fit a ~100% role. Unlike AI, where you can "hire" a role that only does SMS translations – whether that would take one day per month, or 20 interns.
 
-So: AI-interns should be less general-solutions roles than regular interns. 
-So: We need to surface access to gather relevant information (stats, analytics, reports and other documentation).
+Remember: Less context is better.
 
-4. Exception: hire and fire without consideration
+5. Diff: hire and fire without consideration.
 
-Hiring interns takes time, interviews, quality assurance, legal, onboarding lead time before they're efficient. Offboarding or firing is not done by the flick of a finger. 
+A human intern needs hiring and contracts and  weeks of onboarding. You cannot fire them with a keystroke.
 
-AI is different. Try 1 "AI-intern" and see how it goes. If it works, hire 1000. If it don't, respecify the role.
-
-5. Same: A good playbook is necessary for efficiency
-
-With clear bounderies and playbooks, both interns and AI can take responsibility of seeing tasks end to end without human input. 
-
-
-
-TLDR:
-- Don't plan how to use AI. Plan how to make an intern effective on their 1st day: define tasks, and give self serve access to relevant knowledge.
-- Do not hire interns without first considering AI solutions
-- Define typical tasks in markdown, and specify how they're done. 
-- Do make data accessable via APIs. AI should not have to ask you about your intrinsic knowledge.
-- Do try to solve postponed larger tasks.
-
-
+Try one AI intern. If it works, hire a thousand. If it doesn't, respecify the role. Or fire them. No worries!
