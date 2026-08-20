@@ -80,9 +80,9 @@ const spotify = "url" in content.data ? getSpotifyData(content.data.url) : null;
 	)
 }
 {
-	content.data.url && (
+	content.data.url && !spotify && (
 		<a href={content.data.url} class="link block mt-8">
-			{spotify ? "Open in Spotify" : "Go to content"}
+			Go to content
 		</a>
 	)
 }

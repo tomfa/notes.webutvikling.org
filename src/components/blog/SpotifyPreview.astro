@@ -1,8 +1,9 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import type { IElement } from "@/data/shared";
-import { getFormattedDate } from "@/utils";
+import { getFormattedDate, hasBody } from "@/utils";
 import SpotifyEmbed from "./SpotifyEmbed.astro";
+import NotesIcon from "./NotesIcon.astro";
 
 interface Props extends IElement {
 	post: CollectionEntry<"link">;
@@ -14,13 +15,17 @@ const { post, as: Element = "div", withDesc = true } = Astro.props;
 const date = new Date(post.data.pubDate || Date.now());
 const datetime = date.toISOString();
 const postDate = getFormattedDate(date, { month: "short" });
+const notes = hasBody(post);
 ---
 
-<Element>
-	<a href={post.data.url} class="cactus-link inline-block" rel="prefetch">
-		{post.data.title}
-	</a>
-	<span class="ml-2 text-xs text-gray-400">Spotify</span>
+<Element class="flex w-full items-baseline justify-between gap-x-2">
+	<span>
+		<a href={post.data.url} class="cactus-link inline-block" rel="prefetch">
+			{post.data.title}
+		</a>
+		<span class="ml-2 text-xs text-gray-400">Spotify</span>
+	</span>
+	{notes && <NotesIcon slug={post.slug} />}
 </Element>
 <div class="mt-2 w-full">
 	<SpotifyEmbed url={post.data.url} title={post.data.title} />

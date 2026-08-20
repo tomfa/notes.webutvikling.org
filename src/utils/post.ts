@@ -6,6 +6,10 @@ export function isVisible(entry: Entry) {
 	return !entry.data.archived && (!entry.data.draft || import.meta.env.DEV);
 }
 
+export function hasBody(entry: Entry) {
+	return Boolean(entry.body?.trim());
+}
+
 export function sortMDByDate(posts: Entry[] = []) {
 	return posts.sort(
 		(a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
