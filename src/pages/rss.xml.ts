@@ -1,13 +1,13 @@
 import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
 import siteMeta from "@/site-config";
-import { sortMDByDate } from "@/utils";
+import { sortMDByDate, isVisible } from "@/utils";
 
 export const get = async () => {
 	const posts = await getCollection("post");
 	const links = await getCollection("link");
 	const content = sortMDByDate(
-		[...links, ...posts].filter((p) => !p.data.draft || import.meta.env.DEV)
+		[...links, ...posts].filter(isVisible)
 	);
 
 	return rss({

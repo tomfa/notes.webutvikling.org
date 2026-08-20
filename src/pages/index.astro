@@ -2,16 +2,16 @@
 import { getCollection } from "astro:content";
 import PageLayout from "@/layouts/Base";
 import PostPreview from "@/components/blog/PostPreview";
-import { getUniqueTags, getUniqueCategories, getSpotifyData, sortMDByDate } from "@/utils";
+import { getUniqueTags, getUniqueCategories, getSpotifyData, sortMDByDate, isVisible } from "@/utils";
 import ArticlePreview from "../components/blog/ArticlePreview.astro";
 import VideoPreview from "../components/blog/VideoPreview.astro";
 import SpotifyPreview from "../components/blog/SpotifyPreview.astro";
 
 const allPosts = await getCollection("post");
-const posts = allPosts.filter(p => !p.data.draft || import.meta.env.DEV).map(p => ({ ...p, type: "post" }));
+const posts = allPosts.filter(isVisible).map(p => ({ ...p, type: "post" }));
 
 const allLinks = await getCollection("link");
-const links = allLinks.filter(p => !p.data.draft || import.meta.env.DEV).map(p => ({ ...p, type: "link" }));
+const links = allLinks.filter(isVisible).map(p => ({ ...p, type: "link" }));
 
 const allPostsByDate = sortMDByDate([...posts, ...links]);
 const mainTags = [

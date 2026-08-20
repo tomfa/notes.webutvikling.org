@@ -4,13 +4,13 @@ import PageLayout from "@/layouts/Base";
 import ArticlePreview from "@/components/blog/ArticlePreview";
 import PostPreview from "@/components/blog/PostPreview";
 import SocialList from "@/components/SocialList";
-import { getUniqueTags, sortMDByDate } from "@/utils";
+import { getUniqueTags, sortMDByDate, isVisible } from "@/utils";
 
 const allLinks = await getCollection("link");
 const articles = allLinks.filter((p) => p.data.type === "article");
 const allPosts = await getCollection("post");
 const bookPosts = allPosts.filter((p) => p.data.category === "book");
-const entries = [...articles, ...bookPosts].filter(p => !p.data.draft || import.meta.env.DEV);
+const entries = [...articles, ...bookPosts].filter(isVisible);
 const entriesByDate = sortMDByDate(entries);
 const uniqueTags = getUniqueTags(entries);
 ---

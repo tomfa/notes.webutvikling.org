@@ -1,11 +1,11 @@
 ---
 import PageLayout from "@/layouts/Base";
-import { getUniqueTagsWithCount } from "@/utils";
+import { getUniqueTagsWithCount, isVisible } from "@/utils";
 import { getCollection } from "astro:content";
 
 const allPosts = await getCollection("post");
 const allLinks = await getCollection("link");
-const allTags = getUniqueTagsWithCount([...allPosts, ...allLinks].filter(p => !p.data.draft || import.meta.env.DEV));
+const allTags = getUniqueTagsWithCount([...allPosts, ...allLinks].filter(isVisible));
 
 const meta = {
 	title: "All Tags",

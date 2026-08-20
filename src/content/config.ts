@@ -15,6 +15,7 @@ export const POST_CATEGORY = [
 const post = defineCollection({
 	schema: z.object({
 		draft: z.boolean().default(false),
+		archived: z.boolean().default(false),
 		title: z.string().max(60),
 		description: z.string().min(50).max(160).optional(),
 		pubDate: z.any().transform((str) => str && new Date(str)),
@@ -28,6 +29,7 @@ const post = defineCollection({
 const link = defineCollection({
 	schema: z.object({
 		draft: z.boolean().default(false),
+		archived: z.boolean().default(false),
 		url: z.string().url(),
 		title: z.string().max(60),
 		description: z.string().min(50).max(320),

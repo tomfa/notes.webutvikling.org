@@ -24,6 +24,10 @@ _Avoid_: Post, article
 A Post that exists in the repo but is hidden from the production site.
 _Avoid_: Unpublished, WIP, private
 
+**Archived**:
+A Post or Link that exists in the repo but is hidden from both the development and production sites.
+_Avoid_: Deleted, hidden, retired
+
 **Category**:
 A single classification on a Post: guide, rant, question, scribble, statement, debugging, book, or idea. When omitted, the Post is a scribble.
 _Avoid_: Type, kind

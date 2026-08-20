@@ -2,6 +2,10 @@ import type { CollectionEntry } from "astro:content";
 
 export type Entry = CollectionEntry<"post"> | CollectionEntry<"link">;
 
+export function isVisible(entry: Entry) {
+	return !entry.data.archived && (!entry.data.draft || import.meta.env.DEV);
+}
+
 export function sortMDByDate(posts: Entry[] = []) {
 	return posts.sort(
 		(a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()

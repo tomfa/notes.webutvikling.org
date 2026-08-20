@@ -5,11 +5,11 @@ import { getCollection } from "astro:content";
 import PageLayout from "@/layouts/Base";
 import PostPreview from "@/components/blog/PostPreview";
 import Pagination from "@/components/Paginator";
-import { getUniqueCategories, sortMDByDate } from "@/utils";
+import { getUniqueCategories, sortMDByDate, isVisible } from "@/utils";
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
 	const allPosts = await getCollection("post");
-	const allPostsByDate = sortMDByDate(allPosts);
+	const allPostsByDate = sortMDByDate(allPosts.filter(isVisible));
 	const uniqueCategories = getUniqueCategories(allPostsByDate);
 
 	return uniqueCategories.flatMap((category) => {

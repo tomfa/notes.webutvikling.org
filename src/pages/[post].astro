@@ -3,14 +3,14 @@ import type { GetStaticPathsResult } from "astro";
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 import BlogPost from "@/layouts/BlogPost";
+import { isVisible } from "@/utils";
 
 
 export async function getStaticPaths(): Promise<GetStaticPathsResult> {
 	const posts: CollectionEntry<"post">[] = await getCollection("post");
 	const links: CollectionEntry<"link">[] = await getCollection("link");
-	const all = [...posts, ...links];
-  const isPublishable = (post: CollectionEntry<"post">) => !post.data.draft || import.meta.env.DEV;
-	const params = all.filter(isPublishable).flatMap((post, i) => {
+	const all = [...posts, ...links].filter(isVisible);
+	const params = all.flatMap((post, i) => {
     const slug = post.slug.match(/^\d{4}\-\d{2}\-\d{2}\-/) ? post.slug.substring(11) : post.slug;
     const param = [
       {

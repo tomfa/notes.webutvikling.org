@@ -4,10 +4,10 @@ import PageLayout from "@/layouts/Base";
 import ArticlePreview from "@/components/blog/ArticlePreview";
 import PostPreview from "@/components/blog/PostPreview";
 import SocialList from "@/components/SocialList";
-import { getUniqueTags, sortMDByDate } from "@/utils";
+import { getUniqueTags, sortMDByDate, isVisible } from "@/utils";
 
 const allLinks = await getCollection("link");
-const entries = allLinks.filter(p => p.data.type === 'lib');
+const entries = allLinks.filter(p => isVisible(p) && p.data.type === 'lib');
 const entriesByDate = sortMDByDate(entries);
 const uniqueTags = getUniqueTags(entries);
 ---

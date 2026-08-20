@@ -3,10 +3,10 @@ import { getCollection } from "astro:content";
 import PageLayout from "@/layouts/Base";
 import VideoPreview from "@/components/blog/VideoPreview";
 import SocialList from "@/components/SocialList";
-import { getUniqueTags, sortMDByDate } from "@/utils";
+import { getUniqueTags, sortMDByDate, isVisible } from "@/utils";
 
 const allLinks = await getCollection("link");
-const videos = allLinks.filter(l => l.data.type === "video");
+const videos = allLinks.filter(l => isVisible(l) && l.data.type === "video");
 const videosByDate = sortMDByDate(videos);
 const mainTags = [
 	"management",

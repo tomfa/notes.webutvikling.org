@@ -1,6 +1,7 @@
 export { getFormattedDate } from "./date";
 export { elementHasClass, toggleClass } from "./domElement";
 export {
+	isVisible,
 	sortMDByDate,
 	getUniqueTags,
 	getUniqueCategories,
