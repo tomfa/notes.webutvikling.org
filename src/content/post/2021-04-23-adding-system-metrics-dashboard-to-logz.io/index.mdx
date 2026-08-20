@@ -67,7 +67,7 @@ _Which percentiles to choose depends on the nature of your system, but the three
 
 Having many metrics to pay attention to, can lower the engagement with a dashboard.
 If there's "usually something wrong" and you don't react to it, the dashboard looses its value.
-Similarily if you have a lot of metrics – it can become too much and we become blind to them.
+Similarly if you have a lot of metrics – it can become too much and we become blind to them.
 
 In an overview dashboard, you can skip 400, 404 and 500, and just show the percentage of requests that are "bad",
 i.e. HTTP status 400 and above. When that number becomes large, a developer can then dive deeper into the numbers to identify
@@ -113,7 +113,7 @@ After this has been set up, logz will start pouring into Logz.io.
 
 #### Adding logs (NodeJS)
 
-If you don't use Heroku, logz.io has a ton of [log integrations](https://app-uk.logz.io/#/dashboard/send-your-data/log-sources) with good documention. A popular option for my crowd would be the [NodeJS logger](https://app-uk.logz.io/#/dashboard/send-your-data/log-sources/nodejs).
+If you don't use Heroku, logz.io has a ton of [log integrations](https://app-uk.logz.io/#/dashboard/send-your-data/log-sources) with good documentation. A popular option for my crowd would be the [NodeJS logger](https://app-uk.logz.io/#/dashboard/send-your-data/log-sources/nodejs).
 
 _They even included info regarding Serverless environments in the Node setup ❤_
 
@@ -210,7 +210,7 @@ Go to the dashboard from the left hand side. Add an existing visualization, and 
 
 Repeat it again for the "HTTP traffic". We now got a simple performance dashboard! 😲
 
-![Initial performance dashbard](/images/dashboard-start.png)
+![Initial performance dashboard](/images/dashboard-start.png)
 
 But it's hard to see if our performance changes are due to increased traffic load or not.
 It would be nice if the traffic could include a response time indication in the same graph.
@@ -219,7 +219,7 @@ Click the cogwheel for the HTTP traffic visualization, and Edit it.
 
 ![Edit visualization](/images/dashboard-edit-vis.png)
 
-On the left hand side, add a Y axis with mediuan aggregation on the service field.
+On the left hand side, add a Y axis with median aggregation on the service field.
 
 ![Add Response time aggregation](/images/add-y-axis.png)
 
@@ -241,11 +241,11 @@ Let's create a visualization for different types of error HTTP status.
 
 Go to visualizations, select our "HTTP requests" data source.
 
-Again, select the Bucket X-axis to be a Date historgram based on timestamp
+Again, select the Bucket X-axis to be a Date histogram based on timestamp
 
 ![Selecting date histogram for the X-axis](/images/buckets-date-histogram.png)
 
-Now filter based on status being above 400 – we don't care about successful requets here.
+Now filter based on status being above 400 – we don't care about successful requests here.
 
 ![Filter HTTP status above 400](/images/vis-filter-above-400.png)
 
@@ -272,11 +272,11 @@ We now got a table showing us the most requested urls.
 ![Most popular urls](/images/table-url-count.png)
 
 Now we can add a new metric, for the percentiles of response times.
-Add a metric on the left side for Percentieles aggregation of "service" field, on 50, 90 and 98 percents.
+Add a metric on the left side for Percentiles aggregation of "service" field, on 50, 90 and 98 percents.
 
-![Splitting resposne time percentiles](/images/table-response-time-percentiles.png)
+![Splitting response time percentiles](/images/table-response-time-percentiles.png)
 
-Voilla, we got ourselves a table of slow urls. A great place to start if our performance is bad 🕵️‍♀️
+Voila, we got ourselves a table of slow urls. A great place to start if our performance is bad 🕵️‍♀️
 
 ![Table visualization](/images/table-vis.png)
 
@@ -308,7 +308,7 @@ Add a new metric of aggregation "Sum bucket". Use aggregation "Filters", with fi
 
 _Repeat the process for the different statuses you care about to add more columns._
 
-Tada! 🎉 You now got a list of URLs that responds with bad status codes, and their amount. You can click on each header column to sort by e.g. most 500 erros, most 404 errors etc.
+Tada! 🎉 You now got a list of URLs that responds with bad status codes, and their amount. You can click on each header column to sort by e.g. most 500 errors, most 404 errors etc.
 
 ![View of debugging list](/images/debugging-list.png)
 

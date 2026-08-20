@@ -6,7 +6,7 @@ tags: [bluetooth, iot, javascript, json]
 category: guide
 ---
 
-I'm new to the whole Bluetooth communication game, but in my case I've run into having to communicate using 8-bit usigned integer arrays (I've used Cordova libraries to communicate with Arduino chips).
+I'm new to the whole Bluetooth communication game, but in my case I've run into having to communicate using 8-bit unsigned integer arrays (I've used Cordova libraries to communicate with Arduino chips).
 
 In order to do this I've had to convert from and to JSON structures on the Cordova side. I've done this with the two methods [here](https://gist.github.com/tomfa/706d10fed78c497731ac "Github Gist: Javascript-intarray"). On the Arduino side i use [bblanchon's ArduinoJson](https://github.com/bblanchon/ArduinoJson)
 

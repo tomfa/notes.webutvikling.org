@@ -58,7 +58,7 @@ Logger.info("Read user journal", {
 
 - You can use this to detect users who access abnormal amounts of journals by counting `action="READ_JOURNAL"`, grouping by `userId`.
 - You can find who has access patient 12345s journals by filtering on `value="user:12345", action="READ_JOURNAL"`.
-- If the suspected user denies any knowledge, you can search for HTTP logs with same `requestId`, and read out `ipAddress` to find the IP of the user who did it and its timestamp, which should be sufficient information in case there's a legal inquiery.
+- If the suspected user denies any knowledge, you can search for HTTP logs with same `requestId`, and read out `ipAddress` to find the IP of the user who did it and its timestamp, which should be sufficient information in case there's a legal inquiry.
 
 ### How are we progressing on sales?
 
@@ -112,10 +112,10 @@ productsPurchase.forEach((product) =>
 
 ### When was something changed.
 
-For certain systems, it may be necessary to have logging on most changes to add tracability or accountability. In these cases
+For certain systems, it may be necessary to have logging on most changes to add traceability or accountability. In these cases
 it can also be useful for the user to add a comment to why they performed a certain action.
 
-> Employee deletes a user after a request to be deleted ([Right to be forgotton](https://en.wikipedia.org/wiki/Right_to_be_forgotten)).
+> Employee deletes a user after a request to be deleted ([Right to be forgotten](https://en.wikipedia.org/wiki/Right_to_be_forgotten)).
 
 ```ts
 Logger.info('User deleted', {

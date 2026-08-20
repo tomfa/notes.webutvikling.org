@@ -3,7 +3,7 @@ title: "ESM vs CommonJS"
 pubDate: 2023-09-20
 heroImage: /images/imports.jpg
 tags: [javascript, esm, commonjs]
-imageAlt: "An illustration of imports of physical good. Open qustion: can you tree-shake a cargo ship? "
+imageAlt: "An illustration of imports of physical good. Open question: can you tree-shake a cargo ship? "
 ---
 
 This is a topic I've been postponing to understand forever. What is what and why should I care as a web-developer.
@@ -47,7 +47,7 @@ Right, spot on!
 If you're developing packages for others to consume, you might annoy `commonjs` consumers by publishing an `esm` package. 
 `node-fetch` published [this esm/commonjs FAQ](https://github.com/node-fetch/node-fetch/issues/1279) as a response to all the questions after they transitioned to esm.
 
-I believe a main difference being `esm` modules are imported asyncronously on use, while `commonjs` are imported sync immediately. 
+I believe a main difference being `esm` modules are imported asynchronously on use, while `commonjs` are imported sync immediately. 
 If that's correct, you could argue commonjs to be more suitable serverside?
 
 > Ok, lets go. How do I start using `esm`?

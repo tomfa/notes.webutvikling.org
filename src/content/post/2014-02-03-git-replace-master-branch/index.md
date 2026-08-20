@@ -24,6 +24,6 @@ git checkout master
 git merge BESTBRANCH
 ```
 
-Voilla! Now master is best.
+Voila! Now master is best.
 
 http://stackoverflow.com/questions/2862590/how-to-replace-master-branch-in-git-entirely-from-another-branch

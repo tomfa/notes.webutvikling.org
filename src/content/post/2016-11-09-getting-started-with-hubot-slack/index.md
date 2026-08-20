@@ -8,7 +8,7 @@ category: guide
 
 If [Custom Slash commands](http://notes.webutvikling.org/custom-slack-slash-commands-on-heroku/) weren't enough for you, or if you are trapped behind a firewall without the option to make public endpoints, bots are a great way to make custom integrations with Slack. Anything you can program is doable to integrate with Slack, let me show you and get you started. Key points about Slack bots:
 
-- **You can run the bot anywhere you'd like. No public endpoint is required.** The bot integrates with Slack using a websocket. This also means communication needs to be initiated at the location of the bot. Slack cannot "wake" your bot up if it goes down. This is worth keeping in mind if you're deploying at Heroku with a free node (which will put your app in sleep mode at somepoint). You should then make a [slash command](http://notes.webutvikling.org/custom-slack-slash-commands-on-heroku/) that pokes your server to make it wake back up.
+- **You can run the bot anywhere you'd like. No public endpoint is required.** The bot integrates with Slack using a websocket. This also means communication needs to be initiated at the location of the bot. Slack cannot "wake" your bot up if it goes down. This is worth keeping in mind if you're deploying at Heroku with a free node (which will put your app in sleep mode at some point). You should then make a [slash command](http://notes.webutvikling.org/custom-slack-slash-commands-on-heroku/) that pokes your server to make it wake back up.
 
 - **Anything you can do as a user, the bot can.** A bot can be invited into different channels, and also removed. It can give emoticon-responses to other people saying stuff. You can send private messages to it, and receive them.
 

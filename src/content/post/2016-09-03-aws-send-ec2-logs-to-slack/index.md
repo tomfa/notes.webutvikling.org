@@ -36,7 +36,7 @@ In this first step, we will send application logs from the EC2 instances to Clou
     sudo python awslogs-agent-setup.py -r eu-central-1
     ```
 
-If you need any guidance during the interactive setup, check out the table at the bottom of the [AWS guide](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/QuickStartEC2Instance.html). **Voilla!** Within a few minutes, your log should appear in AWS Console > CloudWatch > Logs. In the meanwhile, we can do Part 2.
+If you need any guidance during the interactive setup, check out the table at the bottom of the [AWS guide](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/QuickStartEC2Instance.html). **Voila!** Within a few minutes, your log should appear in AWS Console > CloudWatch > Logs. In the meanwhile, we can do Part 2.
 
 ### Part 2: Send CloudWatch Logs to Slack
 

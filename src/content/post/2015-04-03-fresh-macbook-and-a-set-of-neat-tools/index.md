@@ -22,7 +22,7 @@ I recently bought a Macbook Pro Retina (Late 2014) with 128 GB of storage. I tho
 - [Spectacle](http://spectacleapp.com) - window manager for OS X.
 - [Skype](http://www.skype.com/en/) - Talking with people (though I try to use [appear.in](http://appear.in) when possible)
 - [Spotify](https://www.spotify.com/no/) - Musicplayer
-- [Balsamiq](https://balsamiq.com/) - Making sketches and mockups for costumers
+- [Balsamiq](https://balsamiq.com/) - Making sketches and mockups for customers
 - [Flux](https://justgetflux.com/) - Adjusts the screen lightning to make late night coding more pleasant
 - [FileZilla](http://sourceforge.net/projects/filezilla/) - FTP Client
 - [Sequel Pro](http://www.sequelpro.com/) - SQL client

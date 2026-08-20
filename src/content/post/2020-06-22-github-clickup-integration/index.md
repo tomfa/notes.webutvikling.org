@@ -54,7 +54,7 @@ Both commit messages, pull request texts and issue trackers info are more or les
 - What some concerns might be and how to fix them.
 
 They're not identical, but they're definitely super useful to each other:
-PRs are easier when you can read the commit messages. Similarily, they're easier when you can read the issue tracker.
+PRs are easier when you can read the commit messages. Similarly, they're easier when you can read the issue tracker.
 
 So I like referencing my issue in the issue tracker from my git commits, or/and PRs.
 It's a super quick and efficient way to provide useful context.
@@ -77,7 +77,7 @@ The upside of referencing the issue in each commit is that any future git blame
 leads quickly to the issue tracker.
 
 If you have tried committing with `#`, you have probably noticed
-that it is the default commment character in git.
+that it is the default comment character in git.
 
 You can change this character with the following command:
 

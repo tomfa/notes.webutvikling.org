@@ -14,4 +14,4 @@ I've spent -SO- **-MUCH-** time doing **stupid** style changes for an html email
 
 Honestly. It'll suck the will to live right out of you.
 
-Instead, use something like [MailChimp](http://mailchimp.com). For < 2000 subscribers and < 12000 emails/month, **it's free**. And its got a drag and drop editor, which will make your custumers **so** happy. Or you can create the templates in the editor yourself and **hook your website** onto MailChimp. It's a no-brainer.
+Instead, use something like [MailChimp](http://mailchimp.com). For < 2000 subscribers and < 12000 emails/month, **it's free**. And its got a drag and drop editor, which will make your customers **so** happy. Or you can create the templates in the editor yourself and **hook your website** onto MailChimp. It's a no-brainer.

@@ -6,7 +6,7 @@ tags: ["monitoring", devops, montoring]
 category: scribble
 ---
 
-Monitor-driven or Metric-driven development (MDD). It's becoming more and more relevant parallell with continuous delivery, devops etc, and I think it's super awesome.
+Monitor-driven or Metric-driven development (MDD). It's becoming more and more relevant parallel with continuous delivery, devops etc, and I think it's super awesome.
 
 ## Stop finding bugs.
 

@@ -18,7 +18,7 @@ Uploaded media files in Django are vanished once a new heroku spins up, so you'l
 
 ### Part 2. Configure your Heroku environment
 
-We don't want to hardcode our keys into our repo, so we use the app config variables in Heroku.   **Add Environment Variabels**
+We don't want to hardcode our keys into our repo, so we use the app config variables in Heroku.   **Add Environment Variables**
 
 ```
 AWS\_ACCESS\_ID: <YOUR\_ACCESSKEY>

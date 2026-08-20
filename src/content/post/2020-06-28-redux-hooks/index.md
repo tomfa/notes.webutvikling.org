@@ -276,4 +276,4 @@ The change from MapToProps to using **custom hooks** can be seen in the diff [13
 
 - Component with hooks [will rerender when parent rerenders, unlike with MapXToProps](https://react-redux.js.org/api/hooks#performance). However, this can easily be fixed with `React.useMemo` wrapping the component.
 
-Overall, I do not see good reasons to keep using MapXToProps. Hooks seem more consise and readable.
+Overall, I do not see good reasons to keep using MapXToProps. Hooks seem more concise and readable.

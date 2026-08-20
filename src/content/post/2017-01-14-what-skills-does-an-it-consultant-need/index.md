@@ -10,7 +10,7 @@ _This is a copy paste of my answer to a short interview from a student_ _Disclai
 
 **1. What skills are expected (or most valued/needed) from a person working as a software developer in your company?**
 
-- Technical experience. Understanding of a techincal area is not expected, but highly valued. But everyone needs some level of understanding about programming, databases etc.
+- Technical experience. Understanding of a technical area is not expected, but highly valued. But everyone needs some level of understanding about programming, databases etc.
 
 - Eagerness about developing. You should be self-propelled: finding solutions and learn on your own. And you better like learning, cause you're going to keep doing a lot of it.
 
@@ -20,9 +20,9 @@ _This is a copy paste of my answer to a short interview from a student_ _Disclai
 
 I work in an consultant agency. We, as a team, create something for someone else, in a limited time frame. We must therefore utilize the best in each other, pulling in the same direction towards the right product.
 
-- For every new project, we need to understand what the customer wants. We must challenge and confirm why the customer wants this, and that it's actually what they need through interaction with the users. If not, we're like to create the wrong product. Here, commmunication skills and keeping an open mind are the most important; it can be hard to remember that you are not the user, and that what makes sense for you, might not make sense for others.
+- For every new project, we need to understand what the customer wants. We must challenge and confirm why the customer wants this, and that it's actually what they need through interaction with the users. If not, we're like to create the wrong product. Here, communication skills and keeping an open mind are the most important; it can be hard to remember that you are not the user, and that what makes sense for you, might not make sense for others.
 
-- We also need to explain and argument for what we believe in. We must contribute with our experience and knowledge, letting others learn from us, while also learn from others. If not, we cannot utilize the best from each of us. A discussion often comes after researching the problem (eagnerness), or from experience, and communication skills are needed to find a good solution that everyone is happy with.
+- We also need to explain and argument for what we believe in. We must contribute with our experience and knowledge, letting others learn from us, while also learn from others. If not, we cannot utilize the best from each of us. A discussion often comes after researching the problem (eagerness), or from experience, and communication skills are needed to find a good solution that everyone is happy with.
 
 - Prioritizing correctly. As a team, we must be able to say "no, because...", and "this first, because..." to requests from the customer. If we don't prioritize correctly, we can cripple the development speed, or build on assumptions that will hurt us later. We often need technical experience to be able to know of these reasons, and we need communication skills to be able to argue for our opinions without alienating or closing off others.
 
@@ -30,4 +30,4 @@ I work in an consultant agency. We, as a team, create something for someone else
 
 **3. Based on your experience, which skill(s) – if any – are typically lacking from students graduating from a University or a College.**
 
-I think more practical experience would be benefitial for many. Join a startup, contribute to open source projects, create a django website, deploy an app on heroku, make a React app, create a REST service. Any of these things give valuable experience with practical work that you'll actually do. This in turn gives you concrete experience to contribute with, along with confidence in your self. That's the two things I think lack in many students that graduates.
+I think more practical experience would be beneficial for many. Join a startup, contribute to open source projects, create a django website, deploy an app on heroku, make a React app, create a REST service. Any of these things give valuable experience with practical work that you'll actually do. This in turn gives you concrete experience to contribute with, along with confidence in your self. That's the two things I think lack in many students that graduates.

@@ -14,7 +14,7 @@ I can do it with the [toolbelt](https://toolbelt.heroku.com/), and the command
 heroku run printenv --app your-app-name | grep WEB_CONCURRENCY
 ```
 
-For environement variables that are set by us as a setting, the can also be found
+For environment variables that are set by us as a setting, the can also be found
 with:
 
 ```bash

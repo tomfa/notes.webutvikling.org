@@ -51,7 +51,7 @@ Imagine your web application with no borders, only Helvetica, and no colors. The
 - **structure**: width, height, padding, positioning etc.
 - **skin**: colors, shadows, borders, fonts etc.
 
-The principle of using separate classes for specifying structure and skin is based on the idea that skins are often reused across many elements where structure cannot, and visa versa. It therefore allows for great reusability classes, and a swift change of appearance through changing a few skin-classes. This concept is advised in SMACSS and OOCSS. It doesn't fit neatly into BEM or SUIT CSS.
+The principle of using separate classes for specifying structure and skin is based on the idea that skins are often reused across many elements where structure cannot, and vice versa. It therefore allows for great reusability classes, and a swift change of appearance through changing a few skin-classes. This concept is advised in SMACSS and OOCSS. It doesn't fit neatly into BEM or SUIT CSS.
 
 ### Example site
 
@@ -147,7 +147,7 @@ In short, BEM tells you to use 3 different categories of classes. It's quite sim
 [OOCSS](https://github.com/stubbornella/oocss/wiki) (Object-Oriented CSS) was maybe the first popular CSS system, introduced in 2009. It's not really a system to be adopted any more, but is more known for its two main principles, which were mentioned earlier:
 
 - **Separate container and content**. For example, don't style a search field based on it being placed within the header. In the context of atomic design, a _molecule_ should never (or rarely) be styled on the basis of what _organism_ it is contained in. This allows you to easily reuse the molecule elsewhere, as it should look and act the same.
-- **Separate structure and skin**. Use different classes for the `width`, `height`, `padding` (structure) than for `color`, `box-shadow`, `border` (skin). This is based on the idea that skins are often reused across many elements where structure cannot, and visa versa. It therefore allows for greater reusability.
+- **Separate structure and skin**. Use different classes for the `width`, `height`, `padding` (structure) than for `color`, `box-shadow`, `border` (skin). This is based on the idea that skins are often reused across many elements where structure cannot, and vice versa. It therefore allows for greater reusability.
 
 #### Example Anti OOCSS
 
@@ -188,7 +188,7 @@ While atomic design, oocss and BEM are more conventions and methods of structuri
 
 it also have a few extra categorizations of classes:
 
-- **utiliity-classes**, e.g. `u-block` or `u-textBreak`
+- **utility-classes**, e.g. `u-block` or `u-textBreak`
 - **state-classes, **e.g. `is-disabled`
 
 #### Example SUIT CSS

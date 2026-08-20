@@ -89,7 +89,7 @@ let age = "27";
 let personObject = { face, age };
 ```
 
-9.  Similarily, there's **shorthand for deconstructing objects**:
+9.  Similarly, there's **shorthand for deconstructing objects**:
 
 ```js
 let { face, age } = personObject;
@@ -261,7 +261,7 @@ class Person {
 }
 ```
 
-22. ES6 got **modules**! Previously, the namespace in javascript was mucky. All files that was loaded on a webpage shared the same namespace. So, for example: Addons to jquery were dependant on jquery being loaded previously. And if you in your modules used a variable 'cow', this would be accessable in other javascript files (unless you wrapped them in a function or hid them by other means). In ES6, you can **require **libraries like this:
+22. ES6 got **modules**! Previously, the namespace in javascript was mucky. All files that was loaded on a webpage shared the same namespace. So, for example: Addons to jquery were dependent on jquery being loaded previously. And if you in your modules used a variable 'cow', this would be accessible in other javascript files (unless you wrapped them in a function or hid them by other means). In ES6, you can **require **libraries like this:
 
 ```js
 // messagemodule.js

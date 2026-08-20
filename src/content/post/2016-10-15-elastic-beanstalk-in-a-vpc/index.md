@@ -92,7 +92,7 @@ YES. Given the EC2-instances are placed in the same public network as the ELB, t
 
 **Q: So what was the solution?**
 
-Add --vpc.elbpublic **IF** you want your loadbalancer to be publicly accessable, and add --vpc.public IP **IF** the EC2-instances are in a public subnet.
+Add --vpc.elbpublic **IF** you want your loadbalancer to be publicly accessible, and add --vpc.public IP **IF** the EC2-instances are in a public subnet.
 
 ```
 eb create BeanstalkCleanTest  \

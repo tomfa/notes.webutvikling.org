@@ -84,7 +84,7 @@ Javascript allows us to do some extra imports or logic if need be.
 
 ---
 
-This will install the needed depencies. If I look at my new `package.json`, I'll see some new eslint-\* packages in my devDepencencies.
+This will install the needed dependencies. If I look at my new `package.json`, I'll see some new eslint-\* packages in my devDependencies.
 
 ### Running ESLint
 
@@ -120,9 +120,9 @@ extends: [
 ],
 ```
 
-[Extends](https://eslint.org/docs/user-guide/configuring#using-a-configuration-file) allows us to point to a different eslint configuration, and use that as a "basis". The current eslint config will take presendence over any configuration it extends.
+[Extends](https://eslint.org/docs/user-guide/configuring#using-a-configuration-file) allows us to point to a different eslint configuration, and use that as a "basis". The current eslint config will take precedence over any configuration it extends.
 
-I can point to packages such as `eslint-config-airbnb`, or with a relative path to a different config file of my own. That allows me to split up rules and settings in different files, which can be useful if I want to reuse my rules accross different repositories.
+I can point to packages such as `eslint-config-airbnb`, or with a relative path to a different config file of my own. That allows me to split up rules and settings in different files, which can be useful if I want to reuse my rules across different repositories.
 
 _Note: When pointing to packages, I can omit `eslint-config`, and only write `airbnb` as the extended package string._
 

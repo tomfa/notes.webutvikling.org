@@ -66,7 +66,7 @@ You should now have python2.7 with pip and virtualenvwrapper without having
 had sudo! Awesomesauce!
 
 Now you might have to set up some path pointers to this python instance when
-you set up new projects on the serfver
+you set up new projects on the server
 
 ### Project Step 1: Get your project
 

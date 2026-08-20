@@ -6,7 +6,7 @@ tags: [freshdesk, slack]
 category: guide
 ---
 
-Adding slack as an app in Freshdesk allows you to use observers and dispatcher in freshdesk to notify / recieve data from Slack. **First, add Slack as an app to Freshdesk**
+Adding slack as an app in Freshdesk allows you to use observers and dispatcher in freshdesk to notify / receive data from Slack. **First, add Slack as an app to Freshdesk**
 
 1.  Login to your Freshdesk
 2.  Click Admin > Apps > Get more apps [![Freshdesk observer ](/images/Screen-Shot-2016-08-02-at-15.27.24-300x98.png)](/images/Screen-Shot-2016-08-02-at-15.27.24.png)
@@ -28,7 +28,7 @@ Adding slack as an app in Freshdesk allows you to use observers and dispatcher i
 #### Add an observer rule if you want notification when ticket is UPDATED
 
 1.  Click Admin > Observer > New Rule
-2.  Trigger when e.g. a reply is sent [![Freshdesk observver](/images/Screen-Shot-2016-08-02-at-15.25.44-300x136.png)](/images/Screen-Shot-2016-08-02-at-15.25.44.png)
+2.  Trigger when e.g. a reply is sent [![Freshdesk observer](/images/Screen-Shot-2016-08-02-at-15.25.44-300x136.png)](/images/Screen-Shot-2016-08-02-at-15.25.44.png)
 3.  You might want it to only trigger when the customer replies (not yourself) [![Freshdesk reply is sent](/images/Screen-Shot-2016-08-02-at-16.13.33-300x158.png)](/images/Screen-Shot-2016-08-02-at-16.13.33.png)
 4.  Then, post to Slack. Again, use the url of the ticket, and don't include reply text.
 

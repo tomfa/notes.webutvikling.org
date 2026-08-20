@@ -26,7 +26,7 @@ echo "export PYTHONSTARTUP=~/.pythonrc" >> ~/.bash_profile
 ```
 
 Tada! After having reopened your terminal window, you should now get
-autocomplete when opennig up `python`
+autocomplete when opening up `python`
 
 ### Virtualenv
 

@@ -13,9 +13,9 @@ Wow, such easy, much free! A few simple steps on
 
 _(See 1.4 if it's for a Load Balancer)_
 
-### Lession 1: Create certificates in US-East
+### Lesson 1: Create certificates in US-East
 
-No matter where you're from, or where your buckets or infrastructure is located, **always request Certificiates from US-East**:
+No matter where you're from, or where your buckets or infrastructure is located, **always request Certificates from US-East**:
 
 > You can use certificates that you created in AWS Certificate Manager (ACM) in the **US-East (N. Virginia)** Region, or you can use certificates stored in the IAM certificate store.
 > – [AWS support center](https://aws.amazon.com/premiumsupport/knowledge-center/custom-ssl-certificate-cloudfront/)

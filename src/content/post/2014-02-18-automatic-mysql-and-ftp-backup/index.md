@@ -93,7 +93,7 @@ This step will make the script send you an e-mail when it's run.
   CONFIG_mailcontent='log'
   ```
 
-#### Running automysqlbackup regulary
+#### Running automysqlbackup regularly
 
 [Set up crontab](http://notes.webutvikling.org/cron-tabs/ "Cron tabs: create and delete") to run the script with parameters for daily at 2AM:
 

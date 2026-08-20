@@ -16,6 +16,6 @@ category: scribble
 
 - Don't use the console to set up your AWS services. They are not easy to use, hard to remember, difficult to document etc etc. Use aws cli, a provisioning framework, terraform or something else that allows you to document and code your infrastructure.
 
-- Using Cloudfront on top of S3 bucket for web static files minimizes your latency by quite alot. Totally worth it. It can also be used to host your entire webpackified  frontend (or in other ways compressed to just static files).
+- Using Cloudfront on top of S3 bucket for web static files minimizes your latency by quite a lot. Totally worth it. It can also be used to host your entire webpackified  frontend (or in other ways compressed to just static files).
 
 - Cloudwatch with notifications are cool. You can create an alarm for CPU load, disk load ++++++.

@@ -28,7 +28,7 @@ lsof 2>/dev/null | wc -l
 
 The latter showing my current user's number of file descriptors. If my current amount of FD is greater than my allowed number of FD, I have to kill some of my processes.
 
-## How do I find my currently running processses?
+## How do I find my currently running processes?
 
 ```bash
 lsof -i
@@ -42,7 +42,7 @@ This will show a list where PID (Process ID) is a column
 lsof | grep 123456
 ```
 
-123456 being the process ID. This will show some addition information which should allow you to indentify what the process is actually running.
+123456 being the process ID. This will show some addition information which should allow you to identify what the process is actually running.
 
 ## How do I kill processes?
 

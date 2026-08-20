@@ -139,7 +139,7 @@ type Props = {
 - If you say that they should be optional, then the type annotation does not
   tell you what assumptions you can have inside the class. It is then important that your tools understand that they'll always have values.
 
-Conceptually, I personally I lean towards having them optional. Arguments is "How you instansiate" a class, not "What values are defined" (inside a class). Practically, I'm also more often uncertain about a class when I'm working outside it, than inside it.
+Conceptually, I personally I lean towards having them optional. Arguments is "How you instantiate" a class, not "What values are defined" (inside a class). Practically, I'm also more often uncertain about a class when I'm working outside it, than inside it.
 
 And it shouldn't really matter, as long as your TypeScript compiler or Flow
 linter and your IDE know what's going on.

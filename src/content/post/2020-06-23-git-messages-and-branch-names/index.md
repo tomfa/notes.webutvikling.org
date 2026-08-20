@@ -23,7 +23,7 @@ Question of the day:
 > It may not impact me or my team short term: The code is being merged without
 > anyone reading/caring about the commit messages.
 
-> Naming is hard. Writing consice, short messages equally so. I do not have
+> Naming is hard. Writing concise, short messages equally so. I do not have
 > the mental capacity for good commit messages today.
 
 ## When should I do commits?
@@ -33,7 +33,7 @@ Question of the day:
 What's meaningful can be:
 
 - Extract logic to separate methods (without changing behaviour)
-- Reformatting code (identing, spacing, line shifts, import ordering)
+- Reformatting code (indenting, spacing, line shifts, import ordering)
 - Changing text (in 1 view or situation)
 - Fixing a bug (could often also be more than 1)
 - Adding the DB changes needed for your feature
