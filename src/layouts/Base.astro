@@ -47,9 +47,14 @@ const {
 
 			const isDark = getThemePreference() === "dark";
 
+			function syncPagefindTheme(dark) {
+				root.setAttribute("data-pf-theme", dark ? "dark" : "light");
+			}
+
 			// watch document element class attribute and update user preference when it changes.
 			const observer = new MutationObserver(() => {
 				const rootIsDark = root.classList.contains("dark");
+				syncPagefindTheme(rootIsDark);
 				// set the meta attribute
 				colorThemeMetaTag.setAttribute(
 					"content",
@@ -64,8 +69,11 @@ const {
 
 			// initailse root class attribute
 			root.classList.toggle("dark", isDark);
+			syncPagefindTheme(isDark);
       document.addEventListener('astro:after-swap', () => {
-        root.classList.toggle("dark", getThemePreference() === "dark");
+        const dark = getThemePreference() === "dark";
+        root.classList.toggle("dark", dark);
+        syncPagefindTheme(dark);
       });
 		</script>
 		<ClientRouter />

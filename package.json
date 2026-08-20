@@ -41,10 +41,12 @@
 	"dependencies": {
 		"@astrojs/react": "^6.0.3",
 		"@astrojs/rss": "^4.0.19",
+		"@pagefind/component-ui": "^1.5.2",
 		"@types/react": "^18.2.21",
 		"@types/react-dom": "^18.2.7",
 		"astro": "^7.2.3",
 		"astro-embed": "^0.13.1",
+		"astro-pagefind": "^2.0.1",
 		"react": "^18.0.0",
 		"react-dom": "^18.0.0",
 		"react-gist": "^1.2.4",

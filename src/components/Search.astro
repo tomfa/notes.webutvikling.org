@@ -1,0 +1,15 @@
+---
+import "../styles/search.css";
+---
+
+<script>
+	(() => {
+		const onIdle = window.requestIdleCallback || ((cb: IdleRequestCallback) => setTimeout(cb, 1));
+		onIdle(async () => {
+			await import("@pagefind/component-ui");
+		});
+	})();
+</script>
+
+<pagefind-modal-trigger compact hide-shortcut></pagefind-modal-trigger>
+<pagefind-modal reset-on-close></pagefind-modal>

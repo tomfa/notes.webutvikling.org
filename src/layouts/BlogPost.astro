@@ -8,9 +8,10 @@ import { getOgDescription, getOgImageSrc, resolveOgImage } from "@/utils";
 
 interface Props {
 	post: CollectionEntry<"post"> | CollectionEntry<"link">;
+	indexable?: boolean;
 }
 
-const { post } = Astro.props;
+const { post, indexable = true } = Astro.props;
 const { headings } = await render(post);
 const minDepth = headings.reduce((min, { depth }) => Math.min(min, depth), Infinity);
 
@@ -30,7 +31,7 @@ const imageAlt = "imageAlt" in post.data ? post.data.imageAlt : undefined;
 	}}
 >
 	<div class="sm:grid sm:grid-cols-[3fr_1fr] sm:items-start sm:gap-x-10">
-		<article class="break-words">
+		<article class="break-words" data-pagefind-body={indexable ? true : undefined}>
 			<Hero content={post} />
 			<div
 				class="prose prose-sm prose-cactus mt-12 prose-headings:font-semibold prose-headings:before:absolute prose-headings:before:-ml-4 prose-headings:before:text-accent prose-headings:before:content-['#'] prose-th:before:content-none"

@@ -48,11 +48,11 @@ const { Content } = await render(post);
 />
   ) : null}
 
-<BlogPost post={post}>
+<BlogPost post={post} indexable={!redirect}>
 	<Content />
 	{
 		related.length > 0 && (
-			<section class="not-prose mt-16">
+			<section class="not-prose mt-16" data-pagefind-ignore>
 				<h2 class="font-semibold">Related</h2>
 				<ul class="mt-4 space-y-6">
 					{related.map((entry) => (
@@ -66,7 +66,7 @@ const { Content } = await render(post);
 	}
 	{
 		(prev || next) && (
-			<div class="pt-20 text-xs flex justify-between">
+			<div class="pt-20 text-xs flex justify-between" data-pagefind-ignore>
 				{prev && (
 					<div class="mb-2 flex gap-1 flex-col">
 						<span class="text-xs">Previous post</span>

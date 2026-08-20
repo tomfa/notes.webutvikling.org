@@ -34,7 +34,7 @@ const spotify = "url" in content.data ? getSpotifyData(content.data.url) : null;
 		<span class="mb-4 block text-xs text-gray-400">{content.data.imageAlt}</span>
 	)
 }
-<h1 class="title">{content.data.title}</h1>
+<h1 class="title" data-pagefind-meta="title">{content.data.title}</h1>
 
 <time datetime={datetime}>{postDate}</time>
 {
@@ -63,6 +63,7 @@ const spotify = "url" in content.data ? getSpotifyData(content.data.url) : null;
 						class="link inline-block"
 						aria-label={`View more blogs with the tag ${tag}`}
 						href={`/tags/${tag}`}
+						data-pagefind-filter="tag"
 					>
 						{tag}
 					</a>
@@ -74,14 +75,14 @@ const spotify = "url" in content.data ? getSpotifyData(content.data.url) : null;
 <p class="mt-8">{content.data.description}</p>
 {
 	spotify && "url" in content.data && (
-		<div class="mt-8 w-full">
+		<div class="mt-8 w-full" data-pagefind-ignore>
 			<SpotifyEmbed url={content.data.url} title={content.data.title} />
 		</div>
 	)
 }
 {
 	content.data.url && !spotify && (
-		<a href={content.data.url} class="link block mt-8">
+		<a href={content.data.url} class="link block mt-8" data-pagefind-ignore>
 			Go to content
 		</a>
 	)
