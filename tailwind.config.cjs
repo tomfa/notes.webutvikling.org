@@ -99,7 +99,7 @@ module.exports = {
 		plugin(function ({ addComponents }) {
 			addComponents({
 				".cactus-link": {
-					"@apply relative py-2 underline underline-offset-4 decoration-2 decoration-link sm:no-underline sm:py-0":
+					"@apply relative py-2 font-semibold underline underline-offset-4 decoration-2 decoration-link sm:no-underline sm:py-0":
 						{},
 					"@media (min-width: 640px)": {
 						"&:hover": {
