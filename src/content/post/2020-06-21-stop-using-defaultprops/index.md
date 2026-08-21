@@ -4,6 +4,7 @@ pubDate: 2020-06-21
 heroImage: /images/raphael-biscaldi-5PEy9UraJ5c-unsplash.jpg
 tags: ["react", "javascript"]
 category: statement
+description: "In functional components, default argument values beat defaultProps. Use the language, not the library."
 ---
 
 Question of the day:

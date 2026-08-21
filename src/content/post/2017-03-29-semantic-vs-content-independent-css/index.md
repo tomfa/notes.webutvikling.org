@@ -4,6 +4,7 @@ pubDate: 2017-03-29
 heroImage: /images/Screen-Shot-2017-03-29-at-23.17.34.png
 tags: [css]
 category: statement
+description: "Name CSS classes for what they are, not how they're used."
 ---
 
 Say you have a search form in the top right corner of your website, that looks
@@ -51,6 +52,6 @@ These are all content independent class names, i.e. describe **what they are**, 
 Valid point, and this type of naming is what enables their reusability,
 consistency and readability!
 
-And isn't really our own little *Mini-Bootstrap*
+And isn't really our own little _Mini-Bootstrap_
 exactly what we want from our css? That can be reused in new components and
 projects with totally new concepts? I think it is!
