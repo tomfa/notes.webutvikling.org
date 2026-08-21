@@ -29,7 +29,7 @@ A Post or Link that exists in the repo but is hidden from both the development a
 _Avoid_: Deleted, hidden, retired
 
 **Category**:
-A single classification on a Post: guide, rant, question, scribble, statement, debugging, book, or idea. When omitted, the Post is a scribble.
+A single classification on a Post or Link: guide, rant, question, scribble, statement, debugging, book, or idea. When omitted, it is a scribble.
 _Avoid_: Type, kind
 
 **Tag**:
@@ -37,5 +37,5 @@ A label on a Post. A Post has between one and five.
 _Avoid_: Category, keyword, topic
 
 **Scribble**:
-The default Category — a Post that does not claim to be a guide, rant, or anything else.
+The default Category — a Post or Link that does not claim to be a guide, rant, or anything else.
 _Avoid_: Using this as a name for Posts in general

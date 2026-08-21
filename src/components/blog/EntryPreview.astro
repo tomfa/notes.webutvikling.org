@@ -1,0 +1,24 @@
+---
+import { getPreviewKind } from "@/utils";
+import type { Entry } from "@/utils/post";
+import ArticlePreview from "./ArticlePreview.astro";
+import PostPreview from "./PostPreview.astro";
+import SpotifyPreview from "./SpotifyPreview.astro";
+import VideoPreview from "./VideoPreview.astro";
+
+interface Props {
+	post: Entry;
+	as?: "h2" | "h3" | "div";
+	withDesc?: boolean;
+}
+
+const { post, as = "h2", withDesc = true } = Astro.props;
+const kind = getPreviewKind(post);
+---
+
+{
+	kind === "video" && <VideoPreview post={post} as={as} withDesc={withDesc} />
+}
+{kind === "audio" && <SpotifyPreview post={post} as={as} withDesc={withDesc} />}
+{kind === "article" && <ArticlePreview post={post} as={as} withDesc={withDesc} />}
+{kind === "post" && <PostPreview post={post} as={as} withDesc={withDesc} />}

@@ -29,8 +29,9 @@ Write the file in one go. No grill.
 - **type**: `video` if YouTube/Vimeo, `audio` if Spotify, `lib` if a library or tool homepage, else `article`.
 - **tags**: 1–5, lowercase. Prefer tags that already exist.
 - **pubDate**: same as the folder date.
+- **category**: same enum as a Post. Default `scribble`. Set it when it is a statement, book, or similar; omit when it is a scribble.
 - Omit `draft`. Schema default is published. `draft: true` only if the user asked for a Draft.
-- No body. No `heroImage`. No `author`. No `category`.
+- No body. No `heroImage`. No `author`.
 
 Schema lives in `src/content/config.ts`. Trust that over the README.
 
@@ -39,6 +40,7 @@ Schema lives in `src/content/config.ts`. Trust that over the README.
 title: "Short punchy title"
 pubDate: 2026-08-20
 type: article
+category: statement
 url: https://example.com/the-thing
 tags: [javascript]
 description: "Why you'd send someone here, in one or two sentences. Fifty to three hundred twenty characters."
@@ -50,6 +52,7 @@ description: "Why you'd send someone here, in one or two sentences. Fifty to thr
 - [ ] Folder date and `pubDate` match
 - [ ] Title ≤ 60, description 50–320, tags 1–5
 - [ ] `type` is `article`, `video`, `audio`, or `lib`
+- [ ] Category is from the enum, omitted when it is a scribble
 - [ ] `url` is the given URL
 - [ ] File has frontmatter only
 - [ ] Omit `draft` unless asked for a Draft

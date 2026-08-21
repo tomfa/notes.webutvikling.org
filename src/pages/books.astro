@@ -1,0 +1,22 @@
+---
+import { getCollection } from "astro:content";
+import PageLayout from "@/layouts/Base";
+import EntryFeed from "@/components/blog/EntryFeed";
+import { sortMDByDate, isVisible, isBooksEntry } from "@/utils";
+
+const allPosts = await getCollection("post");
+const allLinks = await getCollection("link");
+const entries = sortMDByDate([...allPosts, ...allLinks].filter(isVisible).filter(isBooksEntry));
+---
+
+<PageLayout
+	meta={{
+		title: "Books",
+		description: "Notes on books.",
+	}}
+>
+	<div>
+		<p class="mb-4 text-lg">Notes on books.</p>
+	</div>
+	<EntryFeed entries={entries} />
+</PageLayout>

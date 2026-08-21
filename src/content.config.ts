@@ -61,6 +61,7 @@ const link = defineCollection({
 			pubDate: z.coerce.date().optional(),
 			tags: z.array(z.string()).default([]),
 			type: z.enum(LINK_TYPE).optional(),
+			category: z.enum(POST_CATEGORY).default("scribble"),
 			related,
 		})
 		.transform((data) => {

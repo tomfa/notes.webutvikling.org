@@ -4,20 +4,21 @@ pubDate: 2025-06-01
 description: "Generating decent content gets cheap. The work that remains is taste, judgment, and deciding what to make."
 heroImage: /images/blake-cheek-fnd1hZOuSUE-unsplash.jpg
 tags: [ai]
+category: statement
 imageAlt: "Hands popping up from the water. You're not sure if it's someone drowning in the despair of being replaced by AI or if it's the AI, rising out of the water. Photo by Blake Cheek on Unsplash"
 ---
 
 import { YouTube } from "astro-embed";
 
-ChatGPT released 2.5 years ago, and I feel now that it's now quite clear (even to me) that AI will change our lives quite drastically. I say _will_, because I think the changes ahead is quite a lot larger than those behind us. 
+ChatGPT released 2.5 years ago, and I feel now that it's now quite clear (even to me) that AI will change our lives quite drastically. I say _will_, because I think the changes ahead is quite a lot larger than those behind us.
 
-This text is a braindump of how I guess things will change in the next 10 years, in the context of digital product development. Basically, its summary is that 
+This text is a braindump of how I guess things will change in the next 10 years, in the context of digital product development. Basically, its summary is that
 
 > **Generating (decent) content becomes cheap** and we should therefore instead focus more on **architecture**, **feedback** and **verification** of work. Also, the value of **excellent** content increases, so hone your skills
 
 This will **reduce** demand for _doers_ who clock in and out, and **increase** the demand of critical, managerial and architectural skills and people who _excel_ at what they do.
 
-## The product workflow 
+## The product workflow
 
 I think product development mainly consists of the steps below. Build something new often require all steps, while smaller things may go straight from idea to implementation.
 
@@ -27,43 +28,49 @@ I've marked them with color to indicate where AI will 🟩 reduce or 🟥 increa
 2. ⬜️ **Idea solution**: Service design (or high-level technical architecture).
 3. 🟨 **Implementation design**: UX design, excl. graphical design (or high-level coding patterns/architecture).
 4. 🟩 **Implementation specs**: Graphical design (or low-level technical design).
-5. 🟩 **Implementation**: Writing code, or performing configurations. 
+5. 🟩 **Implementation**: Writing code, or performing configurations.
    - For more complex implementations, you may have to go back to step 1 (and follow the parenthesis texts)
 6. 🟥 **Quality Assurance**: Testing, security, reviews, metrics.
 7. 🟩 **Support**: Documentation, articles, support requests.
 
 ### Idea ⬜️
-Somewhere, someone says 
+
+Somewhere, someone says
 
 > You know what would be a good idea?
 
-It can be for a new product/company on a whiteboard, a new feature from customer feedback or a bug found in Sentry. 
+It can be for a new product/company on a whiteboard, a new feature from customer feedback or a bug found in Sentry.
 
 We do not need a larger _quantity_ of ideas, and AI won't excel at the _quality_ of ideas. At best, AI can help bring more objectiveness to _prioritizing_ our ideas.
 
 ### Solution ⬜️
+
 In service design and high-level technical architecture I think there's still to many case-specific considerations
-to take, for AI to come up with the solutions that's worthwhile listening to. 
+to take, for AI to come up with the solutions that's worthwhile listening to.
 
 - Who will have process ownership of applications for parental leave? (Service design)
 - What's the DB technology to use for the identity service? (Technical architecture)
 
-The most correct generic (AI) answer is HR and Postgres – but it depends on the context. Maybe applications are processed automatically, or we ought to use WorkOS Enterprise SSO for identity management. 
+The most correct generic (AI) answer is HR and Postgres – but it depends on the context. Maybe applications are processed automatically, or we ought to use WorkOS Enterprise SSO for identity management.
 
-Since we're working on a high abstraction level, generating the _content_ isn't what's costly today – it's the thoughts put into the decision. 
+Since we're working on a high abstraction level, generating the _content_ isn't what's costly today – it's the thoughts put into the decision.
 
 We don't need AIs ability to generate a big _quantity_ of content, and I think skilled employees will make higher _quality_ decisions.
 
-### Design 🟨 
+### Design 🟨
+
 (UX – Figma sketching)
 
 ### Specs 🟩
+
 (Graphical design / Figma detailing)
 
 ### Implementation 🟩
+
 (coding – Cursor)
 
 ### QA 🟥
+
 (testing – )
 
 ### Support 🟩
@@ -75,7 +82,7 @@ We don't need AIs ability to generate a big _quantity_ of content, and I think s
 I know there's a whole lot of developers who will take well specified tickets from JIRA, and implement them.
 If that's the only value you bring to work, you're in trouble. AI will be taking your job.
 
-Instead, try to get in on making the tickets. 
+Instead, try to get in on making the tickets.
 
 ### Use what's popular
 
@@ -91,14 +98,14 @@ So be (more) biased towards popular solutions.
 ### Increase consistency
 
 Understanding code becomes harder, since someone not on your team wrote it (AI).
-So anything you can do to make code more understandable on an architectural level 
+So anything you can do to make code more understandable on an architectural level
 will help you more than previously.
 
 _Note: A nearby trap is early over-optimization. But consistency in 2030 is more important than in 2020._
 
 ### Excel at what you do
 
-It's a cliché advice, but it will be more relevant than ever. 
+It's a cliché advice, but it will be more relevant than ever.
 
 Most work is mediocre. If AI is able to produce mediocre+ work, it will make paying a person for this work obsolete. So stop doing mediocre work: either pass it on to AI or start excelling at it.
 
@@ -108,7 +115,7 @@ Just a different phrasing for the above. You'll be mediocre at what you find bor
 
 ### Give better feedback
 
-Most work-days are filled with _getting stuff done_, and I think we need to start spending more time _evaluating_ what has been done. 
+Most work-days are filled with _getting stuff done_, and I think we need to start spending more time _evaluating_ what has been done.
 
 Because AI will get stuff done with mediocre quality, so we need to get good at evaluating these implementations, understand what and why something will or won't work – and be great at giving AI the feedback on how it could've been better.
 
@@ -135,7 +142,7 @@ I bet option 3 will be selected by a bunch of dinosaur companies who will conver
 much of their tech team into QA-testers with a sprinkle of vibe bug-fixing. This job will suck, and the amount of work will be costly enough
 to push everything towards option 4.
 
-So **option 4 is where we'll land**. And how do we make this reality better? Automated verification that (unrelated) behaviour is unchanged. Easy QA that new behaviour is as expected. 
+So **option 4 is where we'll land**. And how do we make this reality better? Automated verification that (unrelated) behaviour is unchanged. Easy QA that new behaviour is as expected.
 
 For instance, generating Storybook stories, connecting [Figma to Storybook](https://help.figma.com/hc/en-us/articles/360045003494-Storybook-and-Figma), running browser tests with [Chromatic](https://chromatic.com/storybook), adding [Playwright](https://playwright.dev/) e2e tests.
 
@@ -166,9 +173,10 @@ The [RelevanceAI](https://relevanceai.com/function/marketing) might automate som
 Migrating to (or from) 3rd party software takes more time the larger you are. So you might want to start chopping off code today.
 
 ## Societal changes
+
 ### Elders gets scammed
 
-Many elders has had problems getting scammed with technology, phone sales and fake invoices for quite a while. 
+Many elders has had problems getting scammed with technology, phone sales and fake invoices for quite a while.
 
 The problem will grow, since e.g. bad actors will be able to write or [speak with a convincing tone using AI](https://www.instagram.com/reel/DKPu4MppDnj/)-generated text or voices – maybe even using the voice of their victims children, generated from online content.
 
@@ -180,19 +188,19 @@ The problem will grow, since e.g. bad actors will be able to write or [speak wit
 Apple. They launch a `Safety` set of features that allows us to increase our parents security settings.
 Here, callers must provide biometrics identification and unknown numbers are blocked. Luckily, no AI is needed for this, as Apple won't have successfully embraced it by then.
 
-Banks may also fix this, by selling "Scam-proof" bank services. In order to deliver that, they 
+Banks may also fix this, by selling "Scam-proof" bank services. In order to deliver that, they
 might use AI to phone up your granny for a little chat if she tries to transfer abnormal amounts of money.
 
 ### Read more critically
 
-The last 15 years has been terrifying in how we relate to information. 
+The last 15 years has been terrifying in how we relate to information.
 
-We no longer consume the same(ish) media as our neighbors and colleagues, making it 
+We no longer consume the same(ish) media as our neighbors and colleagues, making it
 harder to relate to people in our proximity and diving societies. Truthfulness has become
-something subjective, with phrases like _MY truth_. 
+something subjective, with phrases like _MY truth_.
 Objective truth does not even phase the owners of "_Truth_ Social".
 
-6+ hours of daily mobile usage, financed by personalized ads on social media, 
+6+ hours of daily mobile usage, financed by personalized ads on social media,
 lets others buy our political opinions. [Cambridge Analytica affected hundreds of elections](https://www.bbc.com/news/world-43476762) this way.
 
 With AI, this problem to become bigger. The price is lowered for generating well-formulated, convincing information, regardless of it's correctness.
@@ -203,8 +211,9 @@ questionable actors from generating persuasive, but false, content.
 
 **We need** to be able to verify where information originates. And assistance in evaluating truthfulness. And culturually take a step away from the personalized swipe-hole that social media has become.
 
-**Who fixes this?** People _want_ to hear what they _like_ to hear, and won't be paying for tech to tell them that they're about to loose grasp on reality – so it's hard to start small. I think the push comes from big tech/media companies or EU. 
-> ✅ httrspct:// "This website is respected by other well known brands you already know and trust" 
+**Who fixes this?** People _want_ to hear what they _like_ to hear, and won't be paying for tech to tell them that they're about to loose grasp on reality – so it's hard to start small. I think the push comes from big tech/media companies or EU.
+
+> ✅ httrspct:// "This website is respected by other well known brands you already know and trust"
 
 I also hope governments can start putting limitations on phones in schools.
 
@@ -219,7 +228,7 @@ that are affected the most by this, are those where these forms of communication
 - (Low-level) social media representatives
 - Generic sales / low-hanging marketing
 
-The good news is that you'll be able to do so much more. You, as 1 individual, 
+The good news is that you'll be able to do so much more. You, as 1 individual,
 will be able to cater for 10x more customers in support. AI will respond to email
 and comments made by the majority of customers, in a patient and polite manner.
 Generating posts for your social media? It'll excel at that. So one single marketer
@@ -232,13 +241,14 @@ I think that we with AI can generate content that surpasses the quality of the b
 **You should** excel at your job if you work in one of these sectors, and learn to adopt AI tools. Otherwise prepare to do a different job within a few years.
 
 **We need** to get more creative, in order to stand out from the crowd. As individuals, excel at these tasks or acquire new skills. As companies,
-we need to get on this cost-cutting train. Or go the other way, and use our _human_ touch as a 
+we need to get on this cost-cutting train. Or go the other way, and use our _human_ touch as a
 selling point.
 
 **Who will do this?**
 Many different actors. I can imagine it's exciting days for Intercom – who may be disrupted by a startup and go die slowly like an Oracle purchase; or start selling a complete Call-center-as-a-service, replacing your current support department.
 
 ## Disruptions
+
 ### Unemployment waves
 
 Large companies pay a lot of people to produce decent tickets, slides, code, designs and emails, and AI does that work for less.
@@ -250,7 +260,6 @@ Microsoft, Meta and Google already cut tens of thousands while revenue kept grow
 They keep a smaller, more senior staff: people who decide what to build and check that it works. Ticket implementers get cut first.
 
 **You should** get out of jobs where your value is "I completed the ticket." Own a problem, own a system or get so good they can't ignore you.
-
 
 ### More startups
 

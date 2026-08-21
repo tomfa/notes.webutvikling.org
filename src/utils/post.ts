@@ -10,6 +10,23 @@ export function isVisible(entry: Entry) {
 	return !entry.data.archived && (!entry.data.draft || import.meta.env.DEV);
 }
 
+export function getPostCategory(entry: Entry) {
+	return entry.data.category;
+}
+
+export function isNotesEntry(entry: Entry) {
+	return getPostCategory(entry) === "statement";
+}
+
+export function isBooksEntry(entry: Entry) {
+	return getPostCategory(entry) === "book";
+}
+
+export function isScribblesEntry(entry: Entry) {
+	const category = getPostCategory(entry);
+	return category !== "statement" && category !== "book";
+}
+
 export function getPublicSlug(entry: Entry) {
 	return DATE_PREFIX.test(entry.id) ? entry.id.substring(11) : entry.id;
 }
@@ -117,7 +134,7 @@ export function getUniqueTags(posts: Entry[] = []) {
 export function getUniqueCategories(posts: Entry[] = []) {
 	const uniqueCategories = new Set<string>();
 	posts.forEach((post) => {
-		uniqueCategories.add(post.data.category.toLowerCase());
+		uniqueCategories.add(getPostCategory(post).toLowerCase());
 	});
 	return [...uniqueCategories];
 }
@@ -138,8 +155,9 @@ export function getUniqueCategoriesWithCount(posts: Entry[] = []): {
 	[key: string]: number;
 } {
 	return posts.reduce((prev, post) => {
+		const category = getPostCategory(post);
 		const runningCategories: { [key: string]: number } = { ...prev };
-		runningCategories[post.data.category] = (runningCategories[post.data.category] || 0) + 1;
+		runningCategories[category] = (runningCategories[category] || 0) + 1;
 		return runningCategories;
 	}, {});
 }

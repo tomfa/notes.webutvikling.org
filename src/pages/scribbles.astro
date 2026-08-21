@@ -1,0 +1,22 @@
+---
+import { getCollection } from "astro:content";
+import PageLayout from "@/layouts/Base";
+import EntryFeed from "@/components/blog/EntryFeed";
+import { sortMDByDate, isVisible, isScribblesEntry } from "@/utils";
+
+const allPosts = await getCollection("post");
+const allLinks = await getCollection("link");
+const entries = sortMDByDate([...allPosts, ...allLinks].filter(isVisible).filter(isScribblesEntry));
+---
+
+<PageLayout
+	meta={{
+		title: "Scribbles",
+		description: "Guides, rants, and other scribbles from tech and startups.",
+	}}
+>
+	<div>
+		<p class="mb-4 text-lg">Guides, rants, and other scribbles.</p>
+	</div>
+	<EntryFeed entries={entries} />
+</PageLayout>

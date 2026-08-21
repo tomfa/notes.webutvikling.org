@@ -2,7 +2,7 @@
 title: "Don't build your own invoicing"
 pubDate: 2026-08-21
 category: statement
-description: "Vibe-coding invoicing to save 1% looks cheap until taxes, coupons, and a billing bug show up."
+description: "Vibe-coding invoicing to save 1% on transaction fees looks cheap until taxes, coupons, and a billing bug show up."
 heroImage: https://unsplash.com/photos/a-receipt-sitting-on-top-of-a-wooden-table-recgFWxDO1Y
 tags: [startup, ai, trust, margin]
 imageAlt: "Keep the receipt. Ideally one you did not generate yourself. Photo by Annie Spratt on Unsplash."

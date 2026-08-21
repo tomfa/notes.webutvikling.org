@@ -2,6 +2,10 @@ export { getFormattedDate } from "./date";
 export { elementHasClass, toggleClass } from "./domElement";
 export {
 	isVisible,
+	getPostCategory,
+	isNotesEntry,
+	isBooksEntry,
+	isScribblesEntry,
 	hasBody,
 	getEntryUrl,
 	getPreviewKind,

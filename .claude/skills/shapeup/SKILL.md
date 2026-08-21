@@ -39,10 +39,10 @@ Same way as write-post. Schema and example: [../write-post/REFERENCE.md](../writ
 Same dressing as write-link.
 
 - Need `url`. If it is not in the file, ask once and stop.
-- Title (max 60), `pubDate`, `type` (`article` \| `video` \| `lib`), `url`, tags (1–5), description (50–320).
+- Title (max 60), `pubDate`, `type` (`article` \| `video` \| `lib`), `url`, tags (1–5), description (50–320), Category (same enum as a Post; default `scribble`).
 - `pubDate` matches the folder date.
 - `draft: true` unless the user said to publish.
-- Do not add `heroImage`, `author`, or `category`. Leave any existing body in place.
+- Do not add `heroImage` or `author`. Leave any existing body in place.
 
 ## Checklist
 
