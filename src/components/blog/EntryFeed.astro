@@ -11,7 +11,7 @@ interface Props {
 
 const { entries, withHero = false } = Astro.props;
 
-const uniqueTags = getUniqueTags(entries).sort((a, b) => a.localeCompare(b));
+const uniqueTags = getUniqueTags(entries, 2).sort((a, b) => a.localeCompare(b));
 ---
 
 <section aria-label="Blog post list" class="mt-16">

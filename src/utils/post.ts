@@ -123,12 +123,17 @@ export function sortMDByDate(posts: Entry[] = []) {
 	);
 }
 
-export function getUniqueTags(posts: Entry[] = []) {
-	const uniqueTags = new Set<string>();
+export function getUniqueTags(posts: Entry[] = [], minCount = 1) {
+	const counts: Record<string, number> = {};
 	posts.forEach((post) => {
-		post.data.tags.map((tag) => uniqueTags.add(tag.toLowerCase()));
+		post.data.tags.forEach((tag) => {
+			const key = tag.toLowerCase();
+			counts[key] = (counts[key] || 0) + 1;
+		});
 	});
-	return [...uniqueTags];
+	return Object.entries(counts)
+		.filter(([, count]) => count >= minCount)
+		.map(([tag]) => tag);
 }
 
 export function getUniqueCategories(posts: Entry[] = []) {
