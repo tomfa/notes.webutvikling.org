@@ -27,7 +27,7 @@ Write the whole Post in one go. Title, Category, tags, and hero are proposed *in
 - Voice: first-person, informal, opinionated. Match recent Posts, not the 2025/2026 braindumps. See [REFERENCE.md](REFERENCE.md).
 - English.
 - **Draft** unless the user said to publish (`draft: true`).
-- Dressed frontmatter: title (max 60), `pubDate`, Category, description (50–160), 1–5 tags, Unsplash *page* URL hero, witty `imageAlt` that credits the photographer.
+- Dressed frontmatter: title (max 60), `pubDate`, Category, description (50–260), 1–5 tags, Unsplash *page* URL hero, witty `imageAlt` that credits the photographer.
 - Pick the hero from the Claim. Put it in. The user can change it after.
 
 Schema, Category enum, and an example: [REFERENCE.md](REFERENCE.md).
@@ -37,6 +37,6 @@ Schema, Category enum, and an example: [REFERENCE.md](REFERENCE.md).
 - [ ] Claim is one sentence you could point at
 - [ ] Prerequisites named; the opening does not teach them
 - [ ] Folder date and `pubDate` match
-- [ ] Title ≤ 60, description 50–160, tags 1–5, Category from the enum
+- [ ] Title ≤ 60, description 50–260, tags 1–5, Category from the enum
 - [ ] `heroImage` is `https://unsplash.com/photos/…`
 - [ ] `draft: true` unless told to publish

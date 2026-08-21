@@ -34,7 +34,7 @@ const post = defineCollection({
 		draft: z.boolean().default(false),
 		archived: z.boolean().default(false),
 		title: z.string().max(60),
-		description: z.string().min(50).max(160).optional(),
+		description: z.string().min(50).max(260).optional(),
 		pubDate: z.coerce.date().optional(),
 		heroImage: z.string().optional(),
 		imageAlt: z.string().optional(),

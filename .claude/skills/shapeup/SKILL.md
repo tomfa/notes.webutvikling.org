@@ -28,7 +28,7 @@ If frontmatter is missing, add it. If fields are missing, fill only those. Never
 
 Same way as write-post. Schema and example: [../write-post/REFERENCE.md](../write-post/REFERENCE.md).
 
-- Title (max 60), `pubDate`, Category, description (50–160), 1–5 tags, Unsplash *page* URL hero, witty `imageAlt` that credits the photographer.
+- Title (max 60), `pubDate`, Category, description (50–260), 1–5 tags, Unsplash *page* URL hero, witty `imageAlt` that credits the photographer.
 - Pick the hero from the Claim. Put it in.
 - `pubDate` matches the folder date.
 - `draft: true` unless the user said to publish.
