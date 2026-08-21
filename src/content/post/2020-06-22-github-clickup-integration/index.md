@@ -1,5 +1,6 @@
 ---
-title: "Integrate task management with code"
+title: "Always say what we try to accomplish"
+description: "A good leaders repeats why and what we try to accomplish. So should issue trackers and code tools. Here's a short guide on integrating ClickUp with GitHub, so exactly that becomes simpler."
 pubDate: 2020-06-22
 heroImage: /images/clickhub.png
 tags: [management, "ClickUp", "Github"]
