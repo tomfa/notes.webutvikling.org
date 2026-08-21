@@ -49,22 +49,58 @@ function withImageParams(src: string, width: number, height: number): string {
 	return url.toString();
 }
 
+function cdnUrlFromResponse(response: Response): string | undefined {
+	const location = response.headers.get("location");
+	if (location && isUnsplashCdnUrl(location)) {
+		return location;
+	}
+	if (isUnsplashCdnUrl(response.url)) {
+		return response.url;
+	}
+	return undefined;
+}
+
+function unsplashDownloadUrl(photoId: string, width: number): string {
+	return `https://unsplash.com/photos/${photoId}/download?force=true&w=${width}`;
+}
+
+const cdnUrlByPhotoId = new Map<string, string>();
+
+async function lookupUnsplashCdnUrl(photoId: string): Promise<string | undefined> {
+	const downloadUrl = `https://unsplash.com/photos/${photoId}/download?force=true`;
+	const headers = { Accept: "*/*" };
+
+	try {
+		const response = await fetch(downloadUrl, {
+			method: "GET",
+			redirect: "follow",
+			headers,
+		});
+		const cdnUrl = cdnUrlFromResponse(response);
+		void response.body?.cancel();
+		return cdnUrl;
+	} catch {
+		return undefined;
+	}
+}
+
 async function resolveUnsplashPhotoId(
 	photoId: string,
 	width: number,
 	height: number
 ): Promise<string> {
-	const downloadUrl = `https://unsplash.com/photos/${photoId}/download?w=${width}`;
-	const response = await fetch(downloadUrl, { method: "HEAD", redirect: "manual" });
-	const location = response.headers.get("location");
-
-	if (!location || !isUnsplashCdnUrl(location)) {
-		throw new Error(
-			`Could not resolve Unsplash photo "${photoId}". Use a photo page URL (https://unsplash.com/photos/<id>) or an images.unsplash.com URL.`
-		);
+	const cached = cdnUrlByPhotoId.get(photoId);
+	if (cached) {
+		return withImageParams(cached, width, height);
 	}
 
-	return withImageParams(location, width, height);
+	const cdnUrl = await lookupUnsplashCdnUrl(photoId);
+	if (cdnUrl) {
+		cdnUrlByPhotoId.set(photoId, cdnUrl);
+		return withImageParams(cdnUrl, width, height);
+	}
+
+	return unsplashDownloadUrl(photoId, width);
 }
 
 async function resolveUnsplashImage(src: string, width: number, height: number): Promise<string> {
@@ -78,9 +114,7 @@ async function resolveUnsplashImage(src: string, width: number, height: number):
 
 	const photoId = extractUnsplashPhotoId(src);
 	if (!photoId) {
-		throw new Error(
-			`Could not find an Unsplash photo id in "${src}". Use a photo page URL (https://unsplash.com/photos/<id>) or an images.unsplash.com URL.`
-		);
+		return src;
 	}
 
 	return resolveUnsplashPhotoId(photoId, width, height);

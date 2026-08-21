@@ -16,7 +16,12 @@ const { headings } = await render(post);
 const minDepth = headings.reduce((min, { depth }) => Math.min(min, depth), Infinity);
 
 const ogImageSrc = getOgImageSrc(post);
-const image = ogImageSrc ? await resolveOgImage(ogImageSrc) : undefined;
+let image: string | undefined;
+try {
+	image = ogImageSrc ? await resolveOgImage(ogImageSrc) : undefined;
+} catch {
+	image = undefined;
+}
 const imageAlt = "imageAlt" in post.data ? post.data.imageAlt : undefined;
 ---
 
