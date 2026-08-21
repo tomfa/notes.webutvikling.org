@@ -10,9 +10,10 @@ interface Props {
 	post: Entry;
 	as?: "h2" | "h3" | "div";
 	withDesc?: boolean;
+	withHero?: boolean;
 }
 
-const { post, as = "h2", withDesc = true } = Astro.props;
+const { post, as = "h2", withDesc = true, withHero = false } = Astro.props;
 const kind = getPreviewKind(post);
 ---
 
@@ -21,4 +22,4 @@ const kind = getPreviewKind(post);
 }
 {kind === "audio" && <SpotifyPreview post={post} as={as} withDesc={withDesc} />}
 {kind === "article" && <ArticlePreview post={post} as={as} withDesc={withDesc} />}
-{kind === "post" && <PostPreview post={post} as={as} withDesc={withDesc} />}
+{kind === "post" && <PostPreview post={post} as={as} withDesc={withDesc} withHero={withHero} />}

@@ -18,5 +18,5 @@ const entries = sortMDByDate([...allPosts, ...allLinks].filter(isVisible).filter
 	<div>
 		<p class="mb-4 text-lg">Notes on books.</p>
 	</div>
-	<EntryFeed entries={entries} />
+	<EntryFeed entries={entries} withHero />
 </PageLayout>

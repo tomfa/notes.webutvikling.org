@@ -1,43 +1,79 @@
 ---
 import type { IElement } from "@/data/shared";
-import { getFormattedDate, getPublicSlug } from "@/utils";
+import { getFormattedDate, getPublicSlug, resolveHeroImage } from "@/utils";
 import type { Entry } from "@/utils/post";
 
 interface Props extends IElement {
 	post: Entry;
 	withDesc?: boolean;
 	withTags?: boolean;
+	withHero?: boolean;
 }
 
-const { post, as: Element = "div", withDesc = false, withTags = true } = Astro.props;
+const { post, as: Element = "div", withDesc = false, withTags = true, withHero = false } = Astro.props;
 const date = new Date(post.data.pubDate || Date.now());
 const datetime = date.toISOString();
 const postDate = getFormattedDate(date, { month: "short" });
+const slug = getPublicSlug(post);
+
+const rawHero = withHero && "heroImage" in post.data ? post.data.heroImage : undefined;
+let heroImage: string | undefined;
+if (rawHero) {
+	try {
+		heroImage = await resolveHeroImage(rawHero);
+	} catch {
+		heroImage = rawHero;
+	}
+}
+const imageAlt = "imageAlt" in post.data ? post.data.imageAlt : undefined;
 ---
 
-<Element>
-	<a href={`/${getPublicSlug(post)}`} class="cactus-link pb:0 inline-block" rel="prefetch">
-		{post.data.title}
-	</a>
-</Element>
-<div class="align-start sm:mt-1 flex w-full justify-between flex-col sm:flex-row">
-	<div class="shrink-0">
-		<time class="text-xs text-gray-400" datetime={datetime}>{postDate}</time>
-		<span class="mr-3 text-xs text-gray-400"> • {post.data.category}</span>
-	</div>
-	<div class="sm:text-right">
-		{
-			post.data.tags.map((tag, i) => (
-				<>
-					<a
-						href={`/tags/${tag}`}
-						aria-label={`View all posts with the tag: ${tag}`}
-						class="link mr-2 items-center justify-center rounded-lg text-xs text-accent dark:opacity-30 dark:hover:opacity-100"
-					>{tag}</a>
-				</>
-			))
-		}
+<div class:list={["w-full", heroImage && "flex flex-col items-start gap-3 sm:flex-row sm:gap-4"]}>
+	{
+		heroImage && (
+			<a
+				href={`/${slug}`}
+				class="block w-full shrink-0 aspect-[3/2] sm:h-32 sm:w-32 sm:aspect-auto"
+				rel="prefetch"
+				tabindex="-1"
+				aria-hidden="true"
+			>
+				<img
+					src={heroImage}
+					alt={imageAlt || ""}
+					width="128"
+					height="128"
+					class="h-full w-full object-contain object-center sm:object-cover"
+				/>
+			</a>
+		)
+	}
+	<div class="min-w-0 flex-1">
+		<Element>
+			<a href={`/${slug}`} class="cactus-link pb:0 inline-block" rel="prefetch">
+				{post.data.title}
+			</a>
+		</Element>
+		<div class="align-start sm:mt-1 flex w-full justify-between flex-col sm:flex-row">
+			<div class="shrink-0">
+				<time class="text-xs text-gray-400" datetime={datetime}>{postDate}</time>
+				<span class="mr-3 text-xs text-gray-400"> • {post.data.category}</span>
+			</div>
+			<div class="sm:text-right">
+				{
+					post.data.tags.map((tag, i) => (
+						<>
+							<a
+								href={`/tags/${tag}`}
+								aria-label={`View all posts with the tag: ${tag}`}
+								class="link mr-2 items-center justify-center rounded-lg text-xs text-accent dark:opacity-30 dark:hover:opacity-100"
+							>{tag}</a>
+						</>
+					))
+				}
+			</div>
+		</div>
+
+		{withDesc && post.data.description && <p class="mt-2 w-full">{post.data.description}</p>}
 	</div>
 </div>
-
-{withDesc && post.data.description && <p class="mt-2 w-full">{post.data.description}</p>}

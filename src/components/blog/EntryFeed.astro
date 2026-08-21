@@ -5,9 +5,10 @@ import EntryPreview from "./EntryPreview.astro";
 
 interface Props {
 	entries: Entry[];
+	withHero?: boolean;
 }
 
-const { entries } = Astro.props;
+const { entries, withHero = false } = Astro.props;
 
 const mainTags = [
 	"management",
@@ -27,11 +28,11 @@ const uniqueTags = getUniqueTags(entries).filter((t) => mainTags.includes(t));
 <section aria-label="Blog post list" class="mt-16">
 	<div class="grid gap-y-16 sm:grid-cols-[3fr_1fr] sm:gap-x-8 relative">
 		<section aria-label="Blog post list">
-			<ul class="space-y-8 text-left">
+			<ul class="space-y-16 text-left">
 				{
 					entries.map((p) => (
 						<li class="flex flex-wrap items-center gap-x-2">
-							<EntryPreview post={p} as="h2" withDesc />
+							<EntryPreview post={p} as="h2" withDesc withHero={withHero} />
 						</li>
 					))
 				}
