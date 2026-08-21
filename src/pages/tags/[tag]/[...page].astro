@@ -1,11 +1,11 @@
 ---
 import type { GetStaticPathsOptions, Page } from "astro";
-import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 import PageLayout from "@/layouts/Base";
-import PostPreview from "@/components/blog/PostPreview";
+import EntryPreview from "@/components/blog/EntryPreview";
 import Pagination from "@/components/Paginator";
 import { getUniqueTags, sortMDByDate, isVisible } from "@/utils";
+import type { Entry } from "@/utils/post";
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
 	const allPosts = await getCollection("post");
@@ -24,7 +24,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
 }
 
 interface Props {
-	page: Page<CollectionEntry<"post">>;
+	page: Page<Entry>;
 }
 
 const { page } = Astro.props;
@@ -61,7 +61,7 @@ const paginationProps = {
 			{
 				page.data.map((p) => (
 					<li class="flex flex-wrap items-center gap-x-2">
-						<PostPreview post={p} as="h2" />
+						<EntryPreview post={p} as="h2" withDesc />
 					</li>
 				))
 			}
