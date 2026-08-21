@@ -8,7 +8,6 @@ tags: [startup, ai, trust, margin]
 imageAlt: "Keep the receipt. Ideally one you did not generate yourself. Photo by Annie Spratt on Unsplash."
 related:
   - 2024-06-10-startup-metrics-that-matter
-draft: true
 ---
 
 You want to.

@@ -20,12 +20,9 @@ const url = getEntryUrl(post) ?? "";
 ---
 
 <Element class="flex w-full items-baseline justify-between gap-x-2">
-	<span>
-		<a href={url} class="cactus-link inline-block" rel="prefetch">
-			{post.data.title}
-		</a>
-		<span class="ml-2 text-xs text-gray-400">Spotify</span>
-	</span>
+	<a href={url} class="cactus-link inline-block" rel="prefetch">
+		{post.data.title}
+	</a>
 	{notes && <NotesIcon slug={getPublicSlug(post)} />}
 </Element>
 <div class="mt-2 w-full">
@@ -35,7 +32,6 @@ const url = getEntryUrl(post) ?? "";
 <div class="align-start mt-1 flex w-full justify-between">
 	<div class="shrink-0">
 		<time class="mr-3 text-xs text-gray-400" datetime={datetime}>{postDate}</time>
-		<span class="mr-3 text-xs text-gray-400"> • {post.data.category}</span>
 	</div>
 	<div class="text-right">
 		{

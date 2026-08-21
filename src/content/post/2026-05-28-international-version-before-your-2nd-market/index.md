@@ -9,7 +9,6 @@ imageAlt: "The neighbour looks close on a map. Photo by Gonzalo Gutierrez on Uns
 related:
   - 2026-08-21-dont-build-your-own-invoicing-system
   - 2023-08-16-dont-build-a-calendar
-draft: true
 ---
 
 Sweden is twice the size of Norway, next door, close enough in language that it feels like a translation job. We thought that at Otovo.

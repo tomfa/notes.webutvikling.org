@@ -6,10 +6,9 @@ description: "Stop treating coding models as a tool on your machine. Encode the 
 heroImage: https://unsplash.com/photos/three-people-sitting-in-front-of-table-laughing-together-g1Kr4Ozfoac
 tags: [ai, management]
 imageAlt: "Welcome to the team. Here's the markdown. Photo by Brooke Cagle on Unsplash."
-draft: true
 ---
 
-Twelve months ago, coding models were on par with a not-too-skilled intern. Today they are on par with an experienced senior. 
+Twelve months ago, coding models were on par with a not-too-skilled intern. Today they are on par with an experienced senior.
 
 Where I have gone wrong, is thinking of AI as a tool on my machine – rather than as a part of the online company infrastructure. In this case I've realised the potential of thinking of them as a newly hired summer intern.
 
@@ -33,6 +32,6 @@ Remember: Less context is better.
 
 5. Diff: hire and fire without consideration.
 
-A human intern needs hiring and contracts and  weeks of onboarding. You cannot fire them with a keystroke.
+A human intern needs hiring and contracts and weeks of onboarding. You cannot fire them with a keystroke.
 
 Try one AI intern. If it works, hire a thousand. If it doesn't, respecify the role. Or fire them. No worries!
