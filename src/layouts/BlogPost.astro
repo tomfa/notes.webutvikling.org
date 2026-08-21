@@ -4,6 +4,7 @@ import { render } from "astro:content";
 
 import Base from "./Base.astro";
 import Hero from "@/components/blog/Hero";
+import TagSidebar from "@/components/blog/TagSidebar";
 import { getOgDescription, getOgImageSrc, resolveOgImage } from "@/utils";
 
 interface Props {
@@ -23,6 +24,7 @@ try {
 	image = undefined;
 }
 const imageAlt = "imageAlt" in post.data ? post.data.imageAlt : undefined;
+const tags = post.data.tags;
 ---
 
 <Base
@@ -45,34 +47,37 @@ const imageAlt = "imageAlt" in post.data ? post.data.imageAlt : undefined;
 			</div>
 		</article>
 		{
-			headings.length > 0 && (
-				<aside class="hidden text-right sm:sticky sm:top-20 sm:block">
-					<h2 class="font-semibold">Table of Contents</h2>
-					<ul class="mt-4 text-xs">
-						{headings
-							// .filter(({ depth }) => depth === minDepth)
-							.map(({ slug, text, depth }, i) => {
-								if (depth === minDepth) {
-									return (
-										<li class={`mt-2 line-clamp-2 hover:text-accent`}>
-											<a href={`#${slug}`} aria-label={`Scroll to section: ${text}`}>
-												{text}
-											</a>
-										</li>
-									);
-								}
-								if (depth - 1 === minDepth) {
-									return (
-										<li class="mt-0 text-gray-400 line-clamp-2 hover:text-accent">
-											<a href={`#${slug}`} aria-label={`Scroll to section: ${text}`}>
-												{text}
-											</a>
-										</li>
-									);
-								}
-								return null;
-							})}
-					</ul>
+			(tags.length > 0 || headings.length > 0) && (
+				<aside class="sm:sticky self-start top-8">
+					<TagSidebar tags={tags} />
+					{headings.length > 0 && (
+						<div class:list={["hidden text-right sm:block", tags.length > 0 && "mt-8"]}>
+							<h2 class="font-semibold">Table of Contents</h2>
+							<ul class="mt-4 text-xs">
+								{headings.map(({ slug, text, depth }) => {
+									if (depth === minDepth) {
+										return (
+											<li class="mt-2 line-clamp-2 hover:text-accent">
+												<a href={`#${slug}`} aria-label={`Scroll to section: ${text}`}>
+													{text}
+												</a>
+											</li>
+										);
+									}
+									if (depth - 1 === minDepth) {
+										return (
+											<li class="mt-0 text-gray-400 line-clamp-2 hover:text-accent">
+												<a href={`#${slug}`} aria-label={`Scroll to section: ${text}`}>
+													{text}
+												</a>
+											</li>
+										);
+									}
+									return null;
+								})}
+							</ul>
+						</div>
+					)}
 				</aside>
 			)
 		}
