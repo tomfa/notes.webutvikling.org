@@ -6,6 +6,7 @@ import Base from "./Base.astro";
 import Hero from "@/components/blog/Hero";
 import TagSidebar from "@/components/blog/TagSidebar";
 import { getOgDescription, getOgImageSrc, resolveOgImage } from "@/utils";
+import { getMarkdownPath } from "../utils/llms";
 
 interface Props {
 	post: CollectionEntry<"post"> | CollectionEntry<"link">;
@@ -35,6 +36,7 @@ const tags = post.data.tags;
 		imageAlt,
 		ogType: "article",
 		publishDate: post.data.pubDate,
+		markdownUrl: getMarkdownPath(post),
 	}}
 >
 	<div class="sm:grid sm:grid-cols-[3fr_1fr] sm:items-start sm:gap-x-10">

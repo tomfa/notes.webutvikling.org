@@ -5,6 +5,7 @@ type SiteMeta = {
 	imageAlt?: string;
 	ogType?: "website" | "article";
 	publishDate?: Date;
+	markdownUrl?: string;
 };
 
 export type { SiteMeta };

@@ -17,7 +17,14 @@ export default defineConfig({
 			wrap: true,
 		},
 	},
-	integrations: [mdx(), sitemap(), react(), pagefind()],
+	integrations: [
+		mdx(),
+		sitemap({
+			filter: (page) => !page.endsWith(".md"),
+		}),
+		react(),
+		pagefind(),
+	],
 	vite: {
 		plugins: [tailwindcss()],
 	},

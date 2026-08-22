@@ -1,13 +1,11 @@
 import type { APIContext } from "astro";
 import rss from "@astrojs/rss";
-import { getCollection } from "astro:content";
 import siteMeta from "@/site-config";
-import { getPublicSlug, isVisible, sortMDByDate } from "./post";
+import { absoluteUrl, getVisibleEntries } from "./catalog";
+import { getPublicSlug } from "./post";
 
 async function getFeedItems() {
-	const posts = await getCollection("post");
-	const links = await getCollection("link");
-	return sortMDByDate([...links, ...posts].filter(isVisible)).map((item) => ({
+	return (await getVisibleEntries()).map((item) => ({
 		title: item.data.title,
 		description: item.data.description,
 		pubDate: item.data.pubDate,
@@ -31,11 +29,6 @@ function escapeXml(value: string) {
 		.replaceAll(">", "&gt;")
 		.replaceAll('"', "&quot;")
 		.replaceAll("'", "&apos;");
-}
-
-function absoluteUrl(site: URL, path: string) {
-	const base = site.href.endsWith("/") ? site.href : `${site.href}/`;
-	return new URL(path.replace(/^\//, ""), base).href;
 }
 
 export async function atomFeed(context: APIContext) {

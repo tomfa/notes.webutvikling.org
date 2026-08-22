@@ -5,7 +5,15 @@ import "../styles/global.css";
 
 type Props = SiteMeta;
 
-const { title, description, image, imageAlt, ogType = "website", publishDate } = Astro.props;
+const {
+	title,
+	description,
+	image,
+	imageAlt,
+	ogType = "website",
+	publishDate,
+	markdownUrl,
+} = Astro.props;
 
 const titleSeparator = "•";
 const siteTitle = `${title} ${titleSeparator} ${siteConfig.title}`;
@@ -65,3 +73,9 @@ const socialImageURL = image ? new URL(image, origin).href : undefined;
 <!-- RSS / Atom auto-discovery -->
 <link rel="alternate" type="application/rss+xml" title={siteConfig.title} href="/rss.xml" />
 <link rel="alternate" type="application/atom+xml" title={`${siteConfig.title} (Atom)`} href="/atom" />
+<link rel="describedby" href="/llms.txt" />
+{
+	markdownUrl && (
+		<link rel="alternate" type="text/markdown" title="Markdown" href={markdownUrl} />
+	)
+}
