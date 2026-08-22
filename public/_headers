@@ -1,0 +1,5 @@
+/feed
+  Content-Type: application/rss+xml; charset=utf-8
+
+/atom
+  Content-Type: application/atom+xml; charset=utf-8

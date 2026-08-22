@@ -62,5 +62,6 @@ const socialImageURL = image ? new URL(image, origin).href : undefined;
 {socialImageURL && <meta property="twitter:image" content={socialImageURL} />}
 {imageAlt && socialImageURL && <meta property="twitter:image:alt" content={imageAlt} />}
 
-<!-- RSS auto-discovery -->
+<!-- RSS / Atom auto-discovery -->
 <link rel="alternate" type="application/rss+xml" title={siteConfig.title} href="/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title={`${siteConfig.title} (Atom)`} href="/atom" />
