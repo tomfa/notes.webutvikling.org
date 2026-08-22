@@ -101,6 +101,10 @@ export function getEntryUrl(entry: Entry): string | undefined {
 	return "url" in entry.data ? entry.data.url : undefined;
 }
 
+export function isArticleLink(entry: Entry): boolean {
+	return "type" in entry.data && entry.data.type === "article";
+}
+
 export function getPreviewKind(entry: Entry): PreviewKind {
 	const url = getEntryUrl(entry);
 	if (!url) {

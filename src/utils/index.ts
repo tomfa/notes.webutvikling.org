@@ -8,6 +8,7 @@ export {
 	isScribblesEntry,
 	hasBody,
 	getEntryUrl,
+	isArticleLink,
 	getPreviewKind,
 	getPublicSlug,
 	getOgDescription,

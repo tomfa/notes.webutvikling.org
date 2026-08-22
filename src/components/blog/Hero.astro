@@ -1,7 +1,14 @@
 ---
-import { getFormattedDate, getSpotifyData, isRemoteImageSrc, resolveHeroImage } from "@/utils";
+import {
+	getFormattedDate,
+	getSpotifyData,
+	isArticleLink,
+	isRemoteImageSrc,
+	resolveHeroImage,
+} from "@/utils";
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from "astro:content";
+import OgEmbed from "./OgEmbed.astro";
 import SpotifyEmbed from "./SpotifyEmbed.astro";
 
 interface Props {
@@ -21,7 +28,9 @@ try {
 	heroImage = content.data.heroImage;
 }
 const imageAlt = content.data.imageAlt || 'A decorative, semi-related stock photo that adds less value than this comment.';
-const spotify = "url" in content.data ? getSpotifyData(content.data.url) : null;
+const url = "url" in content.data ? content.data.url : undefined;
+const spotify = url ? getSpotifyData(url) : null;
+const article = isArticleLink(content);
 ---
 
 {
@@ -79,15 +88,22 @@ const spotify = "url" in content.data ? getSpotifyData(content.data.url) : null;
 }
 <p class="mt-8">{content.data.description}</p>
 {
-	spotify && "url" in content.data && (
+	spotify && url && (
 		<div class="mt-8 w-full" data-pagefind-ignore>
-			<SpotifyEmbed url={content.data.url} title={content.data.title} />
+			<SpotifyEmbed url={url} title={content.data.title} />
 		</div>
 	)
 }
 {
-	content.data.url && !spotify && (
-		<a href={content.data.url} class="link block mt-8" data-pagefind-ignore>
+	article && url && (
+		<div class="mt-8 w-full" data-pagefind-ignore>
+			<OgEmbed url={url} />
+		</div>
+	)
+}
+{
+	url && !spotify && !article && (
+		<a href={url} class="link block mt-8" data-pagefind-ignore>
 			Go to content
 		</a>
 	)

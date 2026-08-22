@@ -1,8 +1,16 @@
 ---
 import type { IElement } from "@/data/shared";
-import { getEntryUrl, getFormattedDate, getLinkTypeFromUrl, getPublicSlug, hasBody } from "@/utils";
+import {
+	getEntryUrl,
+	getFormattedDate,
+	getLinkTypeFromUrl,
+	getPublicSlug,
+	hasBody,
+	isArticleLink,
+} from "@/utils";
 import type { Entry } from "@/utils/post";
 import NotesIcon from "./NotesIcon.astro";
+import OgEmbed from "./OgEmbed.astro";
 
 interface Props extends IElement {
 	post: Entry;
@@ -19,6 +27,7 @@ const url = getEntryUrl(post);
 const isLib =
 	("type" in post.data && post.data.type === "lib") ||
 	(url != null && getLinkTypeFromUrl(url) === "lib");
+const showOg = isArticleLink(post) && url != null;
 ---
 
 <Element class="flex w-full items-baseline justify-between gap-x-2">
@@ -30,6 +39,11 @@ const isLib =
 	</span>
 	{notes && <NotesIcon slug={getPublicSlug(post)} />}
 </Element>
+{showOg && url && (
+	<div class="mt-2 w-full">
+		<OgEmbed url={url} />
+	</div>
+)}
 <div class="align-start mt-1 flex w-full justify-between flex-col sm:flex-row">
 	<div class="shrink-0">
 		<time class="mr-3 text-xs text-gray-400" datetime={datetime}>{postDate}</time>

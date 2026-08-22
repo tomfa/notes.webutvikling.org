@@ -3,7 +3,6 @@ title: "Obesity is a thing of the past"
 pubDate: 2025-06-04
 url: https://open.spotify.com/episode/42MPnbOskwDRGYWf0upXKb
 tags: [societal]
-category: statement
 description: Novo Nordisk spent a century on insulin, then disrupted themselves with Ozempic. Body composition as a class marker is just getting started.
 ---
 
