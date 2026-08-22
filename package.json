@@ -8,11 +8,13 @@
 		"sync": "astro sync",
 		"build": "astro build",
 		"preview": "astro preview",
-		"format": "prettier -w ./src ./src/**/*.astro"
+		"format": "prettier -w ./src ./src/**/*.astro",
+		"test:e2e": "playwright test"
 	},
 	"devDependencies": {
 		"@astrojs/mdx": "^7.0.6",
 		"@astrojs/sitemap": "^3.7.3",
+		"@playwright/test": "^1.62.1",
 		"@tailwindcss/aspect-ratio": "^0.4.2",
 		"@tailwindcss/typography": "^0.5.10",
 		"@tailwindcss/vite": "^4.3.3",
