@@ -27,7 +27,7 @@ const menuLinks = [
 <script>
 	import { toggleClass } from "@/utils";
 
-	document.addEventListener("DOMContentLoaded", () => {
+	document.addEventListener("astro:page-load", () => {
 		const header = document.getElementById("main-header") as HTMLElement;
 		const toggleMenuButton = document.getElementById("toggle-navigation-menu") as HTMLButtonElement;
 		let menuOpen = false;
@@ -40,7 +40,7 @@ const menuLinks = [
 	});
 </script>
 
-<header id="main-header" transition:persist="site-header" class="group relative mb-28 flex items-center">
+<header id="main-header" class="group relative mb-28 flex items-center">
 	<div class="flex sm:flex-col">
 		<a
 			href="/"

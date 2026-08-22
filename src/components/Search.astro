@@ -6,7 +6,18 @@ import "../styles/search.css";
 	(() => {
 		const onIdle = window.requestIdleCallback || ((cb: IdleRequestCallback) => setTimeout(cb, 1));
 		onIdle(async () => {
-			await import("@pagefind/component-ui");
+			const { getInstanceManager } = await import("@pagefind/component-ui");
+
+			// Pagefind's components register themselves with a module-level instance and
+			// never deregister. Client-side navigation replaces them, so the instance has
+			// to go as well, or the trigger keeps opening the modal belonging to the page
+			// we navigated away from.
+			document.addEventListener("astro:before-swap", () => {
+				const manager = getInstanceManager();
+				for (const name of manager.getInstanceNames()) {
+					manager.removeInstance(name);
+				}
+			});
 		});
 	})();
 </script>
