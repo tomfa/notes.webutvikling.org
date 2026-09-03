@@ -1,6 +1,6 @@
 ---
 title: "How to speedrun i18n"
-pubDate: 2026-09-03
+pubDate: 2026-09-04
 category: guide
 description: "Good practices when you start out, so adding locales later is mostly strings: one name field, a fuzzy address, inferred enums, one domain, split email."
 heroImage: https://unsplash.com/photos/athletes-in-starting-blocks-on-a-race-track-5GwQ16dnThw
