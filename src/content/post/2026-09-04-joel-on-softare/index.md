@@ -2,7 +2,7 @@
 title: "Joel on Software"
 pubDate: 2026-09-03
 category: book
-description: "Joel has some tidbits of knowledge, although many of them feel dated."
+description: "Assign responsibilities to someONE. Prioritise PRs > Bugs > Features, in that order."
 heroImage: /images/joel-on-software.jpg
 tags: [management, culture, "joel spolsky"]
 imageAlt: "Democritus Junior, still arguing about bug trackers."
